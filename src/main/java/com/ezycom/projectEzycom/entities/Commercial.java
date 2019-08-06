@@ -10,16 +10,16 @@ public class Commercial{
     public Commercial(){
     }
 
-    public Commercial(String nom, String prenom){
-        this.nom = nom;
-        this.prenom = prenom;
+    public Commercial(String lastname, String firstname){
+        this.lastname = lastname;
+        this.firstname = firstname;
     }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String nom;
-    private String prenom;
+    private String lastname;
+    private String firstname;
 
     
 
@@ -38,31 +38,31 @@ public class Commercial{
     }
 
     /**
-     * @return String return the nom
+     * @return String return the lastname
      */
-    public String getNom() {
-        return nom;
+    public String getlastname() {
+        return lastname;
     }
 
     /**
-     * @param nom the nom to set
+     * @param lastname the lastname to set
      */
-    public void setNom(String nom) {
-        this.nom = nom;
+    public void setlastname(String lastname) {
+        this.lastname = lastname;
     }
 
     /**
-     * @return String return the prenom
+     * @return String return the firstname
      */
-    public String getPrenom() {
-        return prenom;
+    public String getfirstname() {
+        return firstname;
     }
 
     /**
-     * @param prenom the prenom to set
+     * @param firstname the firstname to set
      */
-    public void setPrenom(String prenom) {
-        this.prenom = prenom;
+    public void setfirstname(String firstname) {
+        this.firstname = firstname;
     }
 
 }

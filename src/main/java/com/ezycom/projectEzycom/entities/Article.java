@@ -10,16 +10,16 @@ public class Article{
     public Article(){
     }
 
-    public Article(String nom_article, String famille){
-        this.nom_article = nom_article;
-        this.famille = famille;
+    public Article(String articleName, String family){
+        this.articleName = articleName;
+        this.family = family;
     }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String nom_article;
-    private String famille;
+    private String articleName;
+    private String family;
 
     /**
      * @return Long return the id
@@ -36,31 +36,31 @@ public class Article{
     }
 
     /**
-     * @return String return the nom_article
+     * @return String return the articleName
      */
-    public String getNom_article() {
-        return nom_article;
+    public String getarticleName() {
+        return articleName;
     }
 
     /**
-     * @param nom_article the nom_article to set
+     * @param articleName the articleName to set
      */
-    public void setNom_article(String nom_article) {
-        this.nom_article = nom_article;
+    public void setarticleName(String articleName) {
+        this.articleName = articleName;
     }
 
     /**
-     * @return String return the famille
+     * @return String return the family
      */
-    public String getFamille() {
-        return famille;
+    public String getfamily() {
+        return family;
     }
 
     /**
-     * @param famille the famille to set
+     * @param family the family to set
      */
-    public void setFamille(String famille) {
-        this.famille = famille;
+    public void setfamily(String family) {
+        this.family = family;
     }
 
 }

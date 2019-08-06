@@ -10,30 +10,30 @@ public class Payplan{
     public Payplan(){
     }
 
-    public Payplan(String nom, String echeance_objectif, String remun_sur,
-    int objectif, int taux_remun, int remun_loc_abo, int prime_integration,
-    int prime_integration_mois){
-        this.nom = nom;
-        this.echeance_objectif = echeance_objectif;
-        this.remun_sur = remun_sur;
-        this.objectif = objectif;
-        this.taux_remun = taux_remun;
-        this.remun_loc_abo = remun_loc_abo;
-        this.prime_integration = prime_integration;
-        this.prime_integration_mois = prime_integration_mois;
+    public Payplan(String name, String objectiveDeadline, String typeRemuneration,
+    int objectif, int payRate, int remunerationSub, int integrationBonus,
+    int integrationBonusTime){
+        this.name = name; //Nom
+        this.objectiveDeadline = objectiveDeadline; // Echéance Objectif
+        this.typeRemuneration = typeRemuneration; //Remuneration sur CA ou Marge
+        this.objectif = objectif; //Objectif
+        this.payRate = payRate; //taux de rémuneration
+        this.remunerationSub = remunerationSub; //Remuneration Location/Abonnement
+        this.integrationBonus = integrationBonus; //Montant de la prime d'intégration
+        this.integrationBonusTime = integrationBonusTime; //durée de la prime d'integration
     }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String nom;
-    private String echeance_objectif;
-    private String remun_sur;
+    private String name;
+    private String objectiveDeadline;
+    private String typeRemuneration;
     private int objectif;
-    private int taux_remun;
-    private int remun_loc_abo;
-    private int prime_integration;
-    private int prime_integration_mois;
+    private int payRate;
+    private int remunerationSub;
+    private int integrationBonus;
+    private int integrationBonusTime;
 
     /**
      * @return Long return the id
@@ -50,45 +50,45 @@ public class Payplan{
     }
 
     /**
-     * @return String return the nom
+     * @return String return the name
      */
-    public String getNom() {
-        return nom;
+    public String getname() {
+        return name;
     }
 
     /**
-     * @param nom the nom to set
+     * @param name the name to set
      */
-    public void setNom(String nom) {
-        this.nom = nom;
+    public void setname(String name) {
+        this.name = name;
     }
 
     /**
-     * @return String return the echeance_objectif
+     * @return String return the objectiveDeadline
      */
-    public String getEcheance_objectif() {
-        return echeance_objectif;
+    public String getobjectiveDeadline() {
+        return objectiveDeadline;
     }
 
     /**
-     * @param echeance_objectif the echeance_objectif to set
+     * @param objectiveDeadline the objectiveDeadline to set
      */
-    public void setEcheance_objectif(String echeance_objectif) {
-        this.echeance_objectif = echeance_objectif;
+    public void setobjectiveDeadline(String objectiveDeadline) {
+        this.objectiveDeadline = objectiveDeadline;
     }
 
     /**
-     * @return String return the remun_sur
+     * @return String return the typeRemuneration
      */
-    public String getRemun_sur() {
-        return remun_sur;
+    public String gettypeRemuneration() {
+        return typeRemuneration;
     }
 
     /**
-     * @param remun_sur the remun_sur to set
+     * @param typeRemuneration the typeRemuneration to set
      */
-    public void setRemun_sur(String remun_sur) {
-        this.remun_sur = remun_sur;
+    public void settypeRemuneration(String typeRemuneration) {
+        this.typeRemuneration = typeRemuneration;
     }
 
     /**
@@ -106,59 +106,59 @@ public class Payplan{
     }
 
     /**
-     * @return int return the taux_remun
+     * @return int return the payRate
      */
-    public int getTaux_remun() {
-        return taux_remun;
+    public int getpayRate() {
+        return payRate;
     }
 
     /**
-     * @param taux_remun the taux_remun to set
+     * @param payRate the payRate to set
      */
-    public void setTaux_remun(int taux_remun) {
-        this.taux_remun = taux_remun;
+    public void setpayRate(int payRate) {
+        this.payRate = payRate;
     }
 
     /**
-     * @return int return the remun_loc_abo
+     * @return int return the remunerationSub
      */
-    public int getRemun_loc_abo() {
-        return remun_loc_abo;
+    public int getremunerationSub() {
+        return remunerationSub;
     }
 
     /**
-     * @param remun_loc_abo the remun_loc_abo to set
+     * @param remunerationSub the remunerationSub to set
      */
-    public void setRemun_loc_abo(int remun_loc_abo) {
-        this.remun_loc_abo = remun_loc_abo;
+    public void setremunerationSub(int remunerationSub) {
+        this.remunerationSub = remunerationSub;
     }
 
     /**
-     * @return int return the prime_integration
+     * @return int return the integrationBonus
      */
-    public int getPrime_integration() {
-        return prime_integration;
+    public int getintegrationBonus() {
+        return integrationBonus;
     }
 
     /**
-     * @param prime_integration the prime_integration to set
+     * @param integrationBonus the integrationBonus to set
      */
-    public void setPrime_integration(int prime_integration) {
-        this.prime_integration = prime_integration;
+    public void setintegrationBonus(int integrationBonus) {
+        this.integrationBonus = integrationBonus;
     }
 
     /**
-     * @return int return the prime_integration_mois
+     * @return int return the integrationBonusTime
      */
-    public int getPrime_integration_mois() {
-        return prime_integration_mois;
+    public int getintegrationBonusTime() {
+        return integrationBonusTime;
     }
 
     /**
-     * @param prime_integration_mois the prime_integration_mois to set
+     * @param integrationBonusTime the integrationBonusTime to set
      */
-    public void setPrime_integration_mois(int prime_integration_mois) {
-        this.prime_integration_mois = prime_integration_mois;
+    public void setintegrationBonusTime(int integrationBonusTime) {
+        this.integrationBonusTime = integrationBonusTime;
     }
 
 }
