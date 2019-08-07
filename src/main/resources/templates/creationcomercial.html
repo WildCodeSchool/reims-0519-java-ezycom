@@ -40,14 +40,15 @@
 		<div class="col-lg-3">
 			<p class="ml-5">Identité :</p>
 		</div>
-		<form class="col-lg-3 offset-2">
-			<div class="form-group">
-				<label for="formGroupExampleInput">Nom :</label>
-				<input type="text" class="form-control" id="formGroupExampleInput" placeholder="Entrer votre nom">
-			</div>
-			<div class="form-group">
-				<label for="formGroupExampleInput2">Prénom :</label>
-				<input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Entrer votre prénom">
+		<form class="col-lg-3 offset-2 pl-0">
+			<div class="form-group mr-5">
+				<label for="email">Email :</label>
+				<select class="custom-select" id="email">
+						<option selected>Sélection de l'email</option>
+						<option value="1">Mark@gmail.com</option>
+						<option value="2">Tony@yahoo.fr</option>
+						<option value="3">Mel@jesaispas.zut</option>
+					</select>
 			</div>
 		</form>
 		<div class="col-lg-3">
@@ -133,7 +134,7 @@
 				</tbody>
 			</table>
 		</div>
-		<div class="d-flex justify-content-end mr-5 mb-3">
+		<div class="d-flex justify-content-end mr-5">
 			<button type="button" class="btn btn-primary btn-lg">Valider</button>
 		</div>
 		
