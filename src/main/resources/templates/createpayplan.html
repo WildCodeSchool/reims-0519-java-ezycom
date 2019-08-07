@@ -40,12 +40,13 @@
 			<h1 class="text-center my-4">Création du plan de rémunération</h1>
 	</header>
 	
-	<form class="text-center mb-3" action="#" th:action="@{/createpayplan}" th:object="${userForm}" method="post">
+	<form class="text-center mb-3" action="#" th:action="@{/createpayplan}" th:object="${payplan}" method="post">
 		<div class="form-group" th:class="${#fields.hasErrors('name')}? has-error" >
 			<label for="name">Nom du plan de rémunération :</label>
-			<input type="text" id="name" class="mx-2" th:field="*{name}" class="form-control"/>
+			<input type="text" id="name" th:field="*{name}" class="form-control"/>
 			<span th:if="${#fields.hasErrors('name')}" th:errors="*{name}" th:errorclass="fieldError"></span>
 		</div>
+		<button type="submit" class="btn btn-primary mr-3">Valider</button>
 	</form>
     
 		<div class="d-flex justify-content-around mb-3">
