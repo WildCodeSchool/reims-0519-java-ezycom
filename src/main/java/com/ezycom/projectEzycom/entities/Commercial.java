@@ -40,28 +40,28 @@ public class Commercial{
     /**
      * @return String return the lastname
      */
-    public String getlastname() {
+    public String getLastname() {
         return lastname;
     }
 
     /**
      * @param lastname the lastname to set
      */
-    public void setlastname(String lastname) {
+    public void setLastname(String lastname) {
         this.lastname = lastname;
     }
 
     /**
      * @return String return the firstname
      */
-    public String getfirstname() {
+    public String getFirstname() {
         return firstname;
     }
 
     /**
      * @param firstname the firstname to set
      */
-    public void setfirstname(String firstname) {
+    public void setFirstname(String firstname) {
         this.firstname = firstname;
     }
 

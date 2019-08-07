@@ -52,42 +52,42 @@ public class Payplan{
     /**
      * @return String return the name
      */
-    public String getname() {
+    public String getName() {
         return name;
     }
 
     /**
      * @param name the name to set
      */
-    public void setname(String name) {
+    public void setName(String name) {
         this.name = name;
     }
 
     /**
      * @return String return the objectiveDeadline
      */
-    public String getobjectiveDeadline() {
+    public String getObjectiveDeadline() {
         return objectiveDeadline;
     }
 
     /**
      * @param objectiveDeadline the objectiveDeadline to set
      */
-    public void setobjectiveDeadline(String objectiveDeadline) {
+    public void setObjectiveDeadline(String objectiveDeadline) {
         this.objectiveDeadline = objectiveDeadline;
     }
 
     /**
      * @return String return the typeRemuneration
      */
-    public String gettypeRemuneration() {
+    public String getTypeRemuneration() {
         return typeRemuneration;
     }
 
     /**
      * @param typeRemuneration the typeRemuneration to set
      */
-    public void settypeRemuneration(String typeRemuneration) {
+    public void setTypeRemuneration(String typeRemuneration) {
         this.typeRemuneration = typeRemuneration;
     }
 
@@ -108,56 +108,56 @@ public class Payplan{
     /**
      * @return int return the payRate
      */
-    public int getpayRate() {
+    public int getPayRate() {
         return payRate;
     }
 
     /**
      * @param payRate the payRate to set
      */
-    public void setpayRate(int payRate) {
+    public void setPayRate(int payRate) {
         this.payRate = payRate;
     }
 
     /**
      * @return int return the remunerationSub
      */
-    public int getremunerationSub() {
+    public int getRemunerationSub() {
         return remunerationSub;
     }
 
     /**
      * @param remunerationSub the remunerationSub to set
      */
-    public void setremunerationSub(int remunerationSub) {
+    public void setRemunerationSub(int remunerationSub) {
         this.remunerationSub = remunerationSub;
     }
 
     /**
      * @return int return the integrationBonus
      */
-    public int getintegrationBonus() {
+    public int getIntegrationBonus() {
         return integrationBonus;
     }
 
     /**
      * @param integrationBonus the integrationBonus to set
      */
-    public void setintegrationBonus(int integrationBonus) {
+    public void setIntegrationBonus(int integrationBonus) {
         this.integrationBonus = integrationBonus;
     }
 
     /**
      * @return int return the integrationBonusTime
      */
-    public int getintegrationBonusTime() {
+    public int getIntegrationBonusTime() {
         return integrationBonusTime;
     }
 
     /**
      * @param integrationBonusTime the integrationBonusTime to set
      */
-    public void setintegrationBonusTime(int integrationBonusTime) {
+    public void setIntegrationBonusTime(int integrationBonusTime) {
         this.integrationBonusTime = integrationBonusTime;
     }
 

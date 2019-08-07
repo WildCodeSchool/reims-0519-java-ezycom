@@ -38,28 +38,28 @@ public class Article{
     /**
      * @return String return the articleName
      */
-    public String getarticleName() {
+    public String getArticleName() {
         return articleName;
     }
 
     /**
      * @param articleName the articleName to set
      */
-    public void setarticleName(String articleName) {
+    public void setArticleName(String articleName) {
         this.articleName = articleName;
     }
 
     /**
      * @return String return the family
      */
-    public String getfamily() {
+    public String geFamily() {
         return family;
     }
 
     /**
      * @param family the family to set
      */
-    public void setfamily(String family) {
+    public void setFamily(String family) {
         this.family = family;
     }
 
