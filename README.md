@@ -53,5 +53,5 @@ mvn test
 -   **Bryan Nuninger**  -  _Développeur_ ([[https://github.com/BryanNun](https://github.com/BryanNun)])
 -   **Nicolas Huraux**  -  _Développeur_  - ([[https://github.com/NicolasHuraux](https://github.com/NicolasHuraux)])
 -   **Carole Chevalier**  -  _Développeuse_  - ([[https://github.com/cakocako](https://github.com/cakocako)])
--   **Stéphane Thomin **  -  _Développeur_  - ([[https://github.com/StephaneThomin](https://github.com/StephaneThomin)])
--  **Anthony Lefevre **  -  _Développeur_  - ([https://github.com/lefevreanthony](https://github.com/lefevreanthony)])
+-   **Stéphane Thomin**  -  _Développeur_  - ([[https://github.com/StephaneThomin](https://github.com/StephaneThomin)])
+-  **Anthony Lefevre**  -  _Développeur_  - ([https://github.com/lefevreanthony](https://github.com/lefevreanthony)])
