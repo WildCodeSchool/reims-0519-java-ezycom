@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<link rel="stylesheet" href="../static/createpayplan.css">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet"> 
+		<title>Ezycom</title>
+	</head>
+	<body>
+		<header>
+			<nav class="navbar navbar-expand-lg">
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"><img src="../static/logo.png" height="30" width="30"></span> Ezycom
+				</button>
+				<div class="collapse navbar-collapse" id="navbarNav">
+					<ul class="navbar-nav">
+						<li class="nav-item active">
+							<a class="nav-link" href="#">Nouveau plan de rémunération</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">Edition</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">Profil commercial</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">Base de connaissance</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">Assistance</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+			<h1 class="text-center my-4">Création du plan de rémunération</h1>
+    </header>
+    
+		<form class="text-center mb-3"> 
+			<label for="box4">Nom du plan de rémunération :</label>
+			<input type="text" id="box4" class="mx-2">
+    </form>
+    
+		<div class="d-flex justify-content-around mb-3">
+			<form>Echéance objectif : 
+				<div class="custom-control custom-radio custom-control-inline mx-2">
+					<input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input" checked>
+					<label class="custom-control-label" for="customRadioInline1">Mensuel</label>
+				</div>
+				<div class="custom-control custom-radio custom-control-inline mx-2">
+					<input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input">
+					<label class="custom-control-label" for="customRadioInline2">Trimestriel</label>
+				</div>
+				<div class="custom-control custom-radio custom-control-inline mx-2">
+					<input type="radio" id="customRadioInline3" name="customRadioInline1" class="custom-control-input">
+					<label class="custom-control-label" for="customRadioInline3">Annuel</label>
+				</div>
+			</form>
+      <form>
+        <label for="box3">Objectif CA :</label>
+        <input type="text" id="box3" class="mx-2">
+      </form>
+    </div>
+    
+    <hr>
+
+    <div class="d-flex justify-content-around mb-3">
+      <div>
+        <form class="custom-control custom-radio custom-control-inline">
+          <input type="radio" id="remunerationSurCa" value="surCa" name="remuneration" class="custom-control-input" checked>
+          <label class="custom-control-label" for="remunerationSurCa">Rémunération sur CA</label>
+        </form>
+        <form class="custom-control custom-radio custom-control-inline">
+          <input type="radio" id="remunerationSurMarge" value="surMarge" name="remuneration" class="custom-control-input">
+          <label class="custom-control-label" for="remunerationSurMarge">Rémunération sur marge</label>
+        </form>
+      </div>
+      <form>
+        <label for="customRange1">Taux de rémunération en % :</label>
+        <input type="range" class="custom-range mx-2" min="0" max="100" step="10" id="customRange1">
+      </form>
+    </div>
+
+    <hr>
+    
+		<div class="text-center">
+			<form class="mb-3">
+				<label for="box1">Rémunération sur contrat location / Abonnement :</label>
+				<input type="text" id="box1" class="mx-2">
+				<span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Indiquer le nombre de mois pris en compte dans la valorisation de l'affaire dans le cadre d'un contrat réccurent.">
+					<button class="btn btn-outline-dark rounded-circle" type="button" disabled>i</button>
+				</span>
+			</form>
+    </div>
+    
+    <hr>
+
+    <div class="mb-3 d-flex flex-baseline justify-content-around">
+      <form class="custom-control custom-switch">
+        <input type="checkbox" class="custom-control-input" id="customSwitch1">
+        <label class="custom-control-label" for="customSwitch1">Prime d'intégration</label>
+        <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Le commercial bénéficiera d'une prime d'accompagnement qui supplantera le calcul des commissions sur la durée choisie.">
+          <button class="btn btn-outline-dark mx-2 rounded-circle" type="button" disabled>i</button>
+        </span>
+      </form>
+    </div>
+
+    <div class="mb-4 d-flex flex-baseline justify-content-center">
+			<form class="mr-5 d-flex flex-baseline">&rarr; 0&euro;
+				<input type="range" class="custom-range mx-2">
+				3 000&euro;
+			</form>
+			<form class="ml-5 d-flex flex-baseline">&rarr;
+				<input type="text" id="box2" placeholder="Nombre de mois" class="mx-2">
+				<label for="box2">Mois</label>
+      </form>
+    </div>
+
+    <hr>
+
+    <form class="d-flex justify-content-center">
+      <label for="customRange2">Palier plan de rémunération</label>
+    </form>
+    <form class="mb-5 d-flex justify-content-center">
+      <input type="range" class="custom-range mx-2" min="1" max="5" step="1" id="customRange2">
+    </form>
+
+    <form class="mb-5 d-flex flex-baseline justify-content-center">
+      <button type="button" class="btn btn-secondary mr-3">Annuler</button>
+      <button type="button" class="btn btn-primary">Valider</button>
+    </form>
+
+		<!-- Optional JavaScript -->
+		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	</body>
+</html>
