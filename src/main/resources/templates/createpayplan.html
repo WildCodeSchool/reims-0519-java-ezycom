@@ -38,12 +38,15 @@
 				</div>
 			</nav>
 			<h1 class="text-center my-4">Création du plan de rémunération</h1>
-    </header>
-    
-		<form class="text-center mb-3"> 
-			<label for="box4">Nom du plan de rémunération :</label>
-			<input type="text" id="box4" class="mx-2">
-    </form>
+	</header>
+	
+	<form class="text-center mb-3" action="#" th:action="@{/createpayplan}" th:object="${userForm}" method="post">
+		<div class="form-group" th:class="${#fields.hasErrors('name')}? has-error" >
+			<label for="name">Nom du plan de rémunération :</label>
+			<input type="text" id="name" class="mx-2" th:field="*{name}" class="form-control"/>
+			<span th:if="${#fields.hasErrors('name')}" th:errors="*{name}" th:errorclass="fieldError"></span>
+		</div>
+	</form>
     
 		<div class="d-flex justify-content-around mb-3">
 			<form>Echéance objectif : 
@@ -60,10 +63,10 @@
 					<label class="custom-control-label" for="customRadioInline3">Annuel</label>
 				</div>
 			</form>
-      <form>
-        <label for="box3">Objectif CA :</label>
-        <input type="text" id="box3" class="mx-2">
-      </form>
+		<form>
+			<label for="customRange1">Taux de rémunération en % :</label>
+			<input type="range" class="custom-range mx-2" min="0" max="100" step="10" id="customRange1">
+		</form>
     </div>
     
     <hr>
@@ -78,10 +81,10 @@
           <input type="radio" id="remunerationSurMarge" value="surMarge" name="remuneration" class="custom-control-input">
           <label class="custom-control-label" for="remunerationSurMarge">Rémunération sur marge</label>
         </form>
-      </div>
-      <form>
-        <label for="customRange1">Taux de rémunération en % :</label>
-        <input type="range" class="custom-range mx-2" min="0" max="100" step="10" id="customRange1">
+	  </div>
+	  <form>
+        <label for="box3">Objectif :</label>
+        <input type="text" id="box3" class="mx-2">
       </form>
     </div>
 
@@ -110,11 +113,11 @@
     </div>
 
     <div class="mb-4 d-flex flex-baseline justify-content-center">
-			<form class="mr-5 d-flex flex-baseline">&rarr; 0&euro;
+			<form class="mr-5 d-flex flex-baseline"> 0&euro;
 				<input type="range" class="custom-range mx-2">
 				3 000&euro;
 			</form>
-			<form class="ml-5 d-flex flex-baseline">&rarr;
+			<form class="ml-5 d-flex flex-baseline">
 				<input type="text" id="box2" placeholder="Nombre de mois" class="mx-2">
 				<label for="box2">Mois</label>
       </form>
@@ -131,7 +134,7 @@
 
     <form class="mb-5 d-flex flex-baseline justify-content-center">
       <button type="button" class="btn btn-secondary mr-3">Annuler</button>
-      <button type="button" class="btn btn-primary">Valider</button>
+      <button type="submit" class="btn btn-primary mr-3">Valider</button>
     </form>
 
 		<!-- Optional JavaScript -->
