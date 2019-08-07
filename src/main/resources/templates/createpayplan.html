@@ -39,12 +39,18 @@
 			</nav>
 			<h1 class="text-center my-4">Création du plan de rémunération</h1>
     </header>
-    
+
+
+
+	<form action="#" th:action="@{/}" th:object="${userForm}" method="post">
+		<div class="form-group" th:class="${#fields.hasErrors('name')}? has-error" >
 		<form class="text-center mb-3"> 
-			<label for="box4">Nom du plan de rémunération :</label>
-			<input type="text" id="box4" class="mx-2">
-    </form>
-    
+			<label for="name">Nom du plan de rémunération :</label>
+			<input type="text" id="name" class="mx-2" th:field="*{name}" class="form-control" placeholder="name"/>
+   		</form>
+	</form>
+	
+
 		<div class="d-flex justify-content-around mb-3">
 			<form>Echéance objectif : 
 				<div class="custom-control custom-radio custom-control-inline mx-2">
