@@ -1,0 +1,17 @@
+.navbar{
+    background-color: rgb(127,51,125);
+}
+
+a {
+    color: white;
+}
+
+.navbar-toggler{
+    color: white;
+}
+
+@import "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css";
+@import "http://fonts.googleapis.com/icon?family=Material+Icons";
+@import "dist/css/propeller.min.css";
+@import "datetimepicker/css/bootstrap-datetimepicker.css";
+@import "datetimepicker/css/pmd-datetimepicker.css";
