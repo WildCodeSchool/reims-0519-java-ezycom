@@ -7,7 +7,7 @@
 
 		<!-- Bootstrap CSS -->
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-		<link rel="stylesheet" href="../static/createpayplan.css">
+		<link rel="stylesheet" href="../static/createpayplan.css" th:href="@{/createpayplan.css}">
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet"> 
 		<title>Ezycom</title>
 	</head>
@@ -45,22 +45,20 @@
 			<label for="name">Nom du plan de rémunération :</label>
 			<input type="text" id="name" th:field="*{name}" class="form-control"/>
 			<span th:if="${#fields.hasErrors('name')}" th:errors="*{name}" th:errorclass="fieldError"></span>
-		</div>
-		<button type="submit" class="btn btn-primary mr-3">Valider</button>
-	</form>
-    
+		</div>	
+	
 		<div class="d-flex justify-content-around mb-3">
-			<form>Echéance objectif : 
+				<div class="form-group" th:class="${#fields.hasErrors('objectiveDeadline')}? has-error" ></div>
 				<div class="custom-control custom-radio custom-control-inline mx-2">
-					<input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input" checked>
+					<input type="radio" value="Mensuel" id="customRadioInline1" th:field="*{objectiveDeadline}" class="custom-control-input" checked>
 					<label class="custom-control-label" for="customRadioInline1">Mensuel</label>
 				</div>
 				<div class="custom-control custom-radio custom-control-inline mx-2">
-					<input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input">
+					<input type="radio" value="Trimestriel" id="customRadioInline2" th:field="*{objectiveDeadline}" class="custom-control-input">
 					<label class="custom-control-label" for="customRadioInline2">Trimestriel</label>
 				</div>
 				<div class="custom-control custom-radio custom-control-inline mx-2">
-					<input type="radio" id="customRadioInline3" name="customRadioInline1" class="custom-control-input">
+					<input type="radio" value="Annuel" id="customRadioInline3" th:field="*{objectiveDeadline}" class="custom-control-input">
 					<label class="custom-control-label" for="customRadioInline3">Annuel</label>
 				</div>
 			</form>
