@@ -37,7 +37,7 @@ mvn spring-boot:run
 
 ```
 
-Ou via votre IDE si celui-ci le permet (Eclipse par exemple).
+Ou via votre IDE si celui-ci le permet (VS par exemple).
 
 Le projet sera disponible sur votre navigateur à l'adresse  **[http://localhost:8080/](http://localhost:8080/)**
 
