@@ -38,103 +38,110 @@
 				</div>
 			</nav>
 			<h1 class="text-center my-4">Création du plan de rémunération</h1>
-	</header>
+		</header>
 	
-	<form class="text-center mb-3" action="#" th:action="@{/createpayplan}" th:object="${payplan}" method="post">
-		<div class="form-group" th:class="${#fields.hasErrors('name')}? has-error" >
-			<label for="name">Nom du plan de rémunération :</label>
-			<input type="text" id="name" th:field="*{name}" class="form-control"/>
-			<span th:if="${#fields.hasErrors('name')}" th:errors="*{name}" th:errorclass="fieldError"></span>
-		</div>	
-	
-		<div class="d-flex justify-content-around mb-3">
-				<div class="form-group" th:class="${#fields.hasErrors('objectiveDeadline')}? has-error" ></div>
-				<div class="custom-control custom-radio custom-control-inline mx-2">
-					<input type="radio" value="Mensuel" id="customRadioInline1" th:field="*{objectiveDeadline}" class="custom-control-input" checked>
-					<label class="custom-control-label" for="customRadioInline1">Mensuel</label>
-				</div>
-				<div class="custom-control custom-radio custom-control-inline mx-2">
-					<input type="radio" value="Trimestriel" id="customRadioInline2" th:field="*{objectiveDeadline}" class="custom-control-input">
-					<label class="custom-control-label" for="customRadioInline2">Trimestriel</label>
-				</div>
-				<div class="custom-control custom-radio custom-control-inline mx-2">
-					<input type="radio" value="Annuel" id="customRadioInline3" th:field="*{objectiveDeadline}" class="custom-control-input">
-					<label class="custom-control-label" for="customRadioInline3">Annuel</label>
-				</div>
-			</form>
 		<form>
-			<label for="customRange1">Taux de rémunération en % :</label>
-			<input type="range" class="custom-range mx-2" min="0" max="100" step="10" id="customRange1">
+
+			<div class="mb-3 d-flex justify-content-center" action="#" th:action="@{/createpayplan}" th:object="${payplan}" method="post">
+				<div class="div-group" th:class="${#fields.hasErrors('name')}? has-error">
+					<label for="name">Nom du plan de rémunération :</label>
+					<input type="text" id="name" th:field="*{name}" class="div-control"/>
+					<span th:if="${#fields.hasErrors('name')}" th:errors="*{name}" th:errorclass="fieldError"></span>
+				</div>
+			</div>
+			
+			<hr>
+		
+			<div class="d-flex justify-content-center mb-3">
+				<div class="div-group" th:class="${#fields.hasErrors('objectiveDeadline')}? has-error" ></div>Echéance objectif : 
+					<div class="custom-control custom-radio custom-control-inline ml-1">
+						<input type="radio" value="Mensuel" id="customRadioInline1" th:field="*{objectiveDeadline}" class="custom-control-input" checked>
+						<label class="custom-control-label" for="customRadioInline1">Mensuel</label>
+					</div>
+					<div class="custom-control custom-radio custom-control-inline">
+						<input type="radio" value="Trimestriel" id="customRadioInline2" th:field="*{objectiveDeadline}" class="custom-control-input">
+						<label class="custom-control-label" for="customRadioInline2">Trimestriel</label>
+					</div>
+					<div class="custom-control custom-radio custom-control-inline">
+						<input type="radio" value="Annuel" id="customRadioInline3" th:field="*{objectiveDeadline}" class="custom-control-input">
+						<label class="custom-control-label" for="customRadioInline3">Annuel</label>
+					</div>
+				</div>
+				<div class="d-flex justify-content-center mb-3">
+					<label for="customRange1">Taux de rémunération en % :</label>
+					<input type="range" class="custom-range ml-1" min="0" max="100" step="10" id="customRange1">
+				</div>
+			</div>
+			
+			<hr>
+
+			<div class="d-flex justify-content-around mb-3">
+				<div>
+					<div class="custom-control custom-radio custom-control-inline">
+						<input type="radio" id="remunerationSurCa" value="surCa" name="remuneration" class="custom-control-input" checked>
+						<label class="custom-control-label" for="remunerationSurCa">Rémunération sur CA</label>
+					</div>
+					<div class="custom-control custom-radio custom-control-inline">
+						<input type="radio" id="remunerationSurMarge" value="surMarge" name="remuneration" class="custom-control-input">
+						<label class="custom-control-label" for="remunerationSurMarge">Rémunération sur marge</label>
+					</div>
+				</div>
+				<div>
+					<label for="box3">Objectif :</label>
+					<input type="text" id="box3">
+				</div>
+			</div>
+
+			<hr>
+			
+			<div class="text-center">
+				<div class="mb-3">
+					<label for="box1">Rémunération sur contrat location / Abonnement :</label>
+					<input type="text" id="box1" class="mx-2">
+					<span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Indiquer le nombre de mois pris en compte dans la valorisation de l'affaire dans le cadre d'un contrat réccurent.">
+						<button class="btn btn-outline-dark rounded-circle" type="button" disabled>i</button>
+					</span>
+				</div>
+			</div>
+			
+			<hr>
+
+			<div class="mb-3 d-flex flex-baseline justify-content-around">
+				<div class="custom-control custom-switch">
+					<input type="checkbox" class="custom-control-input" id="customSwitch1">
+					<label class="custom-control-label" for="customSwitch1">Prime d'intégration</label>
+					<span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Le commercial bénéficiera d'une prime d'accompagnement qui supplantera le calcul des commissions sur la durée choisie.">
+						<button class="btn btn-outline-dark mx-2 rounded-circle" type="button" disabled>i</button>
+					</span>
+				</div>
+			</div>
+
+			<div class="mb-4 d-flex flex-baseline justify-content-center">
+				<div class="mr-5 d-flex flex-baseline"> 0&euro;
+					<input type="range" class="custom-range mx-2">
+					3 000&euro;
+				</div>
+				<div class="ml-5 d-flex flex-baseline">
+					<input type="text" id="box2" placeholder="Nombre de mois" class="mx-2">
+					<label for="box2">Mois</label>
+				</div>
+			</div>
+
+			<hr>
+
+			<div class="d-flex justify-content-center">
+				<label for="customRange2">Palier plan de rémunération</label>
+			</div>
+			<div class="mb-5 d-flex justify-content-center">
+				<input type="range" class="custom-range mx-2" min="1" max="5" step="1" id="customRange2">
+			</div>
+
+			<div class="mb-5 d-flex flex-baseline justify-content-center">
+				<button type="button" class="btn btn-secondary mr-3">Annuler</button>
+				<button type="submit" class="btn btn-primary mr-3">Valider</button>
+			</div>
+
 		</form>
-    </div>
-    
-    <hr>
-
-    <div class="d-flex justify-content-around mb-3">
-      <div>
-        <form class="custom-control custom-radio custom-control-inline">
-          <input type="radio" id="remunerationSurCa" value="surCa" name="remuneration" class="custom-control-input" checked>
-          <label class="custom-control-label" for="remunerationSurCa">Rémunération sur CA</label>
-        </form>
-        <form class="custom-control custom-radio custom-control-inline">
-          <input type="radio" id="remunerationSurMarge" value="surMarge" name="remuneration" class="custom-control-input">
-          <label class="custom-control-label" for="remunerationSurMarge">Rémunération sur marge</label>
-        </form>
-	  </div>
-	  <form>
-        <label for="box3">Objectif :</label>
-        <input type="text" id="box3" class="mx-2">
-      </form>
-    </div>
-
-    <hr>
-    
-		<div class="text-center">
-			<form class="mb-3">
-				<label for="box1">Rémunération sur contrat location / Abonnement :</label>
-				<input type="text" id="box1" class="mx-2">
-				<span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Indiquer le nombre de mois pris en compte dans la valorisation de l'affaire dans le cadre d'un contrat réccurent.">
-					<button class="btn btn-outline-dark rounded-circle" type="button" disabled>i</button>
-				</span>
-			</form>
-    </div>
-    
-    <hr>
-
-    <div class="mb-3 d-flex flex-baseline justify-content-around">
-      <form class="custom-control custom-switch">
-        <input type="checkbox" class="custom-control-input" id="customSwitch1">
-        <label class="custom-control-label" for="customSwitch1">Prime d'intégration</label>
-        <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Le commercial bénéficiera d'une prime d'accompagnement qui supplantera le calcul des commissions sur la durée choisie.">
-          <button class="btn btn-outline-dark mx-2 rounded-circle" type="button" disabled>i</button>
-        </span>
-      </form>
-    </div>
-
-    <div class="mb-4 d-flex flex-baseline justify-content-center">
-			<form class="mr-5 d-flex flex-baseline"> 0&euro;
-				<input type="range" class="custom-range mx-2">
-				3 000&euro;
-			</form>
-			<form class="ml-5 d-flex flex-baseline">
-				<input type="text" id="box2" placeholder="Nombre de mois" class="mx-2">
-				<label for="box2">Mois</label>
-      </form>
-    </div>
-
-    <hr>
-
-    <form class="d-flex justify-content-center">
-      <label for="customRange2">Palier plan de rémunération</label>
-    </form>
-    <form class="mb-5 d-flex justify-content-center">
-      <input type="range" class="custom-range mx-2" min="1" max="5" step="1" id="customRange2">
-    </form>
-
-    <form class="mb-5 d-flex flex-baseline justify-content-center">
-      <button type="button" class="btn btn-secondary mr-3">Annuler</button>
-      <button type="submit" class="btn btn-primary mr-3">Valider</button>
-    </form>
 
 		<!-- Optional JavaScript -->
 		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
