@@ -40,7 +40,7 @@
 			<h1 class="text-center my-4">Création du plan de rémunération</h1>
 		</header>
 	
-		<form action="#" th:action="@{/createpayplan}" th:object="${payplan}" method="post">
+		<form action="#" th:action="@{/payplans}" th:object="${payplan}" method="post">
 
 			<div class="mb-3 d-flex justify-content-center">
 				<div class="div-group" th:class="${#fields.hasErrors('name')}? has-error">
@@ -48,7 +48,7 @@
 					<input type="text" id="name" th:field="*{name}" class="div-control"/>
 					<span th:if="${#fields.hasErrors('name')}" th:errors="*{name}" th:errorclass="fieldError"></span>
 				</div>
-			</div>
+			</div> 
 			
 			<hr>
 		
