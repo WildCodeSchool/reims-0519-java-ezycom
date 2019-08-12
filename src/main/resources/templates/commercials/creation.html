@@ -5,7 +5,7 @@
 		<link rel="icon" type="image/png" href="../static/logo.png">
 		<title>Paramètre de plan de rémunération</title>
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-		<link rel="stylesheet" href="../static/creationcomercial.css">
+		<link rel="stylesheet" href="../../static/creationcomercial.css">
 	</head>
 	<body>
 		<header>
@@ -142,16 +142,22 @@
 		
 		<hr>
 
-		<form>
-			<input type="email" placeholder="E-mail">
-			<input type="text" placeholder="Mot de passe">
-			<label for="roles">Roles :</label>
-			<select class="custom-select" id="roles">
-				<option selected>Sélection du role</option>
-				<option value="1">Manager</option>
-				<option value="2">Commercial</option>
-				<option value="3">Administation des ventes</option>
-			</select>
+		<form action="#" th:action="@{/user}" th:object="${user}" method="post">
+			<div th:class="${#fields.hasErrors('email')}? has-error">
+				<input type="email" placeholder="E-mail" th:field="*{email}">
+			</div>
+			<div th:class="${#fields.hasErrors('password')}? has-error">
+				<input type="text" placeholder="Mot de passe" th:field="*{password}">
+			</div>
+			<div th:class="${#fields.hasErrors('role')}? has-error">
+				<label for="roles">Roles :</label>
+				<select class="custom-select" id="roles" th:field="*{role}">
+					<option selected>Sélection du role</option>
+					<option value="1">Manager</option>
+					<option value="2">Commercial</option>
+					<option value="3">Administation des ventes</option>
+				</select>
+			</div>
 			<button type="submit" class="btn btn-primary btn-lg">Valider</button>
 		</form>
 		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
