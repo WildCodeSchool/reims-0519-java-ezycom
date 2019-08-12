@@ -31,3 +31,7 @@ a:hover{
 hr {
 	width: 60%;
 }
+
+.form-group {
+	width: 33%;
+}
