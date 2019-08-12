@@ -27,7 +27,7 @@ public class MySecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
             .authorizeRequests()
-                .antMatchers("/resources/static/**", "/resources/templates/**").permitAll()
+                .antMatchers("/images/**", "/css/**").permitAll()
                 .anyRequest().authenticated()
                 .and()
             .formLogin()
@@ -35,10 +35,10 @@ public class MySecurityConfig extends WebSecurityConfigurerAdapter {
                 .defaultSuccessUrl("/commercials/create", true)
                 .permitAll()
                 .and()
-                .logout()
-                .permitAll()
+            .logout()
                 .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
-                .logoutSuccessUrl("/login");
+                .logoutSuccessUrl("/login")
+                .permitAll();
             
     }
     @Override
@@ -50,7 +50,6 @@ public class MySecurityConfig extends WebSecurityConfigurerAdapter {
     public AuthenticationProvider authenticationProvider() {
         PasswordEncoder encoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
 
-        
         DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider();
         authProvider.setUserDetailsService(userDetailsService);
         authProvider.setPasswordEncoder(encoder);
