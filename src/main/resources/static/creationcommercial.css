@@ -1,0 +1,19 @@
+.navbar {
+    background-color: rgb(127,51,125);
+}
+
+a {
+    color: white;
+}
+
+.navbar-toggler {
+    color: white;
+}
+
+hr {
+	width: 60%;
+}
+
+.role-select {
+    width: 30%;
+}
