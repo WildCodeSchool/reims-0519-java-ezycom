@@ -5,11 +5,7 @@
 		<link rel="icon" type="image/png" href="../static/logo.png">
 		<title>Paramètre de plan de rémunération</title>
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<<<<<<< HEAD:src/main/resources/templates/commercials/creation.html
-		<link rel="stylesheet" href="../../static/creationcomercial.css">
-=======
-		<link rel="stylesheet" href="../static/creationcommercial.css">
->>>>>>> fd4182d9909df260f7a3a0d267dcf476fdc709ea:src/main/resources/templates/creationcommercial.html
+		<link rel="stylesheet" href="../../static/creationcomercial.css" th:href="@{/creationcomercial.css}">
 	</head>
 	<body>
 		<header>
@@ -145,25 +141,39 @@
 		</form>
 		
 		<hr>
-
-		<form action="#" th:action="@{/user}" th:object="${user}" method="post">
+		<h2 class="d-flex justify-content-center">Création d'utilisateur :</h2>
+		<div class="d-flex justify-content-center">
+		<br/>
+		<form action="#" th:action="@{/commercials}" th:object="${user}" method="post">
 			<div th:class="${#fields.hasErrors('email')}? has-error">
 				<input type="email" placeholder="E-mail" th:field="*{email}">
+				<span th:if="${#fields.hasErrors('email')}" th:errors="*{email}" th:errorclass="fieldError"></span>
 			</div>
 			<div th:class="${#fields.hasErrors('password')}? has-error">
 				<input type="text" placeholder="Mot de passe" th:field="*{password}">
+			</div> 
+			
+			<div class="div-group" th:class="${#fields.hasErrors('role')}? has-error" >Role :
+				<br/>
+                    <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" value="Manager" id="customRadioInline1" th:field="*{role}" class="custom-control-input" checked>
+                        <label class="custom-control-label" for="customRadioInline1">Manager</label>
+					</div>
+				<br/>
+                    <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" value="Commercial" id="customRadioInline2" th:field="*{role}" class="custom-control-input">
+                        <label class="custom-control-label" for="customRadioInline2">Commercial</label>
+					</div>
+				<br/>
+                    <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" value="Administration" id="customRadioInline3" th:field="*{role}" class="custom-control-input">
+                        <label class="custom-control-label" for="customRadioInline3">Administration</label>
+                    </div>
+                </div>
 			</div>
-			<div th:class="${#fields.hasErrors('role')}? has-error">
-				<label for="roles">Roles :</label>
-				<select class="custom-select" id="roles" th:field="*{role}">
-					<option selected>Sélection du role</option>
-					<option value="1">Manager</option>
-					<option value="2">Commercial</option>
-					<option value="3">Administation des ventes</option>
-				</select>
-			</div>
-			<div class="d-flex justify-content-center mb-5">
-				<button type="submit" class="btn btn-primary btn-lg">Valider</button>
+			<br/>
+			<div class="d-flex justify-content-center mr-5">
+					<button type="button" class="btn btn-primary btn-lg">Valider</button>
 			</div>
 		</form>
 		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

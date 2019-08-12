@@ -21,24 +21,24 @@ public class UserController {
     @Autowired
     private UserRepository UserRepository;
 
-    @GetMapping("/commercial/create")
+    @GetMapping("/commercials/create")
     public String create(@ModelAttribute User user, Model model) {
         model.addAttribute("user", user);
-        return "/commercial/create";
+        return "/commercials/create";
     }
 
-    @PostMapping("/commercial")
+    @PostMapping("/commercials")
     public String validate(@Valid User user, BindingResult bindingResult, RedirectAttributes redirectAttrs) {
         if(bindingResult.hasErrors()) {
             for (ObjectError error : bindingResult.getAllErrors()) {
 
             }
             redirectAttrs.addFlashAttribute("user", user);
-            return "redirect:/commercial/create";
+            return "redirect:/commercials/create";
         }
          else {
             UserRepository.save(user);
-            return "redirect:/commercial/create";
+            return "redirect:/commercials/create";
         }
     }    
 }
