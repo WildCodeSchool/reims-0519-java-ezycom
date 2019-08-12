@@ -36,7 +36,7 @@ public class PayplanController {
             redirectAttrs.addFlashAttribute("payplan", payplan);
             return "redirect:/payplans/create";
         }
-         else {
+        else {
             payplanRepository.save(payplan);
             return "redirect:/payplans/create";
         }
