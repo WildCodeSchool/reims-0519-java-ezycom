@@ -9,7 +9,7 @@ public class CommercialController {
 
     @GetMapping("/commercials/create")
     public String payplan() {
-        return "/commercials/create";
+        return "commercials/create";
 
     }
 
