@@ -18,7 +18,7 @@ public class CommercialController {
     private UserRepository userRepository;
 
     @GetMapping("/commercials/create")
-    public String payplan(Model model) {
+    public String commercial(Model model) {
         List<User> users = userRepository.findAll();
         model.addAttribute("users", users);
         return "commercials/create";
