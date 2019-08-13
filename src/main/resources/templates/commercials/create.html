@@ -5,7 +5,7 @@
 		<link rel="icon" type="image/png" href="../static/logo.png">
 		<title>Paramètre de plan de rémunération</title>
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-		<link rel="stylesheet" href="../static/creationcomercial.css">
+		<link rel="stylesheet" href="../../static/creationcommercial.css" th:href="@{/creationcommercial.css}">
 	</head>
 	<body>
 		<header>
@@ -44,11 +44,9 @@
 			<div class="form-group mr-5">
 				<label for="email">Email :</label>
 				<select class="custom-select" id="email">
-						<option selected>Sélection de l'email</option>
-						<option value="1">Mark@gmail.com</option>
-						<option value="2">Tony@yahoo.fr</option>
-						<option value="3">Mel@jesaispas.zut</option>
-					</select>
+					<option selected>Sélection de l'email</option>
+					<option  th:each="user : ${users}" th:value="${user.id}" th:text=${user.email}></option>
+				</select>
 			</div>
 		</form>
 		<div class="col-lg-3">
