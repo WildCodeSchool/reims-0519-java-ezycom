@@ -12,16 +12,16 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 
 @Controller
-public class MenuPayplanController {
+public class UserController {
 
     @Autowired
     private UserRepository userRepository;
 
-    @GetMapping("/menuPayplan/menuPayplan")
-    public String commercial(Model model) {
+    @GetMapping("/users/create")
+    public String user(Model model) {
         List<User> users = userRepository.findAll();
         model.addAttribute("users", users);
-        return "menuPayplan/menuPayplan";
+        return "users/create";
 
     }
 
