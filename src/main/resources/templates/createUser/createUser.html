@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<link rel="icon" type="image/png" href="../static/logo.png">
+		<title>Paramètre de plan de rémunération</title>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<link rel="stylesheet" href="../../static/creationcomercial.css" th:href="@{/creationcomercial.css}">
+	</head>
+	<body>
+		<header>
+			<nav class="navbar navbar-expand-lg">
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"><img src="logo.png" height="30" width="30"></span> Ezycom
+				</button>
+				<div class="collapse navbar-collapse" id="navbarNav">
+					<ul class="navbar-nav">
+						<li class="nav-item active">
+							<a class="nav-link" href="#">Nouveau plan de rémunération</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">Edition</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">Profil commercial</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">Base de connaissance</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">Assistance</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		</header>
+
+
+
+		<h2 class="d-flex justify-content-center">Création d'utilisateur :</h2>
+		<div class="d-flex justify-content-center">
+		<br/>
+		<!-- <form action="#" th:action="@{/commercials}" th:object="${user}" method="post">
+			<div th:class="${#fields.hasErrors('email')}? has-error">
+				<input type="email" placeholder="E-mail" th:field="*{email}">
+				<span th:if="${#fields.hasErrors('email')}" th:errors="*{email}" th:errorclass="fieldError"></span>
+			</div>
+			<div th:class="${#fields.hasErrors('password')}? has-error">
+				<input type="text" placeholder="Mot de passe" th:field="*{password}">
+			</div> 
+			
+			 <div class="div-group" th:class="${#fields.hasErrors('role')}? has-error" >Role :
+				<br/>
+                    <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" value="Manager" id="customRadioInline1" th:field="*{role}" class="custom-control-input" checked>
+                        <label class="custom-control-label" for="customRadioInline1">Manager</label>
+					</div>
+				<br/>
+                    <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" value="Commercial" id="customRadioInline2" th:field="*{role}" class="custom-control-input">
+                        <label class="custom-control-label" for="customRadioInline2">Commercial</label>
+					</div>
+				<br/>
+                    <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" value="Administration" id="customRadioInline3" th:field="*{role}" class="custom-control-input">
+                        <label class="custom-control-label" for="customRadioInline3">Administration</label>
+                    </div>
+                </div>
+			</div>
+			<br/>
+			<div class="d-flex justify-content-center mr-5">
+					<button type="button" class="btn btn-primary btn-lg">Valider</button>
+			</div>
+        </form> -->
+        
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	</body>
+</html>
