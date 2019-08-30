@@ -18,10 +18,18 @@ public class UserController {
     private UserRepository userRepository;
 
     @GetMapping("/users/create")
-    public String user(Model model) {
+    public String create(Model model) {
         List<User> users = userRepository.findAll();
         model.addAttribute("users", users);
         return "users/create";
+
+    }
+
+    @GetMapping("/users/associate")
+    public String associate(Model model) {
+        List<User> users = userRepository.findAll();
+        model.addAttribute("users", users);
+        return "users/associate";
 
     }
 
