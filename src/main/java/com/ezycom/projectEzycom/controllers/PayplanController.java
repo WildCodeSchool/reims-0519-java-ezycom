@@ -21,7 +21,7 @@ public class PayplanController {
     @Autowired
     private PayplanRepository payplanRepository;
 
-    @GetMapping("/payplans")
+    @GetMapping("/payplans/browse")
     public String browse(Model model) {
         return "/payplans/browse";
     }
