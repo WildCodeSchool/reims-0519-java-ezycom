@@ -1,15 +1,10 @@
 body {
-	font-family: 'Open Sans', sans-serif;
 	color: rgb(60, 60, 60);
 	height: 100vh;
 }
 
 a {
 	color: white;
-}
-
-a:hover{
-	color:rgb(91, 190, 182);
 }
 
 .navbar {
@@ -20,10 +15,6 @@ a:hover{
 	color: white;
 }
 
-.navbar-toggler-icon {
-	background-color: rgb(91, 190, 182);
-}
-
 .custom-range {
 	width: 250px;
 }
@@ -32,6 +23,3 @@ hr {
 	width: 60%;
 }
 
-.form-group {
-	width: 33%;
-}
