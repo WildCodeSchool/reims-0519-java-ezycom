@@ -46,9 +46,7 @@ public class User implements UserDetails {
         this.password = password;
     }
 
-    public User(){
-    }
-
+    
     public User(String email, String password){
         this.email = email;
         this.password = password;
@@ -57,7 +55,7 @@ public class User implements UserDetails {
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         final List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
-        if(getEmail().equals("jeanmi@wcs.fr")) {
+        if(getEmail().equals(email)) {
             authorities.add(new SimpleGrantedAuthority("ADMIN"));
         }
         
