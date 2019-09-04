@@ -6,7 +6,6 @@ import com.ezycom.projectEzycom.services.MyUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -59,9 +58,7 @@ public class MySecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Bean
     public PasswordEncoder passwordEncoder(){
-        PasswordEncoder encoder = new BCryptPasswordEncoder();
-        return encoder;
-    }
- 
-        
-    }
+        return new BCryptPasswordEncoder();
+         
+    } 
+}
