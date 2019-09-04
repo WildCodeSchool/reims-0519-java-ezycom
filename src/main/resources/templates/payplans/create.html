@@ -13,33 +13,21 @@
 	</head>
 	<body>
 		<header>
-			<nav class="navbar navbar-expand-lg">
-				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"><img src="../static/logo.png" height="30" width="30"></span> Ezycom
-				</button>
-				<div class="collapse navbar-collapse" id="navbarNav">
-					<ul class="navbar-nav">
-						<li class="nav-item active">
-							<a class="nav-link" href="#">Nouveau plan de rémunération</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#">Edition</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#">Profil commercial</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#">Base de connaissance</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#">Assistance</a>
-						</li>
-					</ul>
+			<div class="profile">
+				<div class="bloc">
+					<a class="right" th:href="@{/logout}"><img class="nav-icon" th:src="@{/images/icon-logout.png}" alt="logout">Se déconnecter</a>
 				</div>
-			</nav>
-			<h1 class="text-center my-4">Création du plan de rémunération</h1>
+			</div>
+			<div class="logo"></div>
+			<div class="main-nav">
+				<ul>
+				   <li><a th:href="@{../users/create}">Création utilisateur</a></li>
+				   <li><a th:href="@{../users/associate}">Associer un payplan</a></li>
+				   <li><a th:href="@{../payplans/browse}"> Liste Payplans</a></li>
+				</ul>
+			</div>
 		</header>
-	
+	<br/>
 		<form action="#" th:action="@{/payplans}" th:object="${payplan}" method="post">
 
 			<div class="mb-3 d-flex justify-content-center">
