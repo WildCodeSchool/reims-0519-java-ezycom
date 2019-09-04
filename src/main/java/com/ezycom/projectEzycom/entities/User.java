@@ -16,12 +16,24 @@ import org.springframework.security.core.userdetails.UserDetails;
 @Entity
 public class User implements UserDetails {
 
+    public User(){
+    }
+
+    public User(String email, String password, String role){
+        this.email = email;
+        this.password = password;
+        this.role = role;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String email;
     private String password;
+    private String role;
 
+    
+    
     public Long getId() {
         return id;
     }
@@ -46,19 +58,19 @@ public class User implements UserDetails {
         this.password = password;
     }
 
-    public User(){
+    public String getRole() {
+        return role;
     }
 
-    public User(String email, String password){
-        this.email = email;
-        this.password = password;
+    public void setRole(String role) {
+        this.role = role;
     }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         final List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
-        if(getEmail().equals("jeanmi@wcs.fr")) {
-            authorities.add(new SimpleGrantedAuthority("ADMIN"));
+        if(getEmail().equals(email)) {
+            authorities.add(new SimpleGrantedAuthority("manager"));
         }
         
         return authorities;
@@ -89,5 +101,6 @@ public class User implements UserDetails {
         return true;
     }
 
+   
 
 }

@@ -16,11 +16,13 @@ public class MyUserDetailsService implements UserDetailsService {
     @Autowired
     private UserRepository userRepository;
 
+    @Autowired
+    PasswordEncoder passwordEncoder;
+
     @Override
     public UserDetails loadUserByUsername(String email) {
-        PasswordEncoder encoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
         if(userRepository.count() == 0) {
-            User jeanmi = new User("jeanmi@wcs.fr", encoder.encode("jeanjean"));
+            User jeanmi = new User("jeanmi@wcs.fr", passwordEncoder.encode("jeanjean"),"ADMIN");
             userRepository.save(jeanmi);
         }
         
@@ -30,4 +32,5 @@ public class MyUserDetailsService implements UserDetailsService {
         }
         return user;
     }
+    
 }
