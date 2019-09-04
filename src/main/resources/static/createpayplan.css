@@ -8,20 +8,12 @@ a {
 	color: white;
 }
 
-a:hover{
-	color:rgb(91, 190, 182);
-}
-
 .navbar {
 	background-color: rgb(127, 51, 125);
 }
 
 .navbar-toggler {
 	color: white;
-}
-
-.navbar-toggler-icon {
-	background-color: rgb(91, 190, 182);
 }
 
 .custom-range {
