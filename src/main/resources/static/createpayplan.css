@@ -1,5 +1,4 @@
 body {
-	font-family: 'Open Sans', sans-serif;
 	color: rgb(60, 60, 60);
 	height: 100vh;
 }
@@ -24,6 +23,3 @@ hr {
 	width: 60%;
 }
 
-.form-group {
-	width: 33%;
-}
