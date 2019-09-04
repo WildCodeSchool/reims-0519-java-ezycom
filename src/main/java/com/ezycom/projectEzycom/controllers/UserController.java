@@ -2,7 +2,9 @@ package com.ezycom.projectEzycom.controllers;
 
 import java.util.List;
 
+import com.ezycom.projectEzycom.entities.Payplan;
 import com.ezycom.projectEzycom.entities.User;
+import com.ezycom.projectEzycom.repositories.PayplanRepository;
 import com.ezycom.projectEzycom.repositories.UserRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +27,8 @@ public class UserController {
     @Autowired
     PasswordEncoder passwordEncoder;
    
+    private PayplanRepository payplanRepository;
+
     @GetMapping("/users/create")
     public String create(Model model){
         model.addAttribute("user", new User());
@@ -41,6 +45,9 @@ public class UserController {
     public String associate(Model model) {
         List<User> users = userRepository.findAll();
         model.addAttribute("users", users);
+
+        List<Payplan> payplans = payplanRepository.findAll();
+        model.addAttribute("payplans", payplans);
         return "users/associate";
 
     }

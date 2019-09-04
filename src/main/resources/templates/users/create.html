@@ -5,11 +5,15 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+		<title>Création d'utilisateur</title>
+
 		<!-- Bootstrap CSS -->
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-		<link rel="stylesheet" href="../static/creationcommercial.css" th:href="@{/creationcommercial.css}">
-		<link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet"> 
-		<title>Ezycom</title>
+
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+
+		<link rel="icon" type="image/png" href="../../static/images/logo.png" th:href="@{../images/logo.png}">
+		<link rel="stylesheet" href="../../static/creationcommercial.css" th:href="@{../creationcommercial.css}">
 	</head>
 	<body>
 		<header>
@@ -20,27 +24,22 @@
 				<div class="collapse navbar-collapse" id="navbarNav">
 					<ul class="navbar-nav">
 						<li class="nav-item active">
-							<a class="nav-link" href="#">Nouveau plan de rémunération</a>
+							<a class="nav-link" href="../payplans/create.html" th:href="@{../payplans/create}">Nouveau plan de rémunération</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="#">Edition</a>
+							<a class="nav-link" href="../payplans/browse.html" th:href="@{../payplans/browse}">Edition</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="#">Profil commercial</a>
+							<a class="nav-link" href="../users/associate.html" th:href="@{../users/associate}">Profil commercial</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="#">Base de connaissance</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#">Assistance</a>
+							<a class="nav-link" href="#">Création d'utilisateur</a>
 						</li>
 					</ul>
 				</div>
 			</nav>
 			<h1 class="text-center my-4">Création d'utilisateur :</h1>
 		</header>
-
-
 
 		<div class="d-flex justify-content-center">
 		<br/>
@@ -81,5 +80,6 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
 	</body>
 </html>
