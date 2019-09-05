@@ -21,6 +21,11 @@ public class PayplanController {
     @Autowired
     private PayplanRepository payplanRepository;
 
+    @GetMapping("/payplans/browse")
+    public String browse(Model model) {
+        return "/payplans/browse";
+    }
+
     @GetMapping("/payplans/create")
     public String create(@ModelAttribute Payplan payplan, Model model) {
         model.addAttribute("payplan", payplan);
