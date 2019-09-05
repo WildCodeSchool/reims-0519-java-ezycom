@@ -10,6 +10,7 @@
 <body class="container-fluid text-center">
     <header><img src="../static/logo-ezyperf.png" th:src="@{/images/logo-ezyperf.png}" class="pt-3 mb-3 img-fluid"></header>
     <form th:action="@{/login}" method="post" th:object="${user}" class="d-inline-block shadow-sm p-3 text-left rounded">
+        <p class="form-row mb-3 text-center alert alert-warning">Email ou mot de passe incorrect.</p>
         <div class="form-group mb-3" >
             <label for="email"  class="mb-2">Email</label>
             <input class="form-control" type="text"  name="username" id="email" placeholder="exemple@mail.com" required="required">
