@@ -32,10 +32,10 @@
 		</div>
 	</nav>
 	</header>
-	<div class="my-4 border border-dark mx-auto w-25 d-flex align-items-center justify-content-center">
+	<div class="my-4 mb-5 border border-dark mx-auto w-25 d-flex align-items-center justify-content-center">
 		<p class="my-2">Edition des plans de rémunération</p>
 	</div>
-	<div class="mt-5">
+	<div class="w-100 d-flex justify-content-center">
 		<ul>
 			<li class="mb-3 d-flex justify-content-center pr-2">
 					<select class="custom-select">
@@ -46,7 +46,7 @@
 				<div class="btn-group" role="group" aria-label="Basic example">
 				<button type="button" class="btn btn-secondary">Modifier</button>
 				<button type="button" class="btn btn-secondary">Copier</button>
-				<button type="button" id="delete" name="delete" class="btn btn-secondary" th:onclick="@{'/payplan/{id}'(id=${payplan.id})}" th:method="delete">Supprimer</button>
+				<button type="button" class="btn btn-danger">Supprimer</button>
 				
 				</div>
 			</li>

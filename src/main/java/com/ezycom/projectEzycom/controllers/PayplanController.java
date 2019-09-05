@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -28,23 +29,13 @@ public class PayplanController {
 
     @GetMapping("/payplans/browse")
     public String browse(Model model) {
-       
-    
 
     List<Payplan> payplans = payplanRepository.findAll();
     model.addAttribute("payplans", payplans);
     return "payplans/browse";
 
     }
-    @RequestMapping(value="/payplans/{id}", method = RequestMethod.DELETE)
-    @ResponseBody
-    public String delete(@PathVariable String id) {
-    studentService.delete(id);
-    return "Successfully deleted";
-}
-
-
-
+   
     @GetMapping("/payplans/create")
     public String create(@ModelAttribute Payplan payplan, Model model) {
         model.addAttribute("payplan", payplan);
