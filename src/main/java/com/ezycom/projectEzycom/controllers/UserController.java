@@ -27,6 +27,7 @@ public class UserController {
     @Autowired
     PasswordEncoder passwordEncoder;
    
+    @Autowired
     private PayplanRepository payplanRepository;
 
     @GetMapping("/users/create")
@@ -45,7 +46,10 @@ public class UserController {
     public String associate(Model model) {
         List<User> users = userRepository.findAll();
         model.addAttribute("users", users);
-
+        
+    
+    
+   
         List<Payplan> payplans = payplanRepository.findAll();
         model.addAttribute("payplans", payplans);
         return "users/associate";
