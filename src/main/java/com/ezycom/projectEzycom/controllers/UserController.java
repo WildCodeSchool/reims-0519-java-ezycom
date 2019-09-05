@@ -34,22 +34,17 @@ public class UserController {
     public String create(Model model){
         model.addAttribute("user", new User());
         return "/users/create";
-    }
+    } 
     @PostMapping("/users/create")
     public User create(@RequestParam String email, @RequestParam String password, @RequestParam String role) {
         return userRepository.save(new User(email, passwordEncoder.encode(password), role));
         }
-    
-   
     
     @GetMapping("/users/associate")
     public String associate(Model model) {
         List<User> users = userRepository.findAll();
         model.addAttribute("users", users);
         
-    
-    
-   
         List<Payplan> payplans = payplanRepository.findAll();
         model.addAttribute("payplans", payplans);
         return "users/associate";
