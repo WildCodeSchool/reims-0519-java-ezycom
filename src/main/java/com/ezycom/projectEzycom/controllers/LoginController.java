@@ -11,5 +11,9 @@ public class LoginController {
     public String login() {
         return "/login";
     }
-
+    
+    @GetMapping("/loginError")
+    public String loginError() {
+        return "/loginError";
+    }
 }
