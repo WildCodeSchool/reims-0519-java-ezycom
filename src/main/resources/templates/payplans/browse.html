@@ -33,43 +33,25 @@
 	</nav>
 	</header>
 	<div class="my-4 border border-dark mx-auto w-25 d-flex align-items-center justify-content-center">
-		<p class="my-2">Menu plan de rémunération</p>
+		<p class="my-2">Edition des plans de rémunération</p>
 	</div>
 	<div class="mt-5">
 		<ul>
-			<li class="mb-3 d-flex justify-content-center pr-4">
-				<p class="mb-3 mr-3">Plan de remuneration 1</p>
+			<li class="mb-3 d-flex justify-content-center pr-2">
+					<select class="custom-select">
+						<option selected>Sélection plan de rémunération</option>
+						<option th:each="payplan : ${payplans}" th:value="${payplan.id}" th:text=${payplan.name}></option>
+					</select>
+		
 				<div class="btn-group" role="group" aria-label="Basic example">
 				<button type="button" class="btn btn-secondary">Modifier</button>
 				<button type="button" class="btn btn-secondary">Copier</button>
-				<button type="button" class="btn btn-secondary">Supprimer</button>
-				</div>
-			</li>
-			<li class="mb-3 d-flex justify-content-center pr-4">
-				<p class="mb-3 mr-3">Plan de remuneration 2</p>
-				<div class="btn-group" role="group" aria-label="Basic example">
-				<button type="button" class="btn btn-secondary">Modifier</button>
-				<button type="button" class="btn btn-secondary">Copier</button>
-				<button type="button" class="btn btn-secondary">Supprimer</button>
-				</div>
-			</li>
-			<li class="mb-3 d-flex justify-content-center pr-4">
-				<p class="mb-3 mr-3">Plan de remuneration 3</p>
-				<div class="btn-group" role="group" aria-label="Basic example">
-				<button type="button" class="btn btn-secondary">Modifier</button>
-				<button type="button" class="btn btn-secondary">Copier</button>
-				<button type="button" class="btn btn-secondary">Supprimer</button>
-				</div>
-			</li>
-			<li class="mb-3 d-flex justify-content-center pr-4">
-				<p class="mb-3 mr-3">Plan de remuneration 4</p>
-				<div class="btn-group" role="group" aria-label="Basic example">
-				<button type="button" class="btn btn-secondary">Modifier</button>
-				<button type="button" class="btn btn-secondary">Copier</button>
-				<button type="button" class="btn btn-secondary">Supprimer</button>
+				<button type="button" id="delete" name="delete" class="btn btn-secondary" th:onclick="@{'/payplan/{id}'(id=${payplan.id})}" th:method="delete">Supprimer</button>
+				
 				</div>
 			</li>
 		</ul>
+		
 	</div>
 	<div class="m-5 d-flex justify-content-end">
 		<button type="button" class="btn btn-primary">Ajouter nouveau plan de rémunération</button>
