@@ -54,6 +54,6 @@ public class UserController {
         model.addAttribute("payplans", payplans);
         return "users/associate";
 
-    }
+    } 
 
 }
