@@ -118,6 +118,11 @@ main {
     text-decoration: none;
 }
 
+.main-nav li a:hover{
+    color: #cf55cd;
+    transition: 0.5s;
+}
+
 /* login */
 
 .error {
@@ -214,6 +219,7 @@ main {
 }
 
 /* form */
+
 
 @media (min-width:768px) {
     .bloc {

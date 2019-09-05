@@ -26,12 +26,11 @@
 						<li><a th:href="@{../users/create}">Création utilisateur</a></li>
 						<li><a th:href="@{../users/associate}">Associer un payplan</a></li>
 						<li><a th:href="@{../payplans/browse}"> Liste Payplans</a></li>
-						<li><a th:href="@{../payplans/create}"> Création Payplans</a></li>
 					</ul>
 				</div>
 		</header>
-		<div class="d-flex justify-content-center">
 		<br/>
+		<div class="mb-3 d-flex justify-content-center">
 		<form action="#" th:action="@{/users/create}" th:object="${user}" method="post">
 			<div th:class="${#fields.hasErrors('email')}? has-error">
 				<input type="email" id="email" placeholder="E-mail" th:field="*{email}">
