@@ -78,7 +78,7 @@
 				</div>
 				<div>
 					<label for="box3" th:class="${#fields.hasErrors('objectif')}? has-error">Objectif :</label>
-					<input type="text" id="box3" th:field="*{objectif}">
+					<input type="number" id="box3" min="1" th:field="*{objectif}">
 				</div>
 			</div>
 
@@ -135,7 +135,7 @@
 					<label for="customRange3">Palier plan de rémunération</label>
 				</div>
 				<div class="mb-5 ml-3 d-flex justify-content-center">
-					<input type="range" class="custom-range mx-2" min="70" max="110" step="10" id="customRange3" name="payplanter" min="0" max="3000" step="100" value="0" oninput="resultter.value=parseInt(payplanter.value)">
+					<input type="range" class="custom-range mx-2" name="payplanter" min="70" max="110" step="10" id="customRange3" value="70" oninput="resultter.value=parseInt(payplanter.value)">
 					<output name="resultter">70</output>%
 				</div>
 			</div>
