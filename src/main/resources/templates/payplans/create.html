@@ -14,24 +14,23 @@
 	</head>
 	<body>
 		<header>
-        	<div class="profile">
-            	<div class="bloc">
-                	<a class="right" th:href="@{/logout}"><img class="nav-icon" th:src="@{/images/icon-logout.png}" alt="logout">Se déconnecter</a>
-            	</div>
-        	</div>
-            <div class="logo"></div>
-            <div class="main-nav">
-                <ul>
-    	            <li><a th:href="@{../users/create}">Création utilisateur</a></li>
-                    <li><a th:href="@{../users/associate}">Associer un payplan</a></li>
-                    <li><a th:href="@{../payplans/browse}"> Liste Payplans</a></li>
-                </ul>
-        	</div>
+      <div class="profile">
+        <div class="bloc">
+          <a class="right" th:href="@{/logout}"><img class="nav-icon" th:src="@{/images/icon-logout.png}" alt="logout">Se déconnecter</a>
+        </div>
+      </div>
+      <div class="logo"></div>
+      	<div class="main-nav">
+          <ul>
+    	      <li><a th:href="@{../users/create}">Création utilisateur</a></li>
+						<li><a th:href="@{../users/associate}">Associer un payplan</a></li>
+						<li><a th:href="@{../payplans/browse}"> Liste Payplans</a></li>
+          </ul>
+				</div>
+			</div>
 		</header>
-	<br/>
 		<form action="#" th:action="@{/payplans}" th:object="${payplan}" method="post">
-
-			<div class="mb-3 d-flex justify-content-center">
+			<div class="mb-3 mt-3 d-flex justify-content-center">
 				<div class="div-group" th:class="${#fields.hasErrors('name')}? has-error">
 					<label for="name">Nom du plan de rémunération :</label>
 					<input type="text" id="name" th:field="*{name}" class="div-control"/>
@@ -66,15 +65,13 @@
 			<hr>
 
 			<div class="d-flex justify-content-around mb-3">
-				<div>
-					<div class="custom-control custom-radio custom-control-inline" th:class="${#fields.hasErrors('typeRemuneration')}? has-error">
-						<input type="radio" id="remunerationSurCa" value="Ca" name="remuneration" class="custom-control-input" th:field="*{typeRemuneration}" checked>
-						<label class="custom-control-label" for="remunerationSurCa">Rémunération sur CA</label>
-					</div>
-					<div class="custom-control custom-radio custom-control-inline" th:class="${#fields.hasErrors('typeRemuneration')}? has-error">
-						<input type="radio" id="remunerationSurMarge" value="Marge" name="remuneration" class="custom-control-input" th:field="*{typeRemuneration}">
-						<label class="custom-control-label" for="remunerationSurMarge">Rémunération sur marge</label>
-					</div>
+				<div class="custom-control custom-radio custom-control-inline" th:class="${#fields.hasErrors('typeRemuneration')}? has-error">
+					<input type="radio" id="remunerationSurCa" value="Ca" name="remuneration" class="custom-control-input" th:field="*{typeRemuneration}" checked>
+					<label class="custom-control-label" for="remunerationSurCa">Rémunération sur CA</label>
+				</div>
+				<div class="custom-control custom-radio custom-control-inline" th:class="${#fields.hasErrors('typeRemuneration')}? has-error">
+					<input type="radio" id="remunerationSurMarge" value="Marge" name="remuneration" class="custom-control-input" th:field="*{typeRemuneration}">
+					<label class="custom-control-label" for="remunerationSurMarge">Rémunération sur marge</label>
 				</div>
 				<div>
 					<label for="box3" th:class="${#fields.hasErrors('objectif')}? has-error">Objectif :</label>
