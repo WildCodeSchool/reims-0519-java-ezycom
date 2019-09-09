@@ -33,17 +33,14 @@
 	</div>
 	<div class="w-100 d-flex justify-content-center">
 		<ul>
-			<li class="mb-3 d-flex justify-content-center pr-2">
-					<select class="custom-select">
-						<option selected>Sélection plan de rémunération</option>
-						<option th:each="payplan : ${payplans}" th:value="${payplan.id}" th:text=${payplan.name}></option>
-					</select>
-		
+			<li th:each="payplan : ${payplans}" class="mb-3 d-flex justify-content-center pr-2">
+				<span th:text="${payplan.name}">Payplan A</span>
 				<div class="btn-group" role="group" aria-label="Basic example">
-				<button type="button" class="btn btn-secondary">Modifier</button>
-				<button type="button" class="btn btn-secondary">Copier</button>
-				<button type="button" class="btn btn-danger">Supprimer</button>
-				
+					<button type="button" class="btn btn-secondary">Modifier</button>
+					<button type="button" class="btn btn-secondary">Copier</button>
+					<form th:action="@{/payplans/{id}(id=${payplan.id})}" th:method="delete">
+						<button type="submit" class="btn btn-danger">Supprimer</button>
+					</form>
 				</div>
 			</li>
 		</ul>

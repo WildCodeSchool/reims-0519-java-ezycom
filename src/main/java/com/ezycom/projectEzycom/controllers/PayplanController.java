@@ -7,6 +7,8 @@ import com.ezycom.projectEzycom.entities.Payplan;
 import com.ezycom.projectEzycom.repositories.PayplanRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -18,6 +20,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -28,9 +31,10 @@ public class PayplanController {
     private PayplanRepository payplanRepository;
 
     @GetMapping("/payplans")
-    public String browse(Model model) {
+    public String browse(Model model, @RequestParam(defaultValue = "1") int page) {
 
-    List<Payplan> payplans = payplanRepository.findAll();
+    page = Math.max(1, page);
+    Page<Payplan> payplans = payplanRepository.findAll(PageRequest.of(page-1, 10));
     model.addAttribute("payplans", payplans);
     return "payplans/browse";
 
@@ -40,6 +44,13 @@ public class PayplanController {
     public String create(@ModelAttribute Payplan payplan, Model model) {
         model.addAttribute("payplan", payplan);
         return "/payplans/create";
+    }
+
+    @DeleteMapping("/payplans/{id}")
+    public String deletePayplan(@PathVariable("id") long id, Model model) {
+        payplanRepository.delete(
+            payplanRepository.findById(id).get());
+        return "redirect:/payplans";
     }
 
     @PostMapping("/payplans")
