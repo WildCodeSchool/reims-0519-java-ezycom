@@ -29,7 +29,9 @@
 				</div>
 			</div>
 		</header>
+
 		<form action="#" th:action="@{/payplans}" th:object="${payplan}" method="post">
+			
 			<div class="mb-3 mt-3 d-flex justify-content-center">
 				<div class="div-group" th:class="${#fields.hasErrors('name')}? has-error">
 					<label for="name">Nom du plan de rémunération :</label>
@@ -42,7 +44,7 @@
 		
 			<div class="d-flex justify-content-around mb-3">
 				<div class="div-group" th:class="${#fields.hasErrors('objectiveDeadline')}? has-error" >Echéance objectif : 
-					<div class="custom-control custom-radio custom-control-inline">
+					<div class="custom-control custom-radio custom-control-inline ml-3">
 						<input type="radio" value="Mensuel" id="customRadioInline1" th:field="*{objectiveDeadline}" class="custom-control-input" checked>
 						<label class="custom-control-label" for="customRadioInline1">Mensuel</label>
 					</div>
@@ -55,9 +57,9 @@
 						<label class="custom-control-label" for="customRadioInline3">Annuel</label>
 					</div>
 				</div>
-				<div class="d-flex justify-content-center mb-3" th:class="${#fields.hasErrors('payRate')}? has-error">
-					<label for="customRange1">Taux de rémunération :</label>
-					<input type="range" class="custom-range mx-2" id="customRange1" name="payplan" min="0" max="100" step="5" value="0" oninput="result.value=parseInt(payplan.value)">
+				<div class="d-flex" th:class="${#fields.hasErrors('payRate')}? has-error">
+					<label for="payRate">Taux de rémunération :</label>
+					<input type="range" class="custom-range mx-2" id="payRate" name="payplan" min="0" max="100" step="5" value="0" oninput="result.value=parseInt(payplan.value)">
 					<output name="result">0</output>%
 				</div>
 			</div>
