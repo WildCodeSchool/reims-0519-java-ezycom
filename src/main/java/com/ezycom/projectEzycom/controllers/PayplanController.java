@@ -27,7 +27,7 @@ public class PayplanController {
     @Autowired
     private PayplanRepository payplanRepository;
 
-    @GetMapping("/payplans/browse")
+    @GetMapping("/payplans")
     public String browse(Model model) {
 
     List<Payplan> payplans = payplanRepository.findAll();
