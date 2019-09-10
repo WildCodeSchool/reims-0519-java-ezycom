@@ -17,7 +17,7 @@ public class ProductController {
     @Autowired
     private ProductRepository productRepo;
 
-    @RequestMapping("/products")
+    @GetMapping("/products")
     public String browse(Model model) {
         List<Product> products = productRepo.findAll();
         model.addAttribute("products", products);
