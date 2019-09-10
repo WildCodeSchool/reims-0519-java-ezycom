@@ -46,6 +46,19 @@ public class PayplanController {
         return "/payplans/create";
     }
 
+    @GetMapping("/payplans/{id}")
+    public String updatePayplan(@PathVariable("id") long id, @Valid Payplan payplan, 
+    BindingResult result, Model model) {
+    if (result.hasErrors()) {
+        payplan.setId(id);
+        return "/payplans/edit";
+    }
+         
+    payplanRepository.save(payplan);
+    model.addAttribute("payplans", payplanRepository.findAll());
+    return "redirect:/payplans/edit";
+}
+
     @DeleteMapping("/payplans/{id}")
     public String deletePayplan(@PathVariable("id") long id, Model model) {
         payplanRepository.delete(
@@ -64,7 +77,7 @@ public class PayplanController {
         }
          else {
             payplanRepository.save(payplan);
-            return "redirect:/payplans/create";
+            return "redirect:/payplans";
         }
     }
 
