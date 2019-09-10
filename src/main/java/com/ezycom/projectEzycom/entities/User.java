@@ -13,6 +13,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
+
+import com.ezycom.projectEzycom.repositories.UserPayplanRepository;
+
 import javax.persistence.JoinColumn;
 
 import org.springframework.security.core.GrantedAuthority;
@@ -22,10 +26,10 @@ import org.springframework.security.core.userdetails.UserDetails;
 @Entity
 public class User implements UserDetails {
 
-    public User(){
+    public User() {
     }
 
-    public User(String email, String password, String role){
+    public User(String email, String password, String role) {
         this.email = email;
         this.password = password;
         this.role = role;
@@ -38,13 +42,8 @@ public class User implements UserDetails {
     private String password;
     private String role;
 
-    @ManyToMany(cascade = { CascadeType.ALL })
-    @JoinTable(
-        name = "User_Payplan", 
-        joinColumns = { @JoinColumn(name = "user_id") }, 
-        inverseJoinColumns = { @JoinColumn(name = "payplan_id") }
-    )
-    Set<Payplan> payplans = new HashSet<>();
+    @OneToMany(mappedBy = "user")
+    Set<UserPayplanRepository> registrations;
     
     public Long getId() {
         return id;

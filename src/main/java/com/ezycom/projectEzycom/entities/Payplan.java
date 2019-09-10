@@ -11,27 +11,30 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+
+import com.ezycom.projectEzycom.repositories.UserPayplanRepository;
 
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
 @Entity
-public class Payplan{
-    public Payplan(){
+public class Payplan {
+    public Payplan() {
     }
 
-    public Payplan(String name, String objectiveDeadline, String typeRemuneration,
-    int objectif, int payRate, int remunerationSub, int integrationBonus,
-    int integrationBonusTime, boolean integration, int remunerationLocation){
-        this.name = name; //Nom
+    public Payplan(String name, String objectiveDeadline, String typeRemuneration, int objectif, int payRate,
+            int remunerationSub, int integrationBonus, int integrationBonusTime, boolean integration,
+            int remunerationLocation) {
+        this.name = name; // Nom
         this.objectiveDeadline = objectiveDeadline; // Echéance Objectif
-        this.typeRemuneration = typeRemuneration; //Remuneration sur CA ou Marge
-        this.objectif = objectif; //Objectif
-        this.payRate = payRate; //taux de rémuneration
-        this.remunerationSub = remunerationSub; //Remuneration Location/Abonnement
-        this.integrationBonus = integrationBonus; //Montant de la prime d'intégration
-        this.integrationBonusTime = integrationBonusTime; //durée de la prime d'integration
-        this.integration = integration; //bouton Prim d'integration
+        this.typeRemuneration = typeRemuneration; // Remuneration sur CA ou Marge
+        this.objectif = objectif; // Objectif
+        this.payRate = payRate; // taux de rémuneration
+        this.remunerationSub = remunerationSub; // Remuneration Location/Abonnement
+        this.integrationBonus = integrationBonus; // Montant de la prime d'intégration
+        this.integrationBonusTime = integrationBonusTime; // durée de la prime d'integration
+        this.integration = integration; // bouton Prim d'integration
         this.remunerationLocation = remunerationLocation; // Remuneration sur contrat location/Abonnement
     }
 
@@ -49,9 +52,8 @@ public class Payplan{
     private boolean integration;
     private int remunerationLocation;
 
-
-    @ManyToMany(mappedBy = "payplan")
-    private Set<User> users = new HashSet<>();
+    @OneToMany(mappedBy = "payplan")
+    Set<UserPayplanRepository> registrations;
 
     /**
      * @return Long return the id
