@@ -23,8 +23,4 @@ public class ProductController {
         model.addAttribute("products", products);
         return "/import/product";
     }
-    // @PostMapping("/product")
-    // public String read() {
-    //     return "/product";
-    // }
 }
