@@ -37,10 +37,8 @@
 				<span th:text="${payplan.name}"></span>
 				<div class="btn-group" role="group" aria-label="Basic example">
 
-						<!-- <td><a th:href="@{'/appel/edit/' + ${appel.id}}">edit</a></td> -->
-					<a th:href="@{'/payplans/edit/' + ${payplan.id}}" button type="button" class="btn btn-secondary">Modifier </button> </a>
-						
-					
+				
+					<a th:href="@{/payplans/{id}/edit(id=${payplan.id})}"><button type="button" class="btn btn-secondary">Modifier</button></a>
 
 					<button type="button" class="btn btn-secondary">Copier</button>
 

@@ -9,6 +9,7 @@ import com.ezycom.projectEzycom.repositories.PayplanRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.objenesis.instantiator.annotations.Typology;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -18,6 +19,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -42,22 +44,11 @@ public class PayplanController {
    
     @GetMapping("/payplans/create")
     public String create(@ModelAttribute Payplan payplan, Model model) {
+        model.addAttribute("action", "/payplans");
+        model.addAttribute("method", "post");
         model.addAttribute("payplan", payplan);
-        return "/payplans/create";
+        return "/payplans/form";
     }
-
-    @GetMapping("/payplans/{id}")
-    public String updatePayplan(@PathVariable("id") long id, @Valid Payplan payplan, 
-    BindingResult result, Model model) {
-    if (result.hasErrors()) {
-        payplan.setId(id);
-        return "/payplans/edit";
-    }
-         
-    payplanRepository.save(payplan);
-    model.addAttribute("payplans", payplanRepository.findAll());
-    return "redirect:/payplans/edit";
-}
 
     @DeleteMapping("/payplans/{id}")
     public String deletePayplan(@PathVariable("id") long id, Model model) {
@@ -79,6 +70,14 @@ public class PayplanController {
             payplanRepository.save(payplan);
             return "redirect:/payplans";
         }
+    }
+
+    @GetMapping("/payplans/{id}/edit")
+    public String edit(@PathVariable Long id, Model model) {
+        model.addAttribute("action", "/payplans/" + id);
+        model.addAttribute("method", "put");
+        model.addAttribute("payplan", payplanRepository.findById(id).get());
+        return "/payplans/form";
     }
 
 
