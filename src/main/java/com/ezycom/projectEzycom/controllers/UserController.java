@@ -46,5 +46,9 @@ public class UserController {
         List<Payplan> payplans = payplanRepository.findAll();
         model.addAttribute("payplans", payplans);
         return "users/associate";
-    }    
+
+        
+
+
+    }
 }
