@@ -14,19 +14,19 @@
 	</head>
 	<body>
 		<header>
-        	<div class="profile">
-            	<div class="bloc">
-                	<a class="right" th:href="@{/logout}"><img class="nav-icon" th:src="@{/images/icon-logout.png}" alt="logout">Se déconnecter</a>
-            	</div>
-        	</div>
-            <div class="logo"></div>
-            <div class="main-nav">
-                <ul>
-    	            <li><a th:href="@{../users/create}">Création utilisateur</a></li>
-                    <li><a th:href="@{../users/associate}">Associer un payplan</a></li>
-                    <li><a th:href="@{../payplans}"> Liste Payplans</a></li>
-                </ul>
-        	</div>
+			<div class="profile">
+				<div class="bloc">
+						<a class="right" th:href="@{/logout}"><img class="nav-icon" th:src="@{/images/icon-logout.png}" alt="logout">Se déconnecter</a>
+				</div>
+			</div>
+				<div class="logo"></div>
+				<div class="main-nav">
+					<ul>
+						<li><a th:href="@{../users/create}">Création utilisateur</a></li>
+							<li><a th:href="@{../users/associate}">Associer un payplan</a></li>
+							<li><a th:href="@{../payplans}"> Liste Payplans</a></li>
+					</ul>
+			</div>
 
 		</header>
 
@@ -77,7 +77,7 @@
 				</div>
 				<div>
 					<label for="box3" th:class="${#fields.hasErrors('objectif')}? has-error">Objectif :</label>
-					<input type="number" id="box3" min="1" th:field="*{objectif}">
+					<input type="number" id="box3" min="0" step="100" th:field="*{objectif}">
 				</div>
 			</div>
 
@@ -122,7 +122,7 @@
 					<output name="resultbis">0</output>&euro;
 				</div>
 				<div class="ml-5" th:class="${#fields.hasErrors('integrationBonusTime')}? has-error">
-					<input type="number" id="box2" placeholder="Nombre de mois" class="mx-2" min="1" max="12" th:field="*{integrationBonusTime}" >
+					<input type="number" id="box2" placeholder="Nombre de mois" class="mx-2" min="0" max="12" th:field="*{integrationBonusTime}" >
 					<label for="box2">Mois</label>
 				</div>
 			</div>
@@ -141,7 +141,7 @@
 
 			<div class="mb-5 d-flex justify-content-center">
 				<button type="button" class="btn btn-secondary mr-3">Annuler</button>
-				<a th:href="@{../payplans/browse}"><button type="submit" class="btn btn-primary mr-3">Valider</button></a>
+				<button type="submit" class="btn btn-primary mr-3">Valider</button>
 			</div>
 
 		</form>
