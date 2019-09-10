@@ -50,5 +50,4 @@ public class UserController {
         return "users/associate";
 
     } 
-
 }
