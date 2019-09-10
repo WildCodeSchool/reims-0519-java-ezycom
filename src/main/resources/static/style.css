@@ -384,3 +384,13 @@ main {
 .blue {
     color: #4aa59e;
 }
+/* tableau product*/
+.product_table{
+    border: 1px solid black;
+}
+.product_table td {
+    border: 1px solid black;
+}
+.product_table th{
+border-right: 1px solid black;
+}
