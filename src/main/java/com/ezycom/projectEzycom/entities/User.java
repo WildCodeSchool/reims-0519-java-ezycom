@@ -2,12 +2,18 @@ package com.ezycom.projectEzycom.entities;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.JoinColumn;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -32,7 +38,13 @@ public class User implements UserDetails {
     private String password;
     private String role;
 
-    
+    @ManyToMany(cascade = { CascadeType.ALL })
+    @JoinTable(
+        name = "User_Payplan", 
+        joinColumns = { @JoinColumn(name = "user_id") }, 
+        inverseJoinColumns = { @JoinColumn(name = "payplan_id") }
+    )
+    Set<Payplan> payplans = new HashSet<>();
     
     public Long getId() {
         return id;

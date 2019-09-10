@@ -1,9 +1,19 @@
 package com.ezycom.projectEzycom.entities;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 @Entity
 public class Payplan{
@@ -38,6 +48,10 @@ public class Payplan{
     private int integrationBonusTime;
     private boolean integration;
     private int remunerationLocation;
+
+
+    @ManyToMany(mappedBy = "payplan")
+    private Set<User> users = new HashSet<>();
 
     /**
      * @return Long return the id
