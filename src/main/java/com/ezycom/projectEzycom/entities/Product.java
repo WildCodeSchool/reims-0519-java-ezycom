@@ -1,6 +1,5 @@
 package com.ezycom.projectEzycom.entities;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GenerationType;
 import javax.persistence.GeneratedValue;
