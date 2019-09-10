@@ -2,9 +2,8 @@ package com.ezycom.projectEzycom.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import com.ezycom.projectEzycom.entities.Produit;
+import com.ezycom.projectEzycom.entities.Product;
 
 @Repository
-public interface ProduitRepository extends JpaRepository<Produit, Long>{
-    
+public interface ProductRepository extends JpaRepository<Product, Long>{
 }
