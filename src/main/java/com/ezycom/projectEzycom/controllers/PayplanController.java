@@ -81,4 +81,27 @@ public class PayplanController {
     }
 
 
+
+
+    @PutMapping("/payplans/{id}")
+
+    public String updatePayplan(@PathVariable Long id, Payplan payplan) {
+
+        Payplan payplanToUpdate = payplanRepository.findById(id).get();
+
+        payplanToUpdate.setName(payplan.getName());
+        payplanToUpdate.setObjectiveDeadline(payplan.getObjectiveDeadline());
+        payplanToUpdate.setTypeRemuneration(payplan.getTypeRemuneration());
+        payplanToUpdate.setObjectif(payplan.getObjectif());
+        payplanToUpdate.setRemunerationSub(payplan.getRemunerationSub());
+        payplanToUpdate.setIntegrationBonus(payplan.getIntegrationBonus());
+        payplanToUpdate.setIntegrationBonusTime(payplan.getIntegrationBonusTime());
+        payplanToUpdate.setPayRate(payplan.getPayRate());
+        payplanToUpdate.setIntegration(payplan.isIntegration());
+        payplanToUpdate.setRemunerationLocation(payplan.getRemunerationLocation());
+        payplanRepository.save(payplanToUpdate);
+
+        return "redirect:/payplans";
+
+    }
 }
