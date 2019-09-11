@@ -12,26 +12,18 @@
     <div th:replace="fragments/header :: header"></div>
     <table class="product_table mt-5 d-flex justify-content-center text-center">
         <tr>
-            <th>N° commande</th>
-            <th>Date commande</th>
-            <th>Date saisie ADV</th>
-            <th>Commercial</th>
             <th>Code produit</th>
-            <th>Quantité</th>
-            <th>PR€ HT</th>
-            <th>PV€ HT</th>
-            <th>Marge</th>
+            <th>Famille</th>
+            <th>Produits</th>
+            <th>Vente / Abonnement</th>
+            <th>Sous-Produits</th>
         </tr>
         <tr th:each="product : ${products}">
-            <td th:text="${product.purchase}"></td>
-            <td th:text="${product.purchaseDate}"></td>
-            <td th:text="${product.advDate}"></td>
-            <td th:text="${product.commercial}"></td>
             <td th:text="${product.productCode}"></td>
-            <td th:text="${product.quantity}"></td>
-            <td th:text="${product.preTaxeRealPrice}"></td>
-            <td th:text="${product.preTaxeSalePrice}"></td>
-            <td th:text="${product.marge}"></td>
+            <td th:text="${product.familly}"></td>
+            <td th:text="${product.products}"></td>
+            <td th:text="${product.subscription}"></td>
+            <td th:text="${product.subProducts}"></td>
         </tr>
 
     </table>
