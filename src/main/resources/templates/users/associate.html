@@ -1,36 +1,19 @@
 <!doctype html>
 <html lang="fr">
 	<head>
+		<!-- Required meta tags -->
 		<meta charset="utf-8">
-		<link rel="icon" type="image/png" href="../../static/images/logo.png" th:href="@{../images/logo.png}">
-		<title>Paramètre de plan de rémunération</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+			
+		<!-- Bootstrap CSS -->
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-		<link rel="stylesheet" href="../../static/creationcommercial.css" th:href="@{../creationcommercial.css}">
+		<link rel="stylesheet" href="../static/style.css" th:href="@{/style.css}">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet"> 
+		<link rel="icon" type="image/png" href="../../static/images/logo.png" th:href="@{../images/logo.png}">
+		<title>Associer un commerical</title>
 	</head>
 	<body>
-		<header>
-			<nav class="navbar navbar-expand-lg">
-				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"><img src="logo.png" height="30" width="30"></span> Ezycom
-				</button>
-				<div class="collapse navbar-collapse" id="navbarNav">
-					<ul class="navbar-nav">
-						<li class="nav-item active">
-							<a class="nav-link" href="../payplans/create.html" th:href="@{../payplans/create}">Nouveau plan de rémunération</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="../payplans/browse.html" th:href="@{../payplans/browse}">Edition</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#">Profil commercial</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="../users/create.html" th:href="@{../users/create}">Création d'utilisateur</a>
-						</li>
-					</ul>
-				</div>
-			</nav>
-		</header>
+		<div th:replace="fragments/header :: header"></div>
 		<div class="my-4 border border-dark mx-auto w-25 d-flex align-items-center justify-content-center">
 			<p class="my-2">Commercial</p>
 		</div>
