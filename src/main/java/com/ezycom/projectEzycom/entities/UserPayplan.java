@@ -11,8 +11,14 @@ import javax.persistence.JoinColumn;
 
 
 @Entity
-class CourseRegistration {
+public class UserPayplan {
  
+
+    public UserPayplan(Date startDate, Date endDate) {
+        this.startDate = startDate;
+        this.endDate = endDate;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -20,11 +26,11 @@ class CourseRegistration {
     private Date endDate;
  
     @ManyToOne
-    @JoinColumn(name = "user_id")
+    @JoinColumn
     User user;
  
     @ManyToOne
-    @JoinColumn(name = "payplan_id")
+    @JoinColumn
     Payplan payplan;
 
     /**
