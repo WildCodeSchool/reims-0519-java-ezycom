@@ -8,26 +8,8 @@
     <link rel="stylesheet" href="../static/style.css" th:href="@{/style.css}">
 
 </head>
-
-<header>
-        <div class="profile">
-            <div class="bloc">
-                <a class="right" th:href="@{/logout}"><img class="nav-icon" th:src="@{/images/icon-logout.png}" alt="logout">Se déconnecter</a>
-            </div>
-        </div>
-            <div class="logo"></div>
-                <div class="main-nav">
-                    <ul>
-                        <li><a th:href="@{../users/create}">Création utilisateur</a></li>
-                        <li><a th:href="@{../users/associate}">Associer un plan de rémunération</a></li>
-                        <li><a th:href="@{../payplans}">Liste plan de rémunération</a></li>
-                        <li><a th:href="@{../products}">Visualiser les ventes</a></li>
-                    </ul>
-                </div>
-            </div>    
-        </div>
-</header>
 <body>
+    <div th:replace="fragments/header :: header"></div>
     <table class="product_table mt-5 d-flex justify-content-center text-center">
         <tr>
             <th>N° commande</th>

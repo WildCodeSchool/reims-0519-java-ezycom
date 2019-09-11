@@ -13,24 +13,7 @@
 		<title>Création Payplan</title>
 	</head>
 	<body>
-		<header>
-			<div class="profile">
-				<div class="bloc">
-						<a class="right" th:href="@{/logout}"><img class="nav-icon" th:src="@{/images/icon-logout.png}" alt="logout">Se déconnecter</a>
-				</div>
-			</div>
-				<div class="logo"></div>
-				<div class="main-nav">
-					<ul>
-						<li><a th:href="@{../users/create}">Création utilisateur</a></li>
-							<li><a th:href="@{../users/associate}">Associer un plan de rémunération</a></li>
-							<li><a th:href="@{../payplans}">Liste plan de rémunération</a></li>
-							<li><a th:href="@{../products}">Visualiser les ventes</a></li>
-					</ul>
-			</div>
-
-		</header>
-
+		<div th:replace="fragments/header :: header"></div>
 		<form action="#" th:action="@{/payplans}" th:object="${payplan}" method="post">
 			
 			<div class="mb-3 mt-3 d-flex justify-content-center">
