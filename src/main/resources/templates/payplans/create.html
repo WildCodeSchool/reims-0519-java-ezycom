@@ -13,7 +13,7 @@
 		<title>Création Payplan</title>
 	</head>
 	<body>
-		<div th:insert="fragments/header :: header">...</div>
+		<div th:replace="fragments/header :: header"></div>
 		<form action="#" th:action="@{/payplans}" th:object="${payplan}" method="post">
 			
 			<div class="mb-3 mt-3 d-flex justify-content-center">
