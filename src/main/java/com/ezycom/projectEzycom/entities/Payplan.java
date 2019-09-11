@@ -15,14 +15,14 @@ public class Payplan{
     int integrationBonusTime, boolean integration, int remunerationLocation){
         this.name = name; //Nom
         this.objectiveDeadline = objectiveDeadline; // Echéance Objectif
-        this.typeRemuneration = typeRemuneration; //Remuneration sur CA ou Marge
-        this.objectif = objectif; //Objectif
-        this.payRate = payRate; //taux de rémuneration
-        this.remunerationSub = remunerationSub; //Remuneration Location/Abonnement
-        this.integrationBonus = integrationBonus; //Montant de la prime d'intégration
+        this.payRate = payRate; //Taux de rémuneration !!! Ne fonctionne plus
+        this.typeRemuneration = typeRemuneration; //Rémunération sur CA ou Marge
+        this.objectif = objectif; //Objectifs
+        this.remunerationLocation = remunerationLocation; // Rémunération sur contrat location/Abonnement   !!! Ne fonctionne plus
+        this.integration = integration; //bouton Prime d'intégration
+        this.integrationBonus = integrationBonus; //Montant de la prime d'intégration   !!! Ne fonctionne plus
         this.integrationBonusTime = integrationBonusTime; //durée de la prime d'integration
-        this.integration = integration; //bouton Prim d'integration
-        this.remunerationLocation = remunerationLocation; // Remuneration sur contrat location/Abonnement
+        this.remunerationSub = remunerationSub; //Palier payplan   !!! Ne fonctionne plus
     }
 
     @Id
