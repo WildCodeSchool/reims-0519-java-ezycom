@@ -45,8 +45,8 @@ public class Payplan {
     private boolean integration;
     private int remunerationLocation;
 
-    @OneToMany
-    Set<UserPayplan> userPayplans;
+    @OneToMany(mappedBy = "payplan")
+    private Set<UserPayplan> userPayplans;
 
     /**
      * @return Long return the id

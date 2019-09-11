@@ -26,12 +26,10 @@ public class UserPayplan {
     private Date endDate;
  
     @ManyToOne
-    @JoinColumn
-    User user;
+    private User user;
  
     @ManyToOne
-    @JoinColumn
-    Payplan payplan;
+    private Payplan payplan;
 
     /**
      * @return Long return the id
