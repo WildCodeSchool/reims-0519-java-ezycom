@@ -1,9 +1,10 @@
 package com.ezycom.projectEzycom.repositories;
 
+import com.ezycom.projectEzycom.entities.PayplanUser;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import com.ezycom.projectEzycom.entities.UserPayplan;
 
 @Repository
-public interface UserPayplanRepository extends JpaRepository<UserPayplan, Long> {
+public interface PayplanUserRepository extends JpaRepository<PayplanUser, Long> {
 }

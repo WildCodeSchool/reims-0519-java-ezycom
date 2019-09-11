@@ -7,14 +7,12 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import javax.persistence.JoinColumn;
 
 
 @Entity
-public class UserPayplan {
- 
+public class PayplanUser {
 
-    public UserPayplan(Date startDate, Date endDate) {
+    public PayplanUser(Date startDate, Date endDate) {
         this.startDate = startDate;
         this.endDate = endDate;
     }

@@ -8,9 +8,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
-import com.ezycom.projectEzycom.repositories.UserPayplanRepository;
-
-
 @Entity
 public class Payplan {
     public Payplan() {
@@ -46,7 +43,7 @@ public class Payplan {
     private int remunerationLocation;
 
     @OneToMany(mappedBy = "payplan")
-    private Set<UserPayplan> userPayplans;
+    private Set<PayplanUser> payplanUsers;
 
     /**
      * @return Long return the id
