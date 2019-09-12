@@ -21,17 +21,19 @@
             <th>PR€ HT</th>
             <th>PV€ HT</th>
             <th>Marge</th>
+            <th>Taux en %</th>
+            <th>Commission</th>
         </tr>
-        <tr th:each="sales : ${sales}">
-            <td th:text="${sales.purchase}"></td>
-            <td th:text="${sales.purchaseDate}"></td>
-            <td th:text="${sales.advDate}"></td>
-            <td th:text="${sales.commercial}"></td>
-            <td th:text="${sales.productCode}"></td>
-            <td th:text="${sales.quantity}"></td>
-            <td th:text="${sales.preTaxeRealPrice}"></td>
-            <td th:text="${sales.preTaxeSalePrice}"></td>
-            <td th:text="${sales.marge}"></td>
+        <tr th:each="sale : ${sales}">
+            <td th:text="${sale.purchase}"></td>
+            <td th:text="${sale.purchaseDate}"></td>
+            <td th:text="${sale.advDate}"></td>
+            <td th:text="${sale.commercial}"></td>
+            <td th:text="${sale.productCode}"></td>
+            <td th:text="${sale.quantity}"></td>
+            <td th:text="${sale.preTaxeRealPrice}"></td>
+            <td th:text="${sale.preTaxeSalePrice}"></td>
+            <td th:text="${sale.marge}"></td>
         </tr>
 
     </table>
