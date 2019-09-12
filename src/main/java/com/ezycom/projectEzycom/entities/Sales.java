@@ -11,7 +11,7 @@ public class Sales{
     }
 
     public Sales(Long purchase, int purchaseDate, int advDate, String commercial, 
-    String productCode, int quantity, int preTaxeRealPrice, int preTaxeSalePrice, int marge){
+    String productCode, int quantity, int preTaxeRealPrice, int preTaxeSalePrice, int marge, int percent){
 
         this.purchase = purchase;// numéro de commande
         this.purchaseDate = purchaseDate;// date de la commande
@@ -22,6 +22,8 @@ public class Sales{
         this.preTaxeRealPrice = preTaxeRealPrice;//prix réel hors taxe
         this.preTaxeSalePrice = preTaxeSalePrice;//prix de vente hors taxe
         this.marge = marge;//marge du Product
+        this.percent = percent;
+        this.commission = (float)(marge*percent)/100;
     }
 
     @Id
@@ -36,6 +38,8 @@ public class Sales{
     private int preTaxeRealPrice;    
     private int preTaxeSalePrice;    
     private int marge;
+    private int percent;
+    private float commission;
 
     public Long getPurchase() {
         return purchase;
@@ -115,6 +119,22 @@ public class Sales{
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public int getPercent() {
+        return percent;
+    }
+
+    public void setPercent(int percent) {
+        this.percent = percent;
+    }
+
+    public float getCommission() {
+        return commission;
+    }
+
+    public void setCommission(float commission) {
+        this.commission = commission;
     }
 
 }
