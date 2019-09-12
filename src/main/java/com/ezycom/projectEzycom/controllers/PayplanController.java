@@ -76,9 +76,7 @@ public class PayplanController {
     }
 
     @PutMapping("/payplans/{id}")
-
     public String updatePayplan(@PathVariable Long id, Payplan payplan) {
-
         Payplan payplanToUpdate = payplanRepository.findById(id).get();
 
         payplanToUpdate.setName(payplan.getName());
@@ -94,6 +92,13 @@ public class PayplanController {
         payplanRepository.save(payplanToUpdate);
 
         return "redirect:/payplans";
+    }
+    @GetMapping("/payplans/{id}/copy")
+        public String copy(@PathVariable Long id, Model model) {
+        model.addAttribute("action", "/payplans/" + id);
+        model.addAttribute("method", "get");
+        model.addAttribute("payplan", payplanRepository.findById(id).get());
+        return "/payplans/form";
     }
 
 }
