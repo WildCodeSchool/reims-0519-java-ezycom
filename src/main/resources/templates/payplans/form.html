@@ -13,23 +13,8 @@
 		<title>Ezycom</title>
 	</head>
 	<body>
-		<header>
-			<div class="profile">
-				<div class="bloc">
-					<a class="right" th:href="@{/logout}"><img class="nav-icon" th:src="@{/images/icon-logout.png}" alt="logout">Se déconnecter</a>
-				</div>
-			</div>
-			<div class="logo"></div>
-			<div class="main-nav">
-				<ul>
-					<li><a th:href="@{../users/create}">Création utilisateur</a></li>
-					<li><a th:href="@{../users/associate}">Associer un payplan</a></li>
-					<li><a th:href="@{../payplans}"> Liste Payplans</a></li>
-				</ul>
-			</div>
-		</header>
-
-		<form action="#" th:action="${action}" th:object="${payplan}" th:method="${method}">
+		<div th:replace="fragments/header :: header"></div>
+		<form action="#" th:action="@{/payplans}" th:object="${payplan}" method="post">
 			
 			<div class="mb-3 mt-3 d-flex justify-content-center">
 				<div class="div-group" th:class="${#fields.hasErrors('name')}? has-error">
