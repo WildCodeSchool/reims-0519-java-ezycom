@@ -96,7 +96,7 @@ public class PayplanController {
     @GetMapping("/payplans/{id}/copy")
     public String copy(@PathVariable Long id, Model model) {
    
-       model.addAttribute("method", "get");
+       model.addAttribute("method", "post");
        model.addAttribute("action", "/payplans/" + id);
        model.addAttribute("payplan", payplanRepository.findById(id).get());
        return "/payplans/form";
