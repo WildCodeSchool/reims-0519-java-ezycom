@@ -16,7 +16,7 @@
 		<div th:replace="fragments/header :: header"></div>
 		<form action="#" th:action="@{/payplans}" th:object="${payplan}" method="post">
 			
-			<div class="mb-3 mt-3 d-flex justify-content-center">
+			<div class="my-3 d-flex justify-content-center">
 				<div class="div-group" th:class="${#fields.hasErrors('name')}? has-error">
 					<label for="name">Nom du plan de rémunération :</label>
 					<input type="text" id="name" th:field="*{name}" class="div-control"/>
@@ -26,10 +26,10 @@
 			
 			<hr>
 		
-			<div class="d-flex justify-content-around mb-3">
+			<div class="d-flex justify-content-around">
 				<div class="div-group" th:class="${#fields.hasErrors('objectiveDeadline')}? has-error" >Echéance objectif : 
 					<div class="custom-control custom-radio custom-control-inline ml-3">
-						<input type="radio" value="Mensuel" id="customRadioInline1" th:field="*{objectiveDeadline}" class="custom-control-input" checked>
+						<input type="radio" value="Mensuel" id="customRadioInline1" th:field="*{objectiveDeadline}" class="custom-control-input">
 						<label class="custom-control-label" for="customRadioInline1">Mensuel</label>
 					</div>
 					<div class="custom-control custom-radio custom-control-inline">
@@ -41,22 +41,24 @@
 						<label class="custom-control-label" for="customRadioInline3">Annuel</label>
 					</div>
 				</div>
-				<div class="d-flex" th:class="${#fields.hasErrors('payRate')}? has-error">
-					<label for="payRate">Taux de rémunération :</label>
-					<input type="range" class="custom-range mx-2" id="payRate" name="payplan" min="0" max="100" step="5" value="0" oninput="result.value=parseInt(payplan.value)">
-					<output name="result">0</output>%
+				<div class="d-flex justify-content-around flex-baseline">
+					<div th:class="${#fields.hasErrors('payRate')}? has-error">
+						<label for="payRate">Taux de rémunération :</label>
+						<input type="range" class="custom-range mx-2" id="payRate" th:field="*{payRate}" min="0" max="100" step="5" value="0" oninput="result.value=parseInt(payplan.value)">
+						<output name="result">0</output>%
+					</div>
 				</div>
 			</div>
 			
 			<hr>
 
-			<div class="d-flex justify-content-around mb-3">
+			<div class="d-flex justify-content-around">
 				<div class="custom-control custom-radio custom-control-inline" th:class="${#fields.hasErrors('typeRemuneration')}? has-error">
-					<input type="radio" id="remunerationSurCa" value="Ca" name="remuneration" class="custom-control-input" th:field="*{typeRemuneration}" checked>
+					<input type="radio" id="remunerationSurCa" value="Ca" class="custom-control-input" th:field="*{typeRemuneration}">
 					<label class="custom-control-label" for="remunerationSurCa">Rémunération sur CA</label>
 				</div>
 				<div class="custom-control custom-radio custom-control-inline" th:class="${#fields.hasErrors('typeRemuneration')}? has-error">
-					<input type="radio" id="remunerationSurMarge" value="Marge" name="remuneration" class="custom-control-input" th:field="*{typeRemuneration}">
+					<input type="radio" id="remunerationSurMarge" value="Marge" class="custom-control-input" th:field="*{typeRemuneration}">
 					<label class="custom-control-label" for="remunerationSurMarge">Rémunération sur marge</label>
 				</div>
 				<div>
@@ -67,19 +69,19 @@
 
 			<hr>
 			
-			<div class="text-center">
-				<div class="mb-3" th:class="${#fields.hasErrors('remunerationLocation')}? has-error"></div>
+			<div class="d-flex justify-content-center">
+				<div th:class="${#fields.hasErrors('remunerationLocation')}? has-error">
 					<span>Rémunération sur contrat location / Abonnement :</span>
-					<div class="custom-control custom-radio custom-control-inline">
-						<input type="radio" id="customRadioInline4" name="customRadioInline2" class="custom-control-input" checked>
+					<div class="custom-control custom-radio custom-control-inline ml-3">
+						<input type="radio" id="customRadioInline4" value="12" class="custom-control-input" th:field="*{remunerationLocation}">
 						<label class="custom-control-label" for="customRadioInline4">12 Mois</label>
 					</div>
 					<div class="custom-control custom-radio custom-control-inline">
-						<input type="radio" id="customRadioInline5" name="customRadioInline2" class="custom-control-input">
+						<input type="radio" id="customRadioInline5" value="24" class="custom-control-input" th:field="*{remunerationLocation}">
 						<label class="custom-control-label" for="customRadioInline5">24 Mois</label>
 					</div>
 					<div class="custom-control custom-radio custom-control-inline">
-						<input type="radio" id="customRadioInline6" name="customRadioInline2" class="custom-control-input">
+						<input type="radio" id="customRadioInline6"  value="36" class="custom-control-input" th:field="*{remunerationLocation}">
 						<label class="custom-control-label" for="customRadioInline6">36 Mois</label>
 					</div>
 					<span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Indiquer le nombre de mois pris en compte dans la valorisation de l'affaire dans le cadre d'un contrat réccurent.">
@@ -90,7 +92,7 @@
 			
 			<hr>
 
-			<div class="mb-3 d-flex flex-baseline justify-content-center">
+			<div class="d-flex flex-baseline justify-content-center">
 				<div class="custom-control custom-switch" th:class="${#fields.hasErrors('integration')}? has-error">
 					<input type="checkbox" class="custom-control-input" id="customSwitch1" th:field="*{integration}">
 					<label class="custom-control-label" for="customSwitch1">Prime d'intégration</label>
@@ -99,32 +101,31 @@
 					</span>
 				</div>
 			</div>
-
-			<div class="mb-3 d-flex justify-content-around flex-baseline">
+			<div class="d-flex justify-content-around flex-baseline">
 				<div th:class="${#fields.hasErrors('integrationBonus')}? has-error">
-					<input type="range" class="custom-range mx-2" name="payplanbis" min="0" max="3000" step="100" value="0" oninput="resultbis.value=parseInt(payplanbis.value)">
+					<input type="range" class="custom-range mx-2" th:field="*{integrationBonus}" min="0" max="3000" step="100" value="0" oninput="resultbis.value=parseInt(payplanbis.value)">
 					<output name="resultbis">0</output>&euro;
 				</div>
-				<div class="ml-5" th:class="${#fields.hasErrors('integrationBonusTime')}? has-error">
-					<input type="number" id="box2" placeholder="Nombre de mois" class="mx-2" min="0" max="12" th:field="*{integrationBonusTime}" >
+				<div th:class="${#fields.hasErrors('integrationBonusTime')}? has-error">
+					<input type="number" id="box2" placeholder="Nombre de mois" min="0" max="12" th:field="*{integrationBonusTime}">
 					<label for="box2">Mois</label>
 				</div>
 			</div>
 
 			<hr>
 
-			<div class="mb-3 d-flex justify-content-center">
+			<div class="d-flex justify-content-center">
 				<div th:class="${#fields.hasErrors('remunerationSub')}? has-error">
 					<label for="customRange3">Palier plan de rémunération</label>
 				</div>
-				<div class="mb-5 ml-3 d-flex justify-content-center">
-					<input type="range" class="custom-range mx-2" name="payplanter" min="70" max="110" step="10" id="customRange3" value="70" oninput="resultter.value=parseInt(payplanter.value)">
+				<div class="d-flex justify-content-center">
+					<input type="range" class="custom-range mx-3" th:field="*{remunerationSub}" min="70" max="110" step="10" id="customRange3" value="70" oninput="resultter.value=parseInt(payplanter.value)">
 					<output name="resultter">70</output>%
 				</div>
 			</div>
 
 			<div class="mb-5 d-flex justify-content-center">
-				<button type="button" class="btn btn-secondary mr-3">Annuler</button>
+				<a th:href="@{/payplans}" class="btn btn-secondary mr-3">Annuler</a>
 				<button type="submit" class="btn btn-primary mr-3">Valider</button>
 			</div>
 
