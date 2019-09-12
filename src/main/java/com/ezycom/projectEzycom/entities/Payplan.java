@@ -1,9 +1,11 @@
 package com.ezycom.projectEzycom.entities;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotBlank;
 
 @Entity
 public class Payplan{
@@ -11,8 +13,8 @@ public class Payplan{
     }
 
     public Payplan(String name, String objectiveDeadline, String typeRemuneration,
-    int objectif, int payRate, int remunerationSub, int integrationBonus,
-    int integrationBonusTime, boolean integration, int remunerationLocation){
+    Integer objectif, Integer payRate, Integer remunerationSub, Integer integrationBonus,
+    Integer integrationBonusTime, Boolean integration, Integer remunerationLocation){
         this.name = name; //Nom
         this.objectiveDeadline = objectiveDeadline; // Echéance Objectif
         this.payRate = payRate; //Taux de rémuneration !!! Ne fonctionne plus
@@ -28,16 +30,18 @@ public class Payplan{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column
+    @NotBlank
     private String name;
     private String objectiveDeadline;
     private String typeRemuneration;
-    private int objectif;
-    private int payRate;
-    private int remunerationSub;
-    private int integrationBonus;
-    private int integrationBonusTime;
-    private boolean integration;
-    private int remunerationLocation;
+    private Integer objectif;
+    private Integer payRate;
+    private Integer remunerationSub;
+    private Integer integrationBonus;
+    private Integer integrationBonusTime;
+    private Boolean integration;
+    private Integer remunerationLocation;
 
     /**
      * @return Long return the id
@@ -98,86 +102,86 @@ public class Payplan{
     /**
      * @return int return the objectif
      */
-    public int getObjectif() {
+    public Integer getObjectif() {
         return objectif;
     }
 
     /**
      * @param objectif the objectif to set
      */
-    public void setObjectif(int objectif) {
+    public void setObjectif(Integer objectif) {
         this.objectif = objectif;
     }
 
     /**
      * @return int return the payRate
      */
-    public int getPayRate() {
+    public Integer getPayRate() {
         return payRate;
     }
 
     /**
      * @param payRate the payRate to set
      */
-    public void setPayRate(int payRate) {
+    public void setPayRate(Integer payRate) {
         this.payRate = payRate;
     }
 
     /**
      * @return int return the remunerationSub
      */
-    public int getRemunerationSub() {
+    public Integer getRemunerationSub() {
         return remunerationSub;
     }
 
     /**
      * @param remunerationSub the remunerationSub to set
      */
-    public void setRemunerationSub(int remunerationSub) {
+    public void setRemunerationSub(Integer remunerationSub) {
         this.remunerationSub = remunerationSub;
     }
 
     /**
      * @return int return the integrationBonus
      */
-    public int getIntegrationBonus() {
+    public Integer getIntegrationBonus() {
         return integrationBonus;
     }
 
     /**
      * @param integrationBonus the integrationBonus to set
      */
-    public void setIntegrationBonus(int integrationBonus) {
+    public void setIntegrationBonus(Integer integrationBonus) {
         this.integrationBonus = integrationBonus;
     }
 
     /**
      * @return int return the integrationBonusTime
      */
-    public int getIntegrationBonusTime() {
+    public Integer getIntegrationBonusTime() {
         return integrationBonusTime;
     }
 
     /**
      * @param integrationBonusTime the integrationBonusTime to set
      */
-    public void setIntegrationBonusTime(int integrationBonusTime) {
+    public void setIntegrationBonusTime(Integer integrationBonusTime) {
         this.integrationBonusTime = integrationBonusTime;
     }
 
-    public boolean isIntegration() {
+    public Boolean getIntegration() {
         return integration;
     }
 
-    public void setIntegration(boolean integration) {
+    public void setIntegration(Boolean integration) {
         this.integration = integration;
     }
 
-    public int getRemunerationLocation() {
+    public Integer getRemunerationLocation() {
         return remunerationLocation;
     }
 
-    public void setRemunerationLocation(int remunerationLocation) {
+    public void setRemunerationLocation(Integer remunerationLocation) {
         this.remunerationLocation = remunerationLocation;
     }
 
