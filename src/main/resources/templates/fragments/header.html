@@ -12,7 +12,7 @@
                 <a class="right" th:href="@{/logout}"><img class="nav-icon" th:src="@{/images/icon-logout.png}" alt="logout">Se déconnecter</a>
             </div>
         </div>
-            <div class="logo"></div>
+            <a th:href="@{../sales}"><div class="logo"></div></a>
                 <div class="main-nav">
                     <ul class="menu-nav">
                         <li><a class="titre-nav" href="#">Ventes / Produits</a>
@@ -23,8 +23,8 @@
                         </li>  
                         <li><a class="titre-nav" href="#">Plans de rémunération</a>
                             <ul>
-                                <li class="deroulant-rem"><a th:href="@{../payplans}">Liste</a></li>
                                 <li class="deroulant-rem"><a th:href="@{../payplans/create}">Créer</a></li>
+                                <li class="deroulant-rem"><a th:href="@{../payplans}">Liste</a></li>
                             </ul>
                         </li>
                         <li><a class="titre-nav" href="#">Utilisateurs</a>

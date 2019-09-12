@@ -89,7 +89,7 @@ public class PayplanController {
         payplanToUpdate.setIntegrationBonus(payplan.getIntegrationBonus());
         payplanToUpdate.setIntegrationBonusTime(payplan.getIntegrationBonusTime());
         payplanToUpdate.setPayRate(payplan.getPayRate());
-        payplanToUpdate.setIntegration(payplan.isIntegration());
+        payplanToUpdate.setIntegration(payplan.getIntegration());
         payplanToUpdate.setRemunerationLocation(payplan.getRemunerationLocation());
         payplanRepository.save(payplanToUpdate);
 
