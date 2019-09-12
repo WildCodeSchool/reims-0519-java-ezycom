@@ -87,18 +87,20 @@ public class PayplanController {
         payplanToUpdate.setIntegrationBonus(payplan.getIntegrationBonus());
         payplanToUpdate.setIntegrationBonusTime(payplan.getIntegrationBonusTime());
         payplanToUpdate.setPayRate(payplan.getPayRate());
-        payplanToUpdate.setIntegration(payplan.isIntegration());
+        payplanToUpdate.setIntegration(payplan.getIntegration());
         payplanToUpdate.setRemunerationLocation(payplan.getRemunerationLocation());
         payplanRepository.save(payplanToUpdate);
 
         return "redirect:/payplans";
     }
     @GetMapping("/payplans/{id}/copy")
-        public String copy(@PathVariable Long id, Model model) {
-        model.addAttribute("action", "/payplans/" + id);
-        model.addAttribute("method", "get");
-        model.addAttribute("payplan", payplanRepository.findById(id).get());
-        return "/payplans/form";
-    }
+    public String copy(@PathVariable Long id, Model model) {
+   
+       model.addAttribute("method", "get");
+       model.addAttribute("action", "/payplans/" + id);
+       model.addAttribute("payplan", payplanRepository.findById(id).get());
+       return "/payplans/form";
+}
+
 
 }
