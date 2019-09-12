@@ -20,10 +20,14 @@
 	<div class="w-100 d-flex justify-content-center">
 		<ul>
 			<li th:each="payplan : ${payplans}" class="mb-3 d-flex justify-content-center pr-2">
-				<span th:text="${payplan.name}">Payplan A</span>
+				<span th:text="${payplan.name}"></span>
 				<div class="btn-group" role="group" aria-label="Basic example">
-					<button type="button" class="btn btn-secondary">Modifier</button>
+
+				
+					<a th:href="@{/payplans/{id}/edit(id=${payplan.id})}" class="btn btn-secondary">Modifier</a>
+
 					<button type="button" class="btn btn-secondary">Copier</button>
+
 					<form th:action="@{/payplans/{id}(id=${payplan.id})}" th:method="delete">
 						<button type="submit" class="btn btn-danger">Supprimer</button>
 					</form>

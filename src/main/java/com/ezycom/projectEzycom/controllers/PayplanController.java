@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -38,8 +39,10 @@ public class PayplanController {
    
     @GetMapping("/payplans/create")
     public String create(@ModelAttribute Payplan payplan, Model model) {
+        model.addAttribute("action", "/payplans");
+        model.addAttribute("method", "post");
         model.addAttribute("payplan", payplan);
-        return "/payplans/create";
+        return "/payplans/form";
     }
 
     @DeleteMapping("/payplans/{id}")
@@ -60,9 +63,37 @@ public class PayplanController {
         }
          else {
             payplanRepository.save(payplan);
-            return "redirect:/payplans/create";
+            return "redirect:/payplans";
         }
     }
 
+    @GetMapping("/payplans/{id}/edit")
+    public String edit(@PathVariable Long id, Model model) {
+        model.addAttribute("action", "/payplans/" + id);
+        model.addAttribute("method", "put");
+        model.addAttribute("payplan", payplanRepository.findById(id).get());
+        return "/payplans/form";
+    }
+
+    @PutMapping("/payplans/{id}")
+
+    public String updatePayplan(@PathVariable Long id, Payplan payplan) {
+
+        Payplan payplanToUpdate = payplanRepository.findById(id).get();
+
+        payplanToUpdate.setName(payplan.getName());
+        payplanToUpdate.setObjectiveDeadline(payplan.getObjectiveDeadline());
+        payplanToUpdate.setTypeRemuneration(payplan.getTypeRemuneration());
+        payplanToUpdate.setObjectif(payplan.getObjectif());
+        payplanToUpdate.setRemunerationSub(payplan.getRemunerationSub());
+        payplanToUpdate.setIntegrationBonus(payplan.getIntegrationBonus());
+        payplanToUpdate.setIntegrationBonusTime(payplan.getIntegrationBonusTime());
+        payplanToUpdate.setPayRate(payplan.getPayRate());
+        payplanToUpdate.setIntegration(payplan.isIntegration());
+        payplanToUpdate.setRemunerationLocation(payplan.getRemunerationLocation());
+        payplanRepository.save(payplanToUpdate);
+
+        return "redirect:/payplans";
+    }
 
 }

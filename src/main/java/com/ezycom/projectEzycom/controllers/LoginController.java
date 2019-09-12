@@ -16,4 +16,9 @@ public class LoginController {
     public String loginError() {
         return "/loginError";
     }
+    @GetMapping("/")
+    public String mainLogin() {
+        return "/login";
+    }
+
 }
