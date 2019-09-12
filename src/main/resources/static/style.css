@@ -114,13 +114,69 @@ main {
     font-family: 'Open Sans', sans-serif;
     font-size: 20px;
     text-align: center;
-    padding: 12px 16px;
+    padding: 12px 50px;
     text-decoration: none;
 }
 
 .main-nav li a:hover{
     color: #cf55cd;
     transition: 0.5s;
+}
+
+.deroulant{
+    width: 100%;
+    text-align: left;
+}
+
+.deroulant-rem{
+    width: 100%;
+    text-align: center;
+}
+
+.menu-nav, #menu-nav ul{
+    list-style:none;
+    text-align:center;
+}
+
+.menu-nav li{
+    display:inline-block;
+    position:relative;
+}
+
+.menu-nav ul{
+    position:absolute;
+    z-index: 1000;
+    max-height:0;
+    left:0;
+    right:0;
+    overflow:hidden;
+    -moz-transition: .8s all .3s;
+    -webkit-transition: .8s all .3s;
+    transition: .8s all .3s;
+}
+
+.menu-nav li:hover ul{
+    max-height:20em;
+}
+
+
+.menu-nav li:first-child li{
+    background:#3d3d3c;
+
+}
+
+.menu-nav li:last-child li{
+    background:#3d3d3c;
+
+}
+
+.menu-nav li:nth-child(2) li{
+    background:#3d3d3c;
+
+}
+
+.menu-nav ul li:last-child{
+    border-radius:0 0 8px 8px;
 }
 
 /* login */
@@ -220,6 +276,10 @@ main {
 
 /* form */
 
+#liste-payplan{
+    margin-left: 3%;
+    border-radius: 10%;
+}
 
 @media (min-width:768px) {
     .bloc {
