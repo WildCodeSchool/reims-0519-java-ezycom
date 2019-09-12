@@ -16,7 +16,7 @@
 		<div th:replace="fragments/header :: header"></div>
 		<form action="#" th:action="@{/payplans}" th:object="${payplan}" method="post">
 			
-			<div class="my-3 d-flex justify-content-center">
+			<div class="mx-auto" style="width: 200px;">
 				<div class="div-group" th:class="${#fields.hasErrors('name')}? has-error">
 					<label for="name">Nom du plan de rémunération :</label>
 					<input type="text" id="name" th:field="*{name}" class="div-control"/>
@@ -124,7 +124,7 @@
 				</div>
 			</div>
 
-			<div class="mb-5 d-flex justify-content-center">
+			<div class="my-4 d-flex justify-content-center">
 				<a th:href="@{/payplans}" class="btn btn-secondary mr-3">Annuler</a>
 				<button type="submit" class="btn btn-primary mr-3">Valider</button>
 			</div>
