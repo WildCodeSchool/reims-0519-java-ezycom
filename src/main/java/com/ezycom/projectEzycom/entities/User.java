@@ -3,11 +3,13 @@ package com.ezycom.projectEzycom.entities;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -16,10 +18,10 @@ import org.springframework.security.core.userdetails.UserDetails;
 @Entity
 public class User implements UserDetails {
 
-    public User(){
+    public User() {
     }
 
-    public User(String email, String password, String role){
+    public User(String email, String password, String role) {
         this.email = email;
         this.password = password;
         this.role = role;
@@ -32,7 +34,8 @@ public class User implements UserDetails {
     private String password;
     private String role;
 
-    
+    @OneToMany(mappedBy = "user")
+    private Set<PayplanUser> payplanUsers;
     
     public Long getId() {
         return id;

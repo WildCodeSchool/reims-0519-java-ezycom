@@ -1,16 +1,25 @@
 package com.ezycom.projectEzycom.entities;
 
 import javax.persistence.Column;
+
+import java.util.Set;
+
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+
 import javax.validation.constraints.NotBlank;
 
+import javax.persistence.OneToMany;
+
+
 @Entity
-public class Payplan{
-    public Payplan(){
+public class Payplan {
+    public Payplan() {
     }
+
 
     public Payplan(String name, String objectiveDeadline, String typeRemuneration,
     Integer objectif, Integer payRate, Integer remunerationSub, Integer integrationBonus,
@@ -25,6 +34,7 @@ public class Payplan{
         this.integrationBonus = integrationBonus; //Montant de la prime d'intégration   !!! Ne fonctionne plus
         this.integrationBonusTime = integrationBonusTime; //durée de la prime d'integration
         this.remunerationSub = remunerationSub; //Palier payplan   !!! Ne fonctionne plus
+
     }
 
     @Id
@@ -42,6 +52,9 @@ public class Payplan{
     private Integer integrationBonusTime;
     private Boolean integration;
     private Integer remunerationLocation;
+
+    @OneToMany(mappedBy = "payplan")
+    private Set<PayplanUser> payplanUsers;
 
     /**
      * @return Long return the id
