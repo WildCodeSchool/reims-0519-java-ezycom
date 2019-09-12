@@ -53,7 +53,7 @@ public class PayplanController {
     public String validate(@Valid Payplan payplan, BindingResult bindingResult, RedirectAttributes redirectAttrs) {
         if(bindingResult.hasErrors()) {
             for (ObjectError error : bindingResult.getAllErrors()) {
-
+                System.out.println(error.toString());
             }
             redirectAttrs.addFlashAttribute("payplan", payplan);
             return "redirect:/payplans/create";
