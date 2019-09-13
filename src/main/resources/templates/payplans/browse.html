@@ -26,8 +26,13 @@
 				
 					<a id="liste-payplan" th:href="@{/payplans/{id}/edit(id=${payplan.id})}" class="btn btn-secondary">Modifier</a>
 
+<<<<<<< HEAD
 					<a id="liste-payplan" th:href="@{/payplans/{id}/copy(id=${payplan.id})}" class="btn btn-secondary">Copier</a> 
 					
+=======
+					<a th:href="@{/payplans/{id}/copy(id=${payplan.id})}" class="btn btn-secondary">Copier</a> 
+
+>>>>>>> c5c9f34b369369f3ec6f3ab931b224c2884ac199
 					<form th:action="@{/payplans/{id}(id=${payplan.id})}" th:method="delete">
 						<button id="liste-payplan" type="submit" class="btn btn-danger">Supprimer</button>
 					</form>
