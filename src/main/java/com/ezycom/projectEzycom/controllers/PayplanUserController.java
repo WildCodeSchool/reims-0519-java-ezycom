@@ -41,6 +41,7 @@ public class PayplanUserController {
             for (ObjectError error : bindingResult.getAllErrors()) {
                 System.out.println(error.toString());
             }
+            redirectAttrs.addFlashAttribute("payplanUser", payplanUser);
             return "redirect:/users/associate";
         }
          else {
