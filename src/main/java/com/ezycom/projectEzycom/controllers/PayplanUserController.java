@@ -1,5 +1,7 @@
 package com.ezycom.projectEzycom.controllers;
 
+import java.sql.Date;
+
 import javax.validation.Valid;
 
 import com.ezycom.projectEzycom.entities.PayplanUser;
@@ -33,12 +35,14 @@ public class PayplanUserController {
     }
 
     @PostMapping("/users/associate")
-    public String validate(@Valid PayplanUser payplanUser, BindingResult bindingResult, RedirectAttributes redirectAttrs) {
+    public String validate(@Valid PayplanUser payplanUser, Date startDate, Date endDate, BindingResult bindingResult, RedirectAttributes redirectAttrs) {
         if(bindingResult.hasErrors()) {
             for (ObjectError error : bindingResult.getAllErrors()) {
                 System.out.println(error.toString());
             }
             redirectAttrs.addFlashAttribute("payplanUser", payplanUser);
+            redirectAttrs.addFlashAttribute("start", startDate);
+            redirectAttrs.addFlashAttribute("end", endDate);
             return "redirect:/users/associate";
         }
          else {
