@@ -1,6 +1,5 @@
 package com.ezycom.projectEzycom.controllers;
 
-import java.sql.Date;
 
 import javax.validation.Valid;
 
@@ -40,9 +39,8 @@ public class PayplanUserController {
             for (ObjectError error : bindingResult.getAllErrors()) {
                 System.out.println(error.toString());
             }
-            redirectAttrs.addFlashAttribute("payplanUser", payplanUser);
-            redirectAttrs.addFlashAttribute("start", startDate);
-            redirectAttrs.addFlashAttribute("end", endDate);
+            model.addAttribute("startDate", new Date());
+            model.addAttribute("endDate", new Date());
             return "redirect:/users/associate";
         }
          else {
