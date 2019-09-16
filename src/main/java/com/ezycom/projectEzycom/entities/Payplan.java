@@ -20,7 +20,7 @@ public class Payplan {
     public Payplan() {
     }
 
-
+    
     public Payplan(String name, String objectiveDeadline, String typeRemuneration,
     Integer objectif, Integer payRate, Integer remunerationSub, Integer integrationBonus,
     Integer integrationBonusTime, Boolean integration, Integer remunerationLocation){
