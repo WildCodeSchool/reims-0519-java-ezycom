@@ -93,14 +93,14 @@ public class PayplanController {
 
         return "redirect:/payplans";
     }
+
+
     @GetMapping("/payplans/{id}/copy")
     public String copy(@PathVariable Long id, Model model) {
-   
+       model.addAttribute("action", "/payplans");
        model.addAttribute("method", "post");
-       model.addAttribute("action", "/payplans" + id);
        model.addAttribute("payplan", payplanRepository.findById(id).get());
        return "/payplans/form";
-}
-
+    }
 
 }
