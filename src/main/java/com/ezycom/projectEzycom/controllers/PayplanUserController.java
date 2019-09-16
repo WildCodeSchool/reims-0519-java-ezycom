@@ -1,5 +1,6 @@
 package com.ezycom.projectEzycom.controllers;
 
+import java.util.Date;
 
 import javax.validation.Valid;
 
@@ -13,7 +14,6 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -34,16 +34,17 @@ public class PayplanUserController {
     }
 
     @PostMapping("/users/associate")
-    public String validate(@Valid PayplanUser payplanUser, Date startDate, Date endDate, BindingResult bindingResult, RedirectAttributes redirectAttrs) {
+    public String validate(@Valid PayplanUser payplanUser, BindingResult bindingResult, RedirectAttributes redirectAttrs) {
+        System.out.println("ici");
         if(bindingResult.hasErrors()) {
+            System.out.println("if");
             for (ObjectError error : bindingResult.getAllErrors()) {
                 System.out.println(error.toString());
             }
-            model.addAttribute("startDate", new Date());
-            model.addAttribute("endDate", new Date());
             return "redirect:/users/associate";
         }
          else {
+            System.out.println("else");
             payplanUserRepository.save(payplanUser);
             return "redirect:/users/associate";
         }
