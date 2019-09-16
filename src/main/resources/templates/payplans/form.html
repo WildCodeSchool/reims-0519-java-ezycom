@@ -14,8 +14,7 @@
 	</head>
 	<body>
 		<div th:replace="fragments/header :: header"></div>
-		<form action="#" th:action="@{/payplans}" th:object="${payplan}" method="post">
-			
+			<form action="#" th:action="${action}" th:object="${payplan}" th:method="${method}">
 			<div class="my-3 d-flex justify-content-center">
 				<div class="div-group" th:class="${#fields.hasErrors('name')}? has-error">
 					<label for="name">Nom du plan de rémunération :</label>
