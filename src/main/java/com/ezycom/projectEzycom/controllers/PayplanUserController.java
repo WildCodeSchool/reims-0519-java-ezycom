@@ -62,13 +62,12 @@ public class PayplanUserController {
     }
 
     @GetMapping("/users/associate")
-    public String edit(@PathVariable Long id, Model model, PayplanUser payplanUser) {
-        List<User> userList = userRepository.findAll();
-        List<Payplan> payplanList = payplanRepository.findAll();
+    public String association(Model model, PayplanUser payplanUser) {
+        List<User> users = userRepository.findAll();
+        List<Payplan> payplans = payplanRepository.findAll();
         model.addAttribute("payplanUser", payplanUser);
-        model.addAttribute("user", userList);
-        model.addAttribute("payplan", payplanList);
-        model.addAttribute("payplanUser", payplanUserRepository.findById(id).get());
+        model.addAttribute("users", users);
+        model.addAttribute("payplans", payplans);
         return "/users/associate";
     }
 
