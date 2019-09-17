@@ -34,8 +34,8 @@ public class User implements UserDetails {
     private String password;
     private String role;
 
-    @OneToMany(mappedBy = "user_id")
-    private Set<PayplanUser> payplanUsers;
+    @OneToMany(mappedBy = "user")
+    private Set<PayplanUser> payplanUser;
     
     public Long getId() {
         return id;

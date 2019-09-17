@@ -37,7 +37,6 @@ public class PayplanUserController {
     public String validate(@Valid PayplanUser payplanUser, BindingResult bindingResult, RedirectAttributes redirectAttrs) {
         System.out.println("ici");
         if(bindingResult.hasErrors()) {
-            System.out.println("if");
             for (ObjectError error : bindingResult.getAllErrors()) {
                 System.out.println(error.toString());
             }
@@ -45,7 +44,6 @@ public class PayplanUserController {
             return "redirect:/users/associate";
         }
          else {
-            System.out.println("else");
             payplanUserRepository.save(payplanUser);
             return "redirect:/users/associate";
         }
@@ -53,7 +51,7 @@ public class PayplanUserController {
 
     @GetMapping("/users/{id}/edit")
     public String edit(@PathVariable Long id, Model model) {
-        model.addAttribute("action", "/payplanUsers/" + id);
+        model.addAttribute("action", "/payplanUser/" + id);
         model.addAttribute("method", "put");
         model.addAttribute("payplanUser", payplanUserRepository.findById(id).get());
         return "/users/associate";

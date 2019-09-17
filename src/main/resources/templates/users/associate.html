@@ -29,7 +29,7 @@
 					<div class="card">
 						<div class="card-body">
 							<h5 class="card-title">Sélection du plan de rémunération</h5>
-							<select class="custom-select" name="payplanlist">
+							<select class="custom-select" name="payplanlist" >
 								<option selected>Sélection plan de rémunération</option>
 								<option th:each="payplan : ${payplans}" th:value="${payplan.id}" th:text=${payplan.name}></option>
 							</select>

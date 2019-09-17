@@ -53,8 +53,8 @@ public class Payplan {
     private Boolean integration;
     private Integer remunerationLocation;
 
-    @OneToMany(mappedBy = "payplan_id")
-    private Set<PayplanUser> payplanUsers;
+    @OneToMany(mappedBy = "payplan")
+    private Set<PayplanUser> payplanUser;
 
     /**
      * @return Long return the id

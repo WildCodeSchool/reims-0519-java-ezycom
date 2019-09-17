@@ -14,11 +14,11 @@ import javax.persistence.TemporalType;
 @Entity
 public class PayplanUser {
 
-    public PayplanUser(Date startDate, Date endDate, Long user_id, Long payplan_id) {
+    public PayplanUser(Date startDate, Date endDate, User user, Payplan payplan) {
         this.startDate = startDate;
         this.endDate = endDate;
-        this.user_id = user_id;
-        this.payplan_id = payplan_id;
+        this.user = user;
+        this.payplan = payplan;
     }
 
     @Id
@@ -28,8 +28,6 @@ public class PayplanUser {
     private Date startDate;
     @Temporal(TemporalType.TIMESTAMP)
     private Date endDate;
-    private Long user_id;
-    private Long payplan_id;
  
     @ManyToOne
     private User user;
@@ -59,35 +57,6 @@ public class PayplanUser {
 
     public void setEndDate(Date endDate) {
         this.endDate = endDate;
-    }
-
-
-    /**
-     * @return Long return the user_id
-     */
-    public Long getUser_id() {
-        return user_id;
-    }
-
-    /**
-     * @param user_id the user_id to set
-     */
-    public void setUser_id(Long user_id) {
-        this.user_id = user_id;
-    }
-
-    /**
-     * @return Long return the payplan_id
-     */
-    public Long getPayplan_id() {
-        return payplan_id;
-    }
-
-    /**
-     * @param payplan_id the payplan_id to set
-     */
-    public void setPayplan_id(Long payplan_id) {
-        this.payplan_id = payplan_id;
     }
 
     /**
