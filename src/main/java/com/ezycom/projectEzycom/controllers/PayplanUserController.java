@@ -1,11 +1,16 @@
 package com.ezycom.projectEzycom.controllers;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.validation.Valid;
 
+import com.ezycom.projectEzycom.entities.Payplan;
 import com.ezycom.projectEzycom.entities.PayplanUser;
+import com.ezycom.projectEzycom.entities.User;
+import com.ezycom.projectEzycom.repositories.PayplanRepository;
 import com.ezycom.projectEzycom.repositories.PayplanUserRepository;
+import com.ezycom.projectEzycom.repositories.UserRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,11 +24,18 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+
 @Controller
 public class PayplanUserController {
 
     @Autowired
     private PayplanUserRepository payplanUserRepository;
+
+    @Autowired
+    private UserRepository userRepository;
+    
+    @Autowired
+    private PayplanRepository payplanRepository;
 
 
     @DeleteMapping("/users/associate/{id}")
@@ -49,10 +61,13 @@ public class PayplanUserController {
         }
     }
 
-    @GetMapping("/users/{id}/edit")
-    public String edit(@PathVariable Long id, Model model) {
-        model.addAttribute("action", "/payplanUser/" + id);
-        model.addAttribute("method", "put");
+    @GetMapping("/users/associate")
+    public String edit(@PathVariable Long id, Model model, PayplanUser payplanUser) {
+        List<User> userList = userRepository.findAll();
+        List<Payplan> payplanList = payplanRepository.findAll();
+        model.addAttribute("payplanUser", payplanUser);
+        model.addAttribute("user", userList);
+        model.addAttribute("payplan", payplanList);
         model.addAttribute("payplanUser", payplanUserRepository.findById(id).get());
         return "/users/associate";
     }
