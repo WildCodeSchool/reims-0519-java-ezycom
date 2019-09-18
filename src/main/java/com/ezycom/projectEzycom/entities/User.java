@@ -18,6 +18,8 @@ import org.springframework.security.core.userdetails.UserDetails;
 @Entity
 public class User implements UserDetails {
 
+    private static final long serialVersionUID = 1L;
+
     public User() {
     }
 
@@ -75,7 +77,6 @@ public class User implements UserDetails {
         if(getEmail().equals(email)) {
             authorities.add(new SimpleGrantedAuthority("manager"));
         }
-        
         return authorities;
     }
 
@@ -103,7 +104,4 @@ public class User implements UserDetails {
     public boolean isEnabled() {
         return true;
     }
-
-   
-
 }
