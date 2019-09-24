@@ -9,7 +9,7 @@
 
 </head>
 <body>
-    <div th:replace="fragments/header :: header"></div>
+    <div th:replace="fragments/header_commercial :: header"></div>
 
     <p class="my-2">Tableau des ventes</p>
 
@@ -26,19 +26,6 @@
             <th>Marge</th>
             <th>Taux en %</th>
             <th>Commission</th>
-        </tr>
-        <tr th:each="sale : ${sales}">
-            <td th:text="${sale.purchase}"></td>
-            <td th:text="${sale.purchaseDate}"></td>
-            <td th:text="${sale.advDate}"></td>
-            <td th:text="${sale.commercial}"></td>
-            <td th:text="${sale.productCode}"></td>
-            <td th:text="${sale.quantity}"></td>
-            <td th:text="${sale.preTaxeRealPrice}"></td>
-            <td th:text="${sale.preTaxeSalePrice}"></td>
-            <td th:text="${sale.marge}"></td>
-            <td th:text="${sale.percent}"></td>
-            <td th:text="${sale.commission}"></td>
         </tr>
 
     </table>
