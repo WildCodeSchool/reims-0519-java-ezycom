@@ -74,8 +74,11 @@ public class User implements UserDetails {
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         final List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
-        if(getEmail().equals(email)) {
-            authorities.add(new SimpleGrantedAuthority("manager"));
+        if(getRole().equals("Manager")) {
+            authorities.add(new SimpleGrantedAuthority("Manager"));
+        }
+        if(getRole().equals("Commercial")) {
+            authorities.add(new SimpleGrantedAuthority("Commercial"));
         }
         return authorities;
     }
