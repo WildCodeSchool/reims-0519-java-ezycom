@@ -80,6 +80,9 @@ public class User implements UserDetails {
         if(getRole().equals("Commercial")) {
             authorities.add(new SimpleGrantedAuthority("Commercial"));
         }
+        if(getRole().equals("Admin")) {
+            authorities.add(new SimpleGrantedAuthority("Admin"));
+        }
         return authorities;
     }
 

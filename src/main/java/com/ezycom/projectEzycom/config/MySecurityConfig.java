@@ -62,4 +62,33 @@ public class MySecurityConfig extends WebSecurityConfigurerAdapter {
         return new BCryptPasswordEncoder();
          
     } 
+
+    protected String determineTargetUrl(Authentication authentication) {
+        boolean isManager = false;
+        boolean isCommercial = false;
+        boolean isAdmin = false;
+        Collection<? extends GrantedAuthority> authorities
+         = authentication.getAuthorities();
+        for (GrantedAuthority grantedAuthority : authorities) {
+            if (grantedAuthority.getAuthority().equals("Manager")) {
+                isManager = true;
+                break;
+            } else if (grantedAuthority.getAuthority().equals("Commercial")) {
+                isCommercial = true;
+                break;
+            }
+            else if (grantedAuthority.getAuthority().equals("Admin")) {
+                isAdmin = true;
+                break;
+            }
+        }
+ 
+        if (isUser) {
+            return "/homepage.html";
+        } else if (isAdmin) {
+            return "/console.html";
+        } else {
+            throw new IllegalStateException();
+        }
+    }
 }
