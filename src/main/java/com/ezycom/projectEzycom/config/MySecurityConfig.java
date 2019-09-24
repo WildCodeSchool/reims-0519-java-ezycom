@@ -86,10 +86,13 @@ public class MySecurityConfig extends WebSecurityConfigurerAdapter {
             }
         }
  
-        if (isUser) {
-            return "/homepage.html";
+        if (isManager) {
+            return "/sales";
         } else if (isAdmin) {
-            return "/console.html";
+            return "/sales";
+        }
+          else if (isCommercial) {
+            return "/sales";
         } else {
             throw new IllegalStateException();
         }
