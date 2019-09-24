@@ -74,15 +74,7 @@ public class User implements UserDetails {
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         final List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
-        if(getRole().equals("Manager")) {
-            authorities.add(new SimpleGrantedAuthority("Manager"));
-        }
-        if(getRole().equals("Commercial")) {
-            authorities.add(new SimpleGrantedAuthority("Commercial"));
-        }
-        if(getRole().equals("Admin")) {
-            authorities.add(new SimpleGrantedAuthority("Admin"));
-        }
+        authorities.add(new SimpleGrantedAuthority(getRole()));
         return authorities;
     }
 
