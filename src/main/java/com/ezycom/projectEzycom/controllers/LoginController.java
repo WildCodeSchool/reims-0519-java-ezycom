@@ -2,6 +2,7 @@ package com.ezycom.projectEzycom.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.security.core.Authentication;
 
 
 @Controller
@@ -21,4 +22,13 @@ public class LoginController {
         return "/login";
     }
 
+    @GetMapping("/home")
+    public String forwardByRole(Authentication authentication) {
+        User currentUser = (User)authentication.getPrincipal();
+        if (currentUser.getRole().equals("Manager")) {
+            return "forward:/sales";
+        } else if(currentUser.getRole().equals("Commercial")) {
+            return "forward:/users/create";
+        } 
+    }
 }
