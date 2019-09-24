@@ -1,7 +1,5 @@
 package com.ezycom.projectEzycom.config;
 
-import java.util.Collection;
-
 import com.ezycom.projectEzycom.services.MyUserDetailsService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,7 +27,7 @@ public class MySecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
             .csrf().disable().authorizeRequests()
-            .antMatchers(HttpMethod.GET, "/CSS/**", "/IMG/**").permitAll()
+            .antMatchers(HttpMethod.GET, "/images/**", "/css/**").permitAll()
             .antMatchers(HttpMethod.GET, "/").anonymous()
             .antMatchers(HttpMethod.GET, "/product/**", "/sales/**", "/browse/**", "/form/**", "/associate/**", "/create/**")
                 .access("hasAuthority('ADMIN') or hasAuthority('Manager')")
