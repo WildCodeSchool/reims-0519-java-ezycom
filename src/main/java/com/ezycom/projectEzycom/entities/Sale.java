@@ -6,13 +6,13 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
-public class Sales{
-    public Sales(){
+public class Sale{
+    public Sale(){
     }
 
-    public Sales(Long purchase, int purchaseDate, int advDate, String commercial, 
+    public Sale(int id, Long purchase, int purchaseDate, int advDate, String commercial, 
     String productCode, int quantity, int preTaxeRealPrice, int preTaxeSalePrice, int marge, int percent){
-
+        
         this.purchase = purchase;// numéro de commande
         this.purchaseDate = purchaseDate;// date de la commande
         this.advDate = advDate;
@@ -23,12 +23,12 @@ public class Sales{
         this.preTaxeSalePrice = preTaxeSalePrice;//prix de vente hors taxe
         this.marge = marge;//marge du Product
         this.percent = percent;
-        this.commission = (float)(marge*percent)/100;
+        
     }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)   
-    private Long id;
+    private int id;
     private Long purchase;   
     private int purchaseDate;   
     private int advDate;    
@@ -39,7 +39,7 @@ public class Sales{
     private int preTaxeSalePrice;    
     private int marge;
     private int percent;
-    private float commission;
+    
 
     public Long getPurchase() {
         return purchase;
@@ -113,14 +113,6 @@ public class Sales{
         this.marge = marge;
     }
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
     public int getPercent() {
         return percent;
     }
@@ -129,12 +121,16 @@ public class Sales{
         this.percent = percent;
     }
 
-    public float getCommission() {
-        return commission;
+    public int getId() {
+        return id;
     }
 
-    public void setCommission(float commission) {
-        this.commission = commission;
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public Sale(int id) {
+        this.id = id;
     }
 
 }

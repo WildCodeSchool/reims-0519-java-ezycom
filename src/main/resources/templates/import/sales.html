@@ -10,6 +10,7 @@
 </head>
 <body>
     <div th:replace="fragments/header :: header"></div>
+    
     <table class="product_table mt-5 d-flex justify-content-center text-center">
         <tr>
             <th>N° commande</th>
@@ -22,7 +23,7 @@
             <th>PV€ HT</th>
             <th>Marge</th>
             <th>Taux en %</th>
-            <th>Commission</th>
+            
         </tr>
         <tr th:each="sale : ${sales}">
             <td th:text="${sale.purchase}"></td>
@@ -35,7 +36,7 @@
             <td th:text="${sale.preTaxeSalePrice}"></td>
             <td th:text="${sale.marge}"></td>
             <td th:text="${sale.percent}"></td>
-            <td th:text="${sale.commission}"></td>
+            
         </tr>
 
     </table>
