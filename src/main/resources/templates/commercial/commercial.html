@@ -1,13 +1,30 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Bienvenue sur Ezycom</title>
+    <link rel="icon" type="image/png" href="../static/logo.png" th:href="@{/logo.png}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/style.css" th:href="@{/style.css}">
 
 </head>
 <body>
+    <div th:replace="fragments/header_commercial :: header"></div>
+    <table class="product_table mt-5 d-flex justify-content-center text-center">
+        <tr>
+            <th>N° commande</th>
+            <th>Date commande</th>
+            <th>Date saisie ADV</th>
+            <th>Commercial</th>
+            <th>Code produit</th>
+            <th>Quantité</th>
+            <th>PR€ HT</th>
+            <th>PV€ HT</th>
+            <th>Marge</th>
+            <th>Taux en %</th>
+            <th>Commission</th>
+        </tr>
 
-    <h1>Bienvenue FUFU Bien ou quoi ?</h1>
-
-
-    </body>
+    </table>
+</body>
 </html>
