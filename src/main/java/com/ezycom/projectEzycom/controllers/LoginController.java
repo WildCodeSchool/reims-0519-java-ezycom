@@ -31,8 +31,8 @@ public class LoginController {
         if (currentUser.getRole().equals("Manager")) {
             return "forward:/sales";
         } else if(currentUser.getRole().equals("Commercial")) {
-            return "forward:/users/create";
-        } else {
+            return "/commercial/commercial";
+        } else{
             return "forward:/sales";
         }
     }
