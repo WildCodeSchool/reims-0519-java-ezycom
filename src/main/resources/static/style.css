@@ -18,7 +18,8 @@ html {
 
 body {
     margin: 0;
-    background: #f7f7f7;
+    background:#f7f7f7;
+    min-height: 100vh;
 }
 
 @media (min-width:980px) {
@@ -42,6 +43,18 @@ main {
     letter-spacing: 1px;
     padding-bottom: 10px;
 }
+
+#button{
+    background-color: #7f327e;
+    border-color: #7f327e;
+}
+
+#button:hover{
+    background-color: #ffffff;
+    color: #7f327e;
+    transition: 0.5s;
+}
+
 
 /* menu */
 
@@ -276,6 +289,12 @@ main {
 
 /* form */
 
+.radiocreation{
+    display: flex;
+    justify-content: center;
+    padding-top: 5%; 
+}
+
 #liste-payplan{
     margin-left: 3%;
     border-radius: 10%;
@@ -286,6 +305,16 @@ main {
         display: flex;
         width: 100%;
     }
+}
+.blocform{
+    background-color: white;
+    margin-left: 38%;
+    margin-right: 38%; 
+    padding-top: 2%;
+    padding-bottom: 2%;
+    border-radius: 5%;
+    box-shadow: 1px 1px 1px #3d3d3c;
+    border-color: #3d3d3c;
 }
 
 .form {
@@ -310,17 +339,15 @@ main {
     margin-bottom: 10px;
 }
 
-.form input,
-.form textarea {
+input,
+textarea {
     font-family: 'Open Sans', sans-serif;
     background: rgba(255,255,255,.1);
     border: none;
     border-radius: 4px;
-    font-size: 14px;
     margin: 0;
     outline: 0;
     padding: 5px;
-    width: 100%;
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -328,10 +355,10 @@ main {
     color: #000000;
     -webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
     box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
-    margin-bottom: 26px;
+    margin-top: 3%;
 }
 
-.form textarea {
+textarea {
     height: 65px;
 }
 
@@ -343,25 +370,7 @@ main {
     margin: 5px;
 }
 
-.custom-select {
-    font-family: 'Open Sans', sans-serif;
-    height: 30px;
-    background: rgba(255,255,255,.1);
-    border: none;
-    border-radius: 4px;
-    font-size: 14px;
-    margin: 0;
-    outline: 0;
-    padding: 5px;
-    width: 100%;
-    box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    background-color: #e8eeef;
-    -webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
-    box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
-    margin-bottom: 26px;
-}
+
 
 #toDisplay {
     display: none;
@@ -385,19 +394,19 @@ main {
     width: 100%;
 }
 
-.contact-table td, .contact-table th {
+td, th {
     padding: 8px 16px;
 }
 
-.contact-table tr:hover {
-    background-color: #e8eeef;
+tr:hover {
+    background-color: rgb(128, 49, 127, 0.2) ;
 }
 
-.contact-table th {
+th {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
-    background-color: #2b4160;
+    background-color: #7f327e;
     color: white;
 }
 
@@ -445,11 +454,12 @@ main {
     color: #4aa59e;
 }
 /* tableau product*/
-.product_table td {
+td {
     border: 1px solid black;
     padding: 1rem;
 }
-.product_table th{
+
+th{
     border: 1px solid black;
     padding: 0.5rem;
 }
