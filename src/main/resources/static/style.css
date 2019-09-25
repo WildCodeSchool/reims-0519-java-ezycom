@@ -18,7 +18,8 @@ html {
 
 body {
     margin: 0;
-    background: #f7f7f7;
+    background:#f7f7f7;
+    min-height: 100vh;
 }
 
 @media (min-width:980px) {
@@ -299,6 +300,16 @@ main {
         width: 100%;
     }
 }
+.blocform{
+    background-color: white;
+    margin-left: 38%;
+    margin-right: 38%; 
+    padding-top: 2%;
+    padding-bottom: 2%;
+    border-radius: 5%;
+    box-shadow: 1px 1px 1px #3d3d3c;
+    border-color: #3d3d3c;
+}
 
 .form {
     width: 100%;
@@ -322,17 +333,15 @@ main {
     margin-bottom: 10px;
 }
 
-.form input,
-.form textarea {
+input,
+textarea {
     font-family: 'Open Sans', sans-serif;
     background: rgba(255,255,255,.1);
     border: none;
     border-radius: 4px;
-    font-size: 14px;
     margin: 0;
     outline: 0;
     padding: 5px;
-    width: 100%;
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -340,7 +349,7 @@ main {
     color: #000000;
     -webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
     box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
-    margin-bottom: 26px;
+
 }
 
 .form textarea {
