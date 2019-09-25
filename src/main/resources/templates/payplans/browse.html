@@ -14,9 +14,8 @@
 </head>
 <body>
 	<div th:replace="fragments/header :: header"></div>
-	<div class="my-4 mb-5 border border-dark mx-auto w-25 d-flex align-items-center justify-content-center">
-		<p class="my-2">Edition des plans de rémunération</p>
-	</div>
+	<div class="container">
+	<h4 class="d-flex justify-content-center my-5">Création d'un utilisateur</h4>
 	<div class="w-100 d-flex justify-content-center">
 		<ul>
 			<li th:each="payplan : ${payplans}" class="mb-3 d-flex justify-content-center pr-2">
@@ -32,7 +31,8 @@
 		</ul>		
 	</div>
 	<div class="m-5 d-flex justify-content-end">
-		<a th:href="@{../payplans/create}"><button type="button" class="btn btn-primary">Ajouter nouveau plan de rémunération</button></a>
+		<a th:href="@{../payplans/create}"><button id="button" type="button" class="btn btn-primary">Ajouter nouveau plan de rémunération</button></a>
+	</div>
 	</div>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
