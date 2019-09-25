@@ -18,7 +18,7 @@
 			<h4 class="my-4">Associer un commercial :</h4>
 			<form action="#" th:action="@{/users/associate}" method="POST">
 				<div class="form-group">
-					<select class="custom-select" name="emaillist">
+					<select class="custom-select" name="user">
 						<option selected>Sélection de l'email</option>
 						<option th:each="user : ${users}" th:value="${user.id}" th:text=${user.email}></option>
 					</select>
@@ -27,7 +27,7 @@
 					<div class="card">
 						<div class="card-body">
 							<h5 class="card-title">Sélection du plan de rémunération</h5>
-							<select class="custom-select" name="payplanlist">
+							<select class="custom-select" name="payplan">
 								<option selected>Sélection plan de rémunération</option>
 								<option th:each="payplan : ${payplans}" th:value="${payplan.id}" th:text=${payplan.name}></option>
 							</select>
@@ -62,8 +62,8 @@
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
-							<td>
+						<tr th:each="payplan : ${payplans}">
+							<td th:text="${payplan.name}">
 								<input type="text" name="history" disabled>
 							</td>
 							<td>
