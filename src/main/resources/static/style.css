@@ -289,6 +289,12 @@ main {
 
 /* form */
 
+.radiocreation{
+    display: flex;
+    justify-content: center;
+    padding-top: 5%; 
+}
+
 #liste-payplan{
     margin-left: 3%;
     border-radius: 10%;

@@ -23,6 +23,7 @@
 
 
 		<br/>
+		<div class="container">
 		<div class="blocform">
 		<div class="mb-3 d-flex justify-content-center">
 		<form action="#" th:action="@{/users/create}" th:object="${user}" method="post">
@@ -35,6 +36,7 @@
 				<span th:if="${#fields.hasErrors('password')}" th:errors="*{password}" th:errorclass="fieldError"></span>
 			</div> 
 			
+			<div class="radiocreation">
 			<div class="div-group" th:class="${#fields.hasErrors('role')}? has-error" >Role :
 			<br/>
                 <div class="custom-control custom-radio custom-control-inline">
@@ -53,11 +55,13 @@
                 </div>
 			</div>
 		</div>
+		</div>
 		<br/>
-		<div class="d-flex justify-content-center mr-5">
+		<div class="d-flex justify-content-center">
 				<button id="button" type="submit" class="btn btn-primary btn-lg">Valider</button>
 		</div>
 	</form>
+	</div>
 	</div>
         
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
