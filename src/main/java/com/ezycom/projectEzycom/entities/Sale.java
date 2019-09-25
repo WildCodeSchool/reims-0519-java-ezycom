@@ -10,7 +10,7 @@ public class Sale{
     public Sale(){
     }
 
-    public Sale(int id, Long purchase, int purchaseDate, int advDate, String commercial, 
+    public Sale(Long purchase, int purchaseDate, int advDate, String commercial, 
     String productCode, int quantity, int preTaxeRealPrice, int preTaxeSalePrice, int marge, int percent){
         
         this.purchase = purchase;// numéro de commande

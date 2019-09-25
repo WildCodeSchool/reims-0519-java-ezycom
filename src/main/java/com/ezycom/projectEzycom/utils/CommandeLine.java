@@ -18,7 +18,7 @@ import org.springframework.stereotype.Component;
 
             Sale[] data = new Sale[]{
                 new Sale(
-                    1,
+                    
                     201900001L, //numero de commande
                     20190704, // date de commande
                     20190706, //date de saisie ADV
@@ -31,7 +31,7 @@ import org.springframework.stereotype.Component;
                     10 // Taux en %
                 ),
                 new Sale(
-                    2,
+                    
                     201900021L, //numero de commande
                     20190904, // date de commande
                     20190906, //date de saisie ADV
@@ -44,7 +44,7 @@ import org.springframework.stereotype.Component;
                     10 // Taux en %
                 ),
                 new Sale(
-                    2,
+                    
                     201906002L, //numero de commande
                     20190704, // date de commande
                     20190706, //date de saisie ADV
