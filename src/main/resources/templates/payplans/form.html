@@ -101,8 +101,8 @@
 			</div>
 			<div class="d-flex justify-content-around flex-baseline">
 				<div th:class="${#fields.hasErrors('integrationBonus')}? has-error">
-					<input type="range" class="custom-range mx-2" th:field="*{integrationBonus}" min="0" max="3000" step="100" value="0" oninput="resultbis.value=parseInt(payplanbis.value)">
-					<output name="resultbis">0</output>&euro;
+					<label for="prime">Montant de la prime : </label><output name="resultbis"> 0</output>&euro;
+					<input id="prime" type="range" class="custom-range mx-2" th:field="*{integrationBonus}" min="0" max="3000" step="100" value="0" oninput="resultbis.value=parseInt(payplanbis.value)">
 				</div>
 				<div th:class="${#fields.hasErrors('integrationBonusTime')}? has-error">
 					<input type="number" id="box2" min="0" max="12" th:field="*{integrationBonusTime}">
