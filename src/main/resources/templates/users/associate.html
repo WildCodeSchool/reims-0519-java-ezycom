@@ -13,11 +13,9 @@
 	</head>
 	<body>
 		<div th:replace="fragments/header :: header"></div>
-		<div class="my-4 border border-dark mx-auto w-25 d-flex align-items-center justify-content-center">
-			<p class="my-2">Associer un commercial</p>
-		</div>
 
 		<div class="container">
+			<h4 class="my-4">Associer un commercial :</h4>
 			<form action="#" th:action="@{/users/associate}" method="POST">
 				<div class="form-group">
 					<select class="custom-select" name="emaillist">
@@ -49,7 +47,7 @@
 					</div>
 				</div>
 				<div class="d-flex justify-content-center">
-					<button type="submit" class="btn btn-primary btn-lg mb-5">Valider</button>
+					<button id="button" type="submit" class="btn btn-primary btn-lg mb-5">Valider</button>
 				</div>
 			</form>
 

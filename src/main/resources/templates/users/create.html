@@ -16,13 +16,9 @@
 	<body>
 		<div th:replace="fragments/header :: header"></div>
 
-
-		<div class="my-4 mb-5 border border-dark mx-auto w-25 d-flex align-items-center justify-content-center">
-				<p class="my-2">Création d'un utilisateur</p>
-		</div>
-
-
-		<br/>
+		<div class="container">
+			<h4 class="d-flex justify-content-center my-3">Création d'un utilisateur</h4>
+		<div class="blocform">
 		<div class="mb-3 d-flex justify-content-center">
 		<form action="#" th:action="@{/users/create}" th:object="${user}" method="post">
 			<div th:class="${#fields.hasErrors('email')}? has-error">
@@ -34,6 +30,7 @@
 				<span th:if="${#fields.hasErrors('password')}" th:errors="*{password}" th:errorclass="fieldError"></span>
 			</div> 
 			
+			<div class="radiocreation">
 			<div class="div-group" th:class="${#fields.hasErrors('role')}? has-error" >Role :
 			<br/>
                 <div class="custom-control custom-radio custom-control-inline">
@@ -52,12 +49,20 @@
                 </div>
 			</div>
 		</div>
+		</div>
 		<br/>
+<<<<<<< HEAD
 		<div class="d-flex justify-content-center mr-5">
 				
 				<button type="submit" class="btn btn-primary btn-lg">Valider</button>
+=======
+		<div class="d-flex justify-content-center">
+				<button id="button" type="submit" class="btn btn-primary btn-lg">Valider</button>
+>>>>>>> 23f9d9cd3fb7b561d8b6a9f569be1b3b159a01ba
 		</div>
-    </form>
+	</form>
+	</div>
+	</div>
         
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
