@@ -43,6 +43,18 @@ main {
     padding-bottom: 10px;
 }
 
+#button{
+    background-color: #7f327e;
+    border-color: #7f327e;
+}
+
+#button:hover{
+    background-color: #ffffff;
+    color: #7f327e;
+    transition: 0.5s;
+}
+
+
 /* menu */
 
 .profile {
