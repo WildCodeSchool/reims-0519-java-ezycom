@@ -137,11 +137,7 @@ main {
 }
 
 .deroulant{
-    width: 100%;
-    text-align: left;
-}
-
-.deroulant-rem{
+    padding-bottom: .5rem;
     width: 100%;
     text-align: center;
 }

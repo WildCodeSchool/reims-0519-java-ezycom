@@ -65,8 +65,9 @@ public class UserController {
     }
 
     @PostMapping("users/associate")
-    public PayplanUser affiliate(@RequestParam Long emaillist, @RequestParam Long payplanlist, @RequestParam Date start, @RequestParam Date finish){
-        PayplanUser associate = new PayplanUser(emaillist, payplanlist, start, finish);
-        return payplanUserRepository.save(associate);
+    public String affiliate(User user, Payplan payplan, Date start, Date finish){
+        PayplanUser associate = new PayplanUser(user, payplan, start, finish);
+        payplanUserRepository.save(associate);
+        return "redirect:/users/associate";
     }
 }
