@@ -13,7 +13,7 @@ import org.springframework.stereotype.Repository;
 public interface SaleRepository extends JpaRepository<Sale, Long>{
 
     @Query(
-        value = "select commercial,sum(marge * percent/100) as commission from ezycom.sales group by commercial",
+        value = "select commercial,sum(marge * percent/100) as commission from ezycom.sale group by commercial",
         nativeQuery = true
     )
     List<Commission> findByCommercial();
