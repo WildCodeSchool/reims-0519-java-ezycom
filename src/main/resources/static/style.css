@@ -393,14 +393,14 @@ td, th {
 }
 
 tr:hover {
-    background-color: #e8eeef;
+    background-color: rgb(128, 49, 127, 0.2) ;
 }
 
 th {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
-    background-color: #2b4160;
+    background-color: #7f327e;
     color: white;
 }
 
