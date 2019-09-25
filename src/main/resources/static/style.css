@@ -352,7 +352,7 @@ textarea {
     margin-top: 3%;
 }
 
-.form textarea {
+textarea {
     height: 65px;
 }
 
@@ -364,25 +364,7 @@ textarea {
     margin: 5px;
 }
 
-.custom-select {
-    font-family: 'Open Sans', sans-serif;
-    height: 30px;
-    background: rgba(255,255,255,.1);
-    border: none;
-    border-radius: 4px;
-    font-size: 14px;
-    margin: 0;
-    outline: 0;
-    padding: 5px;
-    width: 100%;
-    box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    background-color: #e8eeef;
-    -webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
-    box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
-    margin-bottom: 26px;
-}
+
 
 #toDisplay {
     display: none;
@@ -406,15 +388,15 @@ textarea {
     width: 100%;
 }
 
-.contact-table td, .contact-table th {
+td, th {
     padding: 8px 16px;
 }
 
-.contact-table tr:hover {
+tr:hover {
     background-color: #e8eeef;
 }
 
-.contact-table th {
+th {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
@@ -466,11 +448,12 @@ textarea {
     color: #4aa59e;
 }
 /* tableau product*/
-.product_table td {
+td {
     border: 1px solid black;
     padding: 1rem;
 }
-.product_table th{
+
+th{
     border: 1px solid black;
     padding: 0.5rem;
 }
