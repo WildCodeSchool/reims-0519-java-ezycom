@@ -47,6 +47,7 @@ main {
 #button{
     background-color: #7f327e;
     border-color: #7f327e;
+    color: #ffffff;
 }
 
 #button:hover{
@@ -137,11 +138,7 @@ main {
 }
 
 .deroulant{
-    width: 100%;
-    text-align: left;
-}
-
-.deroulant-rem{
+    padding-bottom: .5rem;
     width: 100%;
     text-align: center;
 }
@@ -193,11 +190,6 @@ main {
 }
 
 /* login */
-
-.error {
-    color: white;
-    text-align: center;
-}
 
 .login { 
     width: 100%;
@@ -462,4 +454,10 @@ td {
 th{
     border: 1px solid black;
     padding: 0.5rem;
+}
+
+.error{
+    text-align: center;
+    margin-top: 30vh;
+    transform: translateY(-50%);
 }

@@ -15,8 +15,6 @@ public class PayplanUser {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Long emaillist;
-    private Long payplanlist;
     private Date start;
     private Date finish;
 
@@ -26,9 +24,9 @@ public class PayplanUser {
     @ManyToOne
     private Payplan payplan;
 
-    public PayplanUser(Long emaillist, Long payplanlist, Date start, Date finish) {
-        this.emaillist = emaillist;
-        this.payplanlist = payplanlist;
+    public PayplanUser(User user, Payplan payplan, Date start, Date finish) {
+        this.user = user;
+        this.payplan = payplan;
         this.start = start;
         this.finish = finish;
     }
@@ -39,22 +37,6 @@ public class PayplanUser {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public Long getEmaillist() {
-        return emaillist;
-    }
-
-    public void setEmaillist(Long emaillist) {
-        this.emaillist = emaillist;
-    }
-
-    public Long getPayplanlist() {
-        return payplanlist;
-    }
-
-    public void setPayplanlist(Long payplanlist) {
-        this.payplanlist = payplanlist;
     }
 
     public Date getStart() {
@@ -71,6 +53,22 @@ public class PayplanUser {
 
     public void setFinish(Date finish) {
         this.finish = finish;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public Payplan getPayplan() {
+        return payplan;
+    }
+
+    public void setPayplan(Payplan payplan) {
+        this.payplan = payplan;
     }
 
 }
