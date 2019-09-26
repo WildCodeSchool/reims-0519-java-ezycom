@@ -2,6 +2,7 @@ package com.ezycom.projectEzycom.controllers;
 
 import java.util.List;
 
+import com.ezycom.projectEzycom.entities.Commission;
 import com.ezycom.projectEzycom.entities.Sale;
 import com.ezycom.projectEzycom.entities.User;
 import com.ezycom.projectEzycom.repositories.SaleRepository;
@@ -29,6 +30,9 @@ public class SaleController {
 
         List<User> users = userRepository.findAll();
         model.addAttribute("users", users);
+
+        List<Commission> commissions = saleRepo.findByCommercial();
+        model.addAttribute("commissions", commissions);
 
         return "import/sales";
     }

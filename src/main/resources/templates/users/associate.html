@@ -28,7 +28,7 @@
 						<div class="card-body">
 							<h5 class="card-title">Sélection du plan de rémunération</h5>
 							<select class="custom-select" name="payplan">
-								<option selected>Sélection plan de rémunération</option>
+								<option selected>Sélection du plan de rémunération</option>
 								<option th:each="payplan : ${payplans}" th:value="${payplan.id}" th:text=${payplan.name}></option>
 							</select>
 						</div>
@@ -51,12 +51,12 @@
 				</div>
 			</form>
 
-			<h4>Historique des plans de rémunérations :</h4>
+			<h4>Historique des plans de rémunération :</h4>
 			<div class="d-flex justify-content-center">
 				<table class="table table-bordered">
 					<thead>
 						<tr>
-							<th>Plan de rémunération précedant</th>
+							<th>Plan de rémunération précédant</th>
 							<th>Date de début d'application</th>
 							<th>Date de fin d'application</th>
 						</tr>
