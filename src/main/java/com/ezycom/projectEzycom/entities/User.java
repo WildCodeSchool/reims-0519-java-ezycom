@@ -23,10 +23,12 @@ public class User implements UserDetails {
     public User() {
     }
 
-    public User(String email, String password, String role) {
+    public User(String email, String password, String role, String firstname, String lastname) {
         this.email = email;
         this.password = password;
         this.role = role;
+        this.firstname = firstname;
+        this.lastname = lastname;
     }
 
     @Id
@@ -35,6 +37,8 @@ public class User implements UserDetails {
     private String email;
     private String password;
     private String role;
+    private String firstname;
+    private String lastname;
 
     @OneToMany(mappedBy = "user")
     private Set<PayplanUser> payplanUsers;
@@ -102,4 +106,47 @@ public class User implements UserDetails {
     public boolean isEnabled() {
         return true;
     }
+
+    /**
+     * @return String return the firstname
+     */
+    public String getFirstname() {
+        return firstname;
+    }
+
+    /**
+     * @param firstname the firstname to set
+     */
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
+    }
+
+    /**
+     * @return String return the lastname
+     */
+    public String getLastname() {
+        return lastname;
+    }
+
+    /**
+     * @param lastname the lastname to set
+     */
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
+    }
+
+    /**
+     * @return Set<PayplanUser> return the payplanUsers
+     */
+    public Set<PayplanUser> getPayplanUsers() {
+        return payplanUsers;
+    }
+
+    /**
+     * @param payplanUsers the payplanUsers to set
+     */
+    public void setPayplanUsers(Set<PayplanUser> payplanUsers) {
+        this.payplanUsers = payplanUsers;
+    }
+
 }
