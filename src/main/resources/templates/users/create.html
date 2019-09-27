@@ -21,6 +21,14 @@
 		<div class="blocform">
 		<div class="mb-3 d-flex justify-content-center">
 		<form action="#" th:action="@{/users/create}" th:object="${user}" method="post">
+			<div th:class="${#fields.hasErrors('lastname')}? has-error">
+				<input type="lastname" placeholder="Nom" th:field="*{lastname}">
+				<span th:if="${#fields.hasErrors('lastname')}" th:errors="*{lastname}" th:errorclass="fieldError"></span>
+			</div>
+			<div th:class="${#fields.hasErrors('firstname')}? has-error">
+				<input type="firstname" placeholder="Prénom" th:field="*{firstname}">
+				<span th:if="${#fields.hasErrors('firstname')}" th:errors="*{firstname}" th:errorclass="fieldError"></span>
+			</div> 
 			<div th:class="${#fields.hasErrors('email')}? has-error">
 				<input type="email" id="email" placeholder="E-mail" th:field="*{email}">
 				<span th:if="${#fields.hasErrors('email')}" th:errors="*{email}" th:errorclass="fieldError"></span>
