@@ -15,7 +15,7 @@
             <p class="my-2">Tableau des ventes</p>
     </div>
     <div class="container">
-    <select class="custom-select" name="emaillist">
+    <select class="custom-select" id="sale" name="emaillist">
         <option selected>Sélection de l'email</option>
         <option th:each="user : ${users}" th:value="${user.id}" th:text=${user.email}></option>
     </select>
@@ -43,7 +43,6 @@
             <th>PV€ HT</th>
             <th>Marge</th>
             <th>Taux en %</th>
-            
         </tr>
         <tr th:id="${sale.id}" th:attr="filter=${month}" th:each="sale : ${sales}">
             <td th:text="${sale.purchase}"></td>
@@ -60,5 +59,6 @@
         </tr>
 
     </table>
+    <script th:src="@{/filter_sales.js}"></script>
 </body>
 </html>
