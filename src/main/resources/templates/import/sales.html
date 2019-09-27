@@ -45,7 +45,7 @@
             <th>Taux en %</th>
             
         </tr>
-        <tr th:each="sale : ${sales}">
+        <tr th:id="${sale.id}" th:attr="filter=${month}" th:each="sale : ${sales}">
             <td th:text="${sale.purchase}"></td>
             <td th:text="${sale.purchaseDate}"></td>
             <td th:text="${sale.advDate}"></td>

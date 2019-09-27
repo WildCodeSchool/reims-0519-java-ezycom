@@ -107,44 +107,29 @@ public class User implements UserDetails {
         return true;
     }
 
-    /**
-     * @return String return the firstname
-     */
+
     public String getFirstname() {
         return firstname;
     }
 
-    /**
-     * @param firstname the firstname to set
-     */
+
     public void setFirstname(String firstname) {
         this.firstname = firstname;
     }
 
-    /**
-     * @return String return the lastname
-     */
+
     public String getLastname() {
         return lastname;
     }
 
-    /**
-     * @param lastname the lastname to set
-     */
     public void setLastname(String lastname) {
         this.lastname = lastname;
     }
 
-    /**
-     * @return Set<PayplanUser> return the payplanUsers
-     */
     public Set<PayplanUser> getPayplanUsers() {
         return payplanUsers;
     }
 
-    /**
-     * @param payplanUsers the payplanUsers to set
-     */
     public void setPayplanUsers(Set<PayplanUser> payplanUsers) {
         this.payplanUsers = payplanUsers;
     }

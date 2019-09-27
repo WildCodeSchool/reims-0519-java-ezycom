@@ -22,11 +22,11 @@
 		<div class="mb-3 d-flex justify-content-center">
 		<form action="#" th:action="@{/users/create}" th:object="${user}" method="post">
 			<div th:class="${#fields.hasErrors('lastname')}? has-error">
-				<input type="lastname" placeholder="Nom" th:field="*{lastname}">
+				<input type="text" placeholder="Nom" th:field="*{lastname}">
 				<span th:if="${#fields.hasErrors('lastname')}" th:errors="*{lastname}" th:errorclass="fieldError"></span>
 			</div>
 			<div th:class="${#fields.hasErrors('firstname')}? has-error">
-				<input type="firstname" placeholder="Prénom" th:field="*{firstname}">
+				<input type="text" placeholder="Prénom" th:field="*{firstname}">
 				<span th:if="${#fields.hasErrors('firstname')}" th:errors="*{firstname}" th:errorclass="fieldError"></span>
 			</div> 
 			<div th:class="${#fields.hasErrors('email')}? has-error">
