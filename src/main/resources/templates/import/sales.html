@@ -15,9 +15,9 @@
             <p class="my-2">Tableau des ventes</p>
     </div>
     <div class="container">
-    <select class="custom-select" id="sale" name="emaillist">
-        <option selected>Sélection de l'email</option>
-        <option th:each="user : ${users}" th:value="${user.id}" th:text=${user.email}></option>
+    <select class="custom-select" id="sale" th:name="sale">
+        <option selected>Sélection du commercial</option>
+        <option th:each="sale : ${sales}" th:value="${sale.id}" th:text=${sale.commercial}>item</option>
     </select>
 
     <table class="product_table mt-5 d-flex justify-content-center text-center">
