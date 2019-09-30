@@ -20,20 +20,4 @@ public class LoginController {
     public String loginError() {
         return "/loginError";
     }
-    @GetMapping("/")
-    public String mainLogin() {
-        return "/login";
-    }
-
-    @GetMapping("/home")
-    public String forwardByRole(Authentication authentication) {
-        User currentUser = (User)authentication.getPrincipal();
-        if (currentUser.getRole().equals("Manager")) {
-            return "forward:/sales";
-        } else if(currentUser.getRole().equals("Commercial")) {
-            return "/commercial/commercial";
-        } else{
-            return "forward:/sales";
-        }
-    }
 }
