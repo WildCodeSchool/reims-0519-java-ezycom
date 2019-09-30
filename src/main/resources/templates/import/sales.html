@@ -37,6 +37,7 @@
             <th>Date commande</th>
             <th>Date saisie ADV</th>
             <th>Commercial</th>
+            <th>Mois</th>
             <th>Code produit</th>
             <th>Quantité</th>
             <th>PR€ HT</th>
@@ -49,6 +50,7 @@
             <td th:text="${sale.purchaseDate}"></td>
             <td th:text="${sale.advDate}"></td>
             <td id="commercial" th:text="${sale.commercial}"></td>
+            <td th:text="${sale.month}"></td>
             <td th:text="${sale.productCode}"></td>
             <td th:text="${sale.quantity}"></td>
             <td th:text="${sale.preTaxeRealPrice}"></td>
