@@ -20,41 +20,100 @@ import org.springframework.stereotype.Component;
                 new Sale(
                     
                     201900001L, //numero de commande
-                    20190704, // date de commande
-                    20190706, //date de saisie ADV
-                    "DUPOND Daniel", // Commercial
+                    "04.10.2019", // date de commande
+                    "06.10.2019", //date de saisie ADV
+                    "Dupond Daniel", // Commercial
                     "P0001", //code produit
                     12, //quantité
                     4680, // Prix Reel HT
                     6084, //Prix vente HT
                     2404, // Marge
-                    10 // Taux en %
+                    10, // Taux en %
+                    "Octobre"
                 ),
                 new Sale(
                     
                     201900021L, //numero de commande
-                    20190904, // date de commande
-                    20190906, //date de saisie ADV
-                    "DUPOND Daniel", // Commercial
+                    "07.10.2019", // date de commande
+                    "09.10.2019", //date de saisie ADV
+                    "Dupond Daniel", // Commercial
                     "P0002", //code produit
                     8, //quantité
                     4800, // Prix Reel HT
                     6240, //Prix vente HT
                     1440, // Marge
-                    10 // Taux en %
+                    10, // Taux en %
+                    "Octobre"
                 ),
                 new Sale(
                     
                     201906002L, //numero de commande
-                    20190704, // date de commande
-                    20190706, //date de saisie ADV
+                    "04.10.2019", // date de commande
+                    "06.10.2019", //date de saisie ADV
                     "Rousseau Sebastien", // Commercial
                     "P0003", //code produit
                     25, //quantité
                     15000, // Prix Reel HT
                     19500, //Prix vente HT
                     4500, // Marge
-                    10 // Taux en %
+                    10, // Taux en %
+                    "Octobre"
+                ),
+                new Sale(
+                    
+                    201906002L, //numero de commande
+                    "10.09.2019", // date de commande
+                    "12.09.2019", //date de saisie ADV
+                    "Rousseau Sebastien", // Commercial
+                    "P0003", //code produit
+                    25, //quantité
+                    15000, // Prix Reel HT
+                    19500, //Prix vente HT
+                    4500, // Marge
+                    10, // Taux en %
+                    "Septembre"
+                ),
+                new Sale(
+                    
+                    201906002L, //numero de commande
+                    "04.09.2019", // date de commande
+                    "06.09.2019", //date de saisie ADV
+                    "Rousseau Sebastien", // Commercial
+                    "P0003", //code produit
+                    25, //quantité
+                    15000, // Prix Reel HT
+                    19500, //Prix vente HT
+                    4500, // Marge
+                    10, // Taux en %
+                    "Septembre"
+                ),
+                new Sale(
+                    
+                    201906002L, //numero de commande
+                    "20.09.2019", // date de commande
+                    "22.09.2019", //date de saisie ADV
+                    "Rousseau Sebastien", // Commercial
+                    "P0003", //code produit
+                    25, //quantité
+                    15000, // Prix Reel HT
+                    19500, //Prix vente HT
+                    4500, // Marge
+                    10, // Taux en %
+                    "Septembre"
+                ),
+                new Sale(
+                    
+                    201906002L, //numero de commande
+                    "11.09.2019", // date de commande
+                    "13.09.2019", //date de saisie ADV
+                    "Dupond Daniel", // Commercial
+                    "P0003", //code produit
+                    25, //quantité
+                    15000, // Prix Reel HT
+                    19500, //Prix vente HT
+                    4500, // Marge
+                    10, // Taux en %
+                    "Septembre"
                 )
             };
             for(Sale sale : data) {
