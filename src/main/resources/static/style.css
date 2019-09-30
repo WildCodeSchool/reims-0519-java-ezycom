@@ -55,7 +55,10 @@ main {
     color: #7f327e;
     transition: 0.5s;
 }
-
+#buttonimport{
+    background-color: #7f327e;
+    border-color: #7f327e;
+}
 
 /* menu */
 
