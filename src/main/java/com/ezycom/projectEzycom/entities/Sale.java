@@ -10,8 +10,8 @@ public class Sale{
     public Sale(){
     }
 
-    public Sale(Long purchase, int purchaseDate, int advDate, String commercial, 
-    String productCode, int quantity, int preTaxeRealPrice, int preTaxeSalePrice, int marge, int percent){
+    public Sale(Long purchase, String purchaseDate, String advDate, String commercial, 
+    String productCode, int quantity, int preTaxeRealPrice, int preTaxeSalePrice, int marge, int percent, String month){
         
         this.purchase = purchase;// numéro de commande
         this.purchaseDate = purchaseDate;// date de la commande
@@ -23,15 +23,15 @@ public class Sale{
         this.preTaxeSalePrice = preTaxeSalePrice;//prix de vente hors taxe
         this.marge = marge;//marge du Product
         this.percent = percent;
-        
+        this.month = month;
     }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)   
     private int id;
     private Long purchase;   
-    private int purchaseDate;   
-    private int advDate;    
+    private String purchaseDate;
+    private String advDate;    
     private String commercial;    
     private String productCode;   
     private int quantity;    
@@ -39,6 +39,7 @@ public class Sale{
     private int preTaxeSalePrice;    
     private int marge;
     private int percent;
+    private String month;
     
 
     public Long getPurchase() {
@@ -49,19 +50,19 @@ public class Sale{
         this.purchase = purchase;
     }
 
-    public int getPurchaseDate() {
+    public String getPurchaseDate() {
         return purchaseDate;
     }
 
-    public void setPurchaseDate(int purchaseDate) {
+    public void setPurchaseDate(String purchaseDate) {
         this.purchaseDate = purchaseDate;
     }
 
-    public int getAdvDate() {
+    public String getAdvDate() {
         return advDate;
     }
 
-    public void setAdvDate(int advDate) {
+    public void setAdvDate(String advDate) {
         this.advDate = advDate;
     }
 
@@ -128,4 +129,19 @@ public class Sale{
     public void setId(int id) {
         this.id = id;
     }
+
+    /**
+     * @return String return the month
+     */
+    public String getMonth() {
+        return month;
+    }
+
+    /**
+     * @param month the month to set
+     */
+    public void setMonth(String month) {
+        this.month = month;
+    }
+
 }

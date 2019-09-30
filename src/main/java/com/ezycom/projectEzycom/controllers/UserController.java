@@ -43,10 +43,12 @@ public class UserController {
         @RequestParam("email") String email,
         @RequestParam("password") String password,
         @RequestParam("role") String role,
+        @RequestParam("lastname") String lastname,
+        @RequestParam("firstname") String firstname,
         RedirectAttributes redirectAttributes
         ) { 
             PasswordEncoder encoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
-            User user = new User(email, encoder.encode(password), role);
+            User user = new User(email, encoder.encode(password), role, lastname, firstname);
             userRepository.save(user);     
             redirectAttributes.addAttribute("message", "success");
             return "redirect:/users/create";
