@@ -464,3 +464,13 @@ th{
     margin-top: 30vh;
     transform: translateY(-50%);
 }
+
+hr{
+    width: 80%;
+}
+
+.imagepalier{
+    width: 600px;
+    height: 300px;
+    margin-right: 3%;
+}
