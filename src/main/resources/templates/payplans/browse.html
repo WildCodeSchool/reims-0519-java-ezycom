@@ -23,13 +23,23 @@
 				<div class="btn-group" role="group" aria-label="Basic example">
 					<a id="liste-payplan" th:href="@{/payplans/{id}/edit(id=${payplan.id})}" class="btn btn-secondary">Modifier</a>
 					<a id="liste-payplan" th:href="@{/payplans/{id}/copy(id=${payplan.id})}" class="btn btn-secondary">Copier</a> 
-					<form th:action="@{/payplans/{id}(id=${payplan.id})}" th:method="delete">
-						<button id="liste-payplan" type="submit" class="btn btn-danger">Supprimer</button>
+					<form th:action="@{/payplans/{id}(id=${payplan.id})}" th:method="delete" >
+						<button id="liste-payplan" type="submit" onclick="myFunction()"  class="btn btn-danger">Supprimer</button>
 					</form>
 				</div>
 			</li>
 		</ul>		
 	</div>
+	<script>
+		function myFunction() {
+			if (confirm("Comfirmer la suppression.")) {
+				
+			} else {
+				
+			}
+		
+		}
+	</script>
 	<div class="m-5 d-flex justify-content-end">
 		<a th:href="@{../payplans/create}"><button id="button" type="button" class="btn btn-primary">Ajouter nouveau plan de rémunération</button></a>
 	</div>

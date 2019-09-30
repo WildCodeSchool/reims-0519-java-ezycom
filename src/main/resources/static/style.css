@@ -55,7 +55,10 @@ main {
     color: #7f327e;
     transition: 0.5s;
 }
-
+#buttonimport{
+    background-color: #7f327e;
+    border-color: #7f327e;
+}
 
 /* menu */
 
@@ -460,4 +463,14 @@ th{
     text-align: center;
     margin-top: 30vh;
     transform: translateY(-50%);
+}
+
+hr{
+    width: 80%;
+}
+
+.imagepalier{
+    width: 600px;
+    height: 300px;
+    margin-right: 3%;
 }

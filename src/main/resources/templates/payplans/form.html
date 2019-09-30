@@ -26,7 +26,7 @@
 			<hr>
 		
 			<div class="d-flex justify-content-around">
-				<div class="div-group" th:class="${#fields.hasErrors('objectiveDeadline')}? has-error" >Echéance objectif : 
+				<div class="div-group" th:class="${#fields.hasErrors('objectiveDeadline')}? has-error">Echéance objectif : 
 					<div class="custom-control custom-radio custom-control-inline ml-3">
 						<input type="radio" value="Mensuel" id="customRadioInline1" th:field="*{objectiveDeadline}" class="custom-control-input">
 						<label class="custom-control-label" for="customRadioInline1">Mensuel</label>
@@ -42,8 +42,8 @@
 				</div>
 				<div class="d-flex justify-content-around flex-baseline">
 					<div th:class="${#fields.hasErrors('payRate')}? has-error">
-						<label for="payRate">Taux de rémunération :</label> <output name="result">0</output>%
-						<input type="range" class="custom-range mx-2" id="payRate" th:field="*{payRate}" min="0" max="100" step="5" value="0" oninput="result.value=parseInt(payplan.value)">
+						<label for="payRate">Taux de rémunération :</label> <output name="result">50</output>%
+						<input type="range" class="custom-range" id="payRate" th:field="*{payRate}" min="0" max="100" step="5" oninput="result.value=parseInt(payRate.value)">
 					</div>
 				</div>
 			</div>
@@ -51,17 +51,19 @@
 			<hr>
 			
 			<div class="d-flex justify-content-around">
-				<div class="custom-control custom-radio custom-control-inline" th:class="${#fields.hasErrors('typeRemuneration')}? has-error">
-					<input type="radio" id="remunerationSurCa" value="Ca" class="custom-control-input" th:field="*{typeRemuneration}">
-					<label class="custom-control-label" for="remunerationSurCa">Rémunération sur CA</label>
-				</div>
-				<div class="custom-control custom-radio custom-control-inline" th:class="${#fields.hasErrors('typeRemuneration')}? has-error">
-					<input type="radio" id="remunerationSurMarge" value="Marge" class="custom-control-input" th:field="*{typeRemuneration}">
-					<label class="custom-control-label" for="remunerationSurMarge">Rémunération sur marge</label>
+				<div class="div-group" th:class="${#fields.hasErrors('typeRemuneration')}? has-error">
+					<div class="custom-control custom-radio custom-control-inline">
+						<input type="radio" id="remunerationSurCa" value="Ca" class="custom-control-input" th:field="*{typeRemuneration}">
+						<label class="custom-control-label" for="remunerationSurCa">Rémunération sur CA</label>
+					</div>
+					<div class="custom-control custom-radio custom-control-inline">
+						<input type="radio" id="remunerationSurMarge" value="Marge" class="custom-control-input" th:field="*{typeRemuneration}">
+						<label class="custom-control-label" for="remunerationSurMarge">Rémunération sur marge</label>
+					</div>
 				</div>
 				<div>
-					<label for="box3" th:class="${#fields.hasErrors('objectif')}? has-error">Objectif :</label>
-					<input type="number" id="box3" min="0" step="100" th:field="*{objectif}">
+					<label for="box3" th:class="${#fields.hasErrors('objectif')}? has-error">Objectif en &euro; :</label>
+					<input type="number" id="box3" min="0" step="100" th:field="*{objectif}" class="ml-2">
 				</div>
 			</div>
 
@@ -101,8 +103,8 @@
 			</div>
 			<div class="d-flex justify-content-around flex-baseline">
 				<div th:class="${#fields.hasErrors('integrationBonus')}? has-error">
-					<label for="prime">Montant de la prime : </label><output name="resultbis"> 0</output>&euro;
-					<input id="prime" type="range" class="custom-range mx-2" th:field="*{integrationBonus}" min="0" max="3000" step="100" value="0" oninput="resultbis.value=parseInt(payplanbis.value)">
+					<label for="prime">Montant de la prime :</label><output name="resultbis" class="ml-2">1500</output>&euro;
+					<input id="prime" type="range" class="custom-range" th:field="*{integrationBonus}" min="0" max="3000" step="100" oninput="resultbis.value=parseInt(prime.value)">
 				</div>
 				<div th:class="${#fields.hasErrors('integrationBonusTime')}? has-error">
 					<input type="number" id="box2" min="0" max="12" th:field="*{integrationBonusTime}">
@@ -111,22 +113,26 @@
 			</div>
 
 			<hr>
-
-			<div class="d-flex justify-content-center">
+			
+			<div class="d-flex justify-content-around ml-5">
 				<div th:class="${#fields.hasErrors('remunerationSub')}? has-error">
-					<label for="customRange3">Palier plan de rémunération</label>
+					<label for="remunerationSub">Palier plan de rémunération :</label><output name="resultter" class="ml-2">90</output>%
+					<input type="range" class="custom-range" th:field="*{remunerationSub}" min="70" max="110" step="10" id="remunerationSub" oninput="resultter.value=parseInt(remunerationSub.value)">
 				</div>
-				<div class="d-flex justify-content-center">
-					<input type="range" class="custom-range mx-3" th:field="*{remunerationSub}" min="70" max="110" step="10" id="customRange3" value="70" oninput="resultter.value=parseInt(payplanter.value)">
-					<output name="resultter">70</output>%
-				</div>
+				<img src="../../static/images/palier.png" th:src="@{../images/palier.png}" alt="palier" class="imagepalier">
 			</div>
 
-			<div class="mb-5 mt-3 d-flex justify-content-center">
+			<div class="mt-3 d-flex justify-content-center">
 				<a th:href="@{/payplans}" class="btn btn-secondary mr-3">Annuler</a>
-				<button id="button" type="submit" class="btn btn-primary mr-3">Valider</button>
-			</div>
 
+				<button id="button" type="submit" onclick="myFunction()" class="btn btn-primary mr-3">Valider</button>
+
+			</div>
+			<script>
+			function myFunction() {
+			alert("Action effectuée");
+			}
+			</script>
 		</form>
 
 		<!-- Optional JavaScript -->
