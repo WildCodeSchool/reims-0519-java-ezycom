@@ -102,4 +102,14 @@ public class User implements UserDetails {
     public boolean isEnabled() {
         return true;
     }
+
+    public Set<PayplanUser> getPayplanUsers() {
+        return payplanUsers;
+    }
+
+    public void setPayplanUsers(Set<PayplanUser> payplanUsers) {
+        this.payplanUsers = payplanUsers;
+    }
+
+    
 }

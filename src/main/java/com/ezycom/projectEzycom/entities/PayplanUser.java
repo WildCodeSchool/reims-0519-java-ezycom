@@ -31,6 +31,10 @@ public class PayplanUser {
         this.finish = finish;
     }
 
+    public PayplanUser(){
+        
+    }
+
     public Long getId() {
         return id;
     }
@@ -68,6 +72,14 @@ public class PayplanUser {
     }
 
     public void setPayplan(Payplan payplan) {
+        this.payplan = payplan;
+    }
+
+    public PayplanUser(Long id, Date start, Date finish, User user, Payplan payplan) {
+        this.id = id;
+        this.start = start;
+        this.finish = finish;
+        this.user = user;
         this.payplan = payplan;
     }
 

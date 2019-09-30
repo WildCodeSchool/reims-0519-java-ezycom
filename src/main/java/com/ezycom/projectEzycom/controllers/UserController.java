@@ -2,6 +2,7 @@ package com.ezycom.projectEzycom.controllers;
 
 import java.sql.Date;
 import java.util.List;
+import java.util.Set;
 
 import com.ezycom.projectEzycom.entities.Payplan;
 import com.ezycom.projectEzycom.entities.PayplanUser;
@@ -53,14 +54,17 @@ public class UserController {
     }
     
     @GetMapping("/users/associate")
-    public String associate(Model model) {
-
+    public String associate(Model model, @RequestParam(required = false) User user) {
         List<User> users = userRepository.findAll();
         model.addAttribute("users", users);
         
         List<Payplan> payplans = payplanRepository.findAll();
         model.addAttribute("payplans", payplans);
-
+        if (user != null)
+        {
+        Set<PayplanUser> payplanUsers = user.getPayplanUsers();
+        model.addAttribute("payplansUsers", payplanUsers);
+        }
         return "users/associate";
     }
 
