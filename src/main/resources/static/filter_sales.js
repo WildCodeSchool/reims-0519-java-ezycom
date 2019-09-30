@@ -7,6 +7,7 @@ $("#sale option").each(function(){
         optionValues.push(this.getAttribute('commercial'));
     }
 });
+
 $("#month option").each(function(){
     if($.inArray(this.getAttribute('month') , optionValues) >-1){
         $(this).hide();

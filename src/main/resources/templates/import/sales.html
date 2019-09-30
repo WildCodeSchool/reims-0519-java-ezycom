@@ -19,9 +19,9 @@
             <option selected disabled>Sélection du commercial</option>
             <option th:each="sale : ${sales}" th:value="${sale.id}" th:text=${sale.commercial} th:attr="commercial=${sale.commercial}">item</option>
         </select>
-        <select class="custom-select" th:name="month" id="month" onchange="updateTable()">
+        <select class="custom-select" th:name="month" id="month">
             <option selected>Sélection du Mois</option>
-            <option th:each="sale : ${sales}" th:value="${sale.id}" th:text=${sale.month} th:attr="month=${sale.month}"></option>
+            <option th:each="sale : ${sales}" th:value="${sale.id}" th:text=${sale.month}></option>
         </select>
 ​
         <table id="commercial_list" class="product_table mt-5 d-flex justify-content-center text-center">
@@ -41,7 +41,6 @@
             <th>Date commande</th>
             <th>Date saisie ADV</th>
             <th>Commercial</th>
-            <th>Mois</th>
             <th>Code produit</th>
             <th>Quantité</th>
             <th>PR€ HT</th>
@@ -52,9 +51,8 @@
         <tr th:id="${sale.id}" th:each="sale : ${sales}">
             <td th:text="${sale.purchase}"></td>
             <td th:text="${sale.purchaseDate}"></td>
-            <td th:text="${sale.advDate}"></td>
-            <td id="commercial" th:text="${sale.commercial}"></td>
             <td id="month" th:text="${sale.month}"></td>
+            <td id="commercial" th:text="${sale.commercial}"></td>
             <td th:text="${sale.productCode}"></td>
             <td th:text="${sale.quantity}"></td>
             <td th:text="${sale.preTaxeRealPrice}"></td>
