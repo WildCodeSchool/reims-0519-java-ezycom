@@ -124,9 +124,13 @@
 
 			<div class="mb-5 mt-3 d-flex justify-content-center">
 				<a th:href="@{/payplans}" class="btn btn-secondary mr-3">Annuler</a>
-				<button id="button" type="submit" class="btn btn-primary mr-3">Valider</button>
+				<button id="button" type="submit" onclick="myFunction()" class="btn btn-primary mr-3">Valider</button>
 			</div>
-
+			<script>
+			function myFunction() {
+			alert("Action effectuée");
+			}
+			</script>
 		</form>
 
 		<!-- Optional JavaScript -->
