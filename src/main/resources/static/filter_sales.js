@@ -7,6 +7,15 @@ $("#sale option").each(function(){
         optionValues.push(this.getAttribute('commercial'));
     }
 });
+$("#month option").each(function(){
+    if($.inArray(this.getAttribute('month') , optionValues) >-1){
+        $(this).hide();
+    }
+    else {
+        optionValues.push(this.getAttribute('month'));
+    }
+});
+
 function updateTable() {
     filter("commercial_list", 0);
     filter("sales_list", 3);
