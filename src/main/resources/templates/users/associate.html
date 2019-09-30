@@ -60,13 +60,18 @@
 				<table class="table table-bordered">
 					<thead>
 						<tr>
+							<th>Nom du commercial</th>
 							<th>Plan de rémunération précédant</th>
 							<th>Date de début d'application</th>
 							<th>Date de fin d'application</th>
+							
 						</tr>
 					</thead>
 					<tbody>
 						<tr th:each="payplanUser : ${payplansUsers}">
+							<td th:text="${payplanUser.user.email}">
+								<input type="text" name="history" disabled>
+							</td>				
 							<td th:text="${payplanUser.payplan.name}">
 								<input type="text" name="history" disabled>
 							</td>				
