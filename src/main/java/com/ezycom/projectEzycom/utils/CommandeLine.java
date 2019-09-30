@@ -61,15 +61,15 @@ import org.springframework.stereotype.Component;
                 ),
                 new Sale(
                     
-                    201906002L, //numero de commande
+                    201906007L, //numero de commande
                     "10.09.2019", // date de commande
                     "12.09.2019", //date de saisie ADV
                     "Rousseau Sebastien", // Commercial
                     "P0003", //code produit
-                    25, //quantité
-                    15000, // Prix Reel HT
-                    19500, //Prix vente HT
-                    4500, // Marge
+                    8, //quantité
+                    4800, // Prix Reel HT
+                    6240, //Prix vente HT
+                    1440, // Marge
                     10, // Taux en %
                     "Septembre"
                 ),
@@ -79,11 +79,11 @@ import org.springframework.stereotype.Component;
                     "04.09.2019", // date de commande
                     "06.09.2019", //date de saisie ADV
                     "Rousseau Sebastien", // Commercial
-                    "P0003", //code produit
-                    25, //quantité
-                    15000, // Prix Reel HT
-                    19500, //Prix vente HT
-                    4500, // Marge
+                    "S0005", //code produit
+                    14, //quantité
+                    420, // Prix Reel HT
+                    546, //Prix vente HT
+                    126, // Marge
                     10, // Taux en %
                     "Septembre"
                 ),
@@ -94,10 +94,10 @@ import org.springframework.stereotype.Component;
                     "22.09.2019", //date de saisie ADV
                     "Rousseau Sebastien", // Commercial
                     "P0003", //code produit
-                    25, //quantité
-                    15000, // Prix Reel HT
-                    19500, //Prix vente HT
-                    4500, // Marge
+                    5, //quantité
+                    3000, // Prix Reel HT
+                    3900, //Prix vente HT
+                    900, // Marge
                     10, // Taux en %
                     "Septembre"
                 ),
@@ -112,6 +112,48 @@ import org.springframework.stereotype.Component;
                     15000, // Prix Reel HT
                     19500, //Prix vente HT
                     4500, // Marge
+                    10, // Taux en %
+                    "Septembre"
+                ),
+                new Sale(
+                    
+                    201906006L, //numero de commande
+                    "08.07.2019", // date de commande
+                    "07.10.2019", //date de saisie ADV
+                    "Richard Jacques", // Commercial
+                    "S0003", //code produit
+                    80, //quantité
+                    640, // Prix Reel HT
+                    830, //Prix vente HT
+                    190, // Marge
+                    10, // Taux en %
+                    "Septembre"
+                ),
+                new Sale(
+                    
+                    2019060008L, //numero de commande
+                    "08.07.2019", // date de commande
+                    "07.10.2019", //date de saisie ADV
+                    "Richard Jacques", // Commercial
+                    "S0001", //code produit
+                    600, //quantité
+                    4800, // Prix Reel HT
+                    6200, //Prix vente HT
+                    1400, // Marge
+                    10, // Taux en %
+                    "Septembre"
+                ),
+                new Sale(
+                    
+                    2019060010L, //numero de commande
+                    "08.07.2019", // date de commande
+                    "07.10.2019", //date de saisie ADV
+                    "Richard Jacques", // Commercial
+                    "S0001", //code produit
+                    10, //quantité
+                    80, // Prix Reel HT
+                    104, //Prix vente HT
+                    24, // Marge
                     10, // Taux en %
                     "Septembre"
                 )
