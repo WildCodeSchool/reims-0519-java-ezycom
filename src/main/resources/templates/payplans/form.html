@@ -119,10 +119,10 @@
 					<label for="remunerationSub">Palier plan de rémunération :</label><output name="resultter" class="ml-2">90</output>%
 					<input type="range" class="custom-range" th:field="*{remunerationSub}" min="70" max="110" step="10" id="remunerationSub" oninput="resultter.value=parseInt(remunerationSub.value)">
 				</div>
-				<img src="../../static/images/palier.png" th:src="@{../images/palier.png}" alt="palier" class="imagepalier">
+				<img src="../../static/images/palier.png" th:src="@{/images/palier.png}" alt="palier" class="imagepalier">
 			</div>
 
-			<div class="mt-3 d-flex justify-content-center">
+			<div class="my-4 d-flex justify-content-center">
 				<a th:href="@{/payplans}" class="btn btn-secondary mr-3">Annuler</a>
 
 				<button id="button" type="submit" onclick="myFunction()" class="btn btn-primary mr-3">Valider</button>
