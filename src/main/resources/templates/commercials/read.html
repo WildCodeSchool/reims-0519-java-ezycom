@@ -29,6 +29,11 @@
             </tr>
             <tr th:each="commission : ${commissions}">
                 <td id="commercial" th:text="${commission.commercial}"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
                 <td th:text="${commission.commission}"></td>
             </tr>
         </table>
@@ -50,11 +55,7 @@
             <td th:text="${sale.purchaseDate}"></td>
             <td th:text="${sale.advDate}"></td>
             <td th:text="${sale.productCode}"></td>
-            <td th:text="${sale.quantity}"></td>
-            <td th:text="${sale.preTaxeRealPrice}"></td>
-            <td th:text="${sale.preTaxeSalePrice}"></td>
-            <td th:text="${sale.marge}"></td>
-            <td th:text="${sale.percent}"></td>
+            <td th:text="${sale.quantity}"></td>   
             <td th:text="${sale.commission}"></td>            
         </tr>
 
