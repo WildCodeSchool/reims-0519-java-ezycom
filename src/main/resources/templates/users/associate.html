@@ -50,37 +50,53 @@
 					<button id="button" type="submit" onclick="myFunction()" class="btn btn-primary btn-lg mb-5">Valider</button>
 				</div>
 			</form>
+
 			<script>
 			function myFunction() {
 			alert("Association effectuée.");
 			}
 			</script>
 
+			<form action="#" th:action="@{/users/associate}" method="GET">
+
 			<h4>Historique des plans de rémunération :</h4>
+			<select class="custom-select my-3" name="user">
+				<option selected>Sélection de l'email</option>
+				<option th:each="user : ${users}" th:value="${user.id}" th:text=${user.email}></option>
+			</select>
 			<div class="d-flex justify-content-center">
 				<table class="table table-bordered">
 					<thead>
 						<tr>
+							<th>Nom du commercial</th>
 							<th>Plan de rémunération précédant</th>
 							<th>Date de début d'application</th>
 							<th>Date de fin d'application</th>
+							
 						</tr>
 					</thead>
 					<tbody>
-						<tr th:each="payplan : ${payplans}">
-							<td th:text="${payplan.name}">
+						<tr th:each="payplanUser : ${payplansUsers}">
+							<td th:text="${payplanUser.user.email}">
 								<input type="text" name="history" disabled>
-							</td>
-							<td>
+							</td>				
+							<td th:text="${payplanUser.payplan.name}">
+								<input type="text" name="history" disabled>
+							</td>				
+							<td th:text="${payplanUser.start}">
 								<input type="date" name="start">
 							</td>
-							<td>
+							<td th:text="${payplanUser.finish}">
 								<input type="date" name="finish">
 							</td>
 						</tr>
-					</tbody>
+					</tbody>		
 				</table>
 			</div>
+			<div class="d-flex justify-content-center">
+					<button id="button" type="submit" class="btn btn-primary btn-lg mb-5">Valider</button>
+				</div>
+			</form>
 		</div>
 		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

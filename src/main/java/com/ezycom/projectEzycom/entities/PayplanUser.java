@@ -24,11 +24,16 @@ public class PayplanUser {
     @ManyToOne
     private Payplan payplan;
 
+
     public PayplanUser(User user, Payplan payplan, Date start, Date finish) {
         this.user = user;
         this.payplan = payplan;
         this.start = start;
         this.finish = finish;
+    }
+
+    public PayplanUser(){
+        
     }
 
     public Long getId() {
@@ -68,6 +73,16 @@ public class PayplanUser {
     }
 
     public void setPayplan(Payplan payplan) {
+        this.payplan = payplan;
+    }
+
+
+
+    public PayplanUser(Long id, Date start, Date finish, User user, Payplan payplan) {
+        this.id = id;
+        this.start = start;
+        this.finish = finish;
+        this.user = user;
         this.payplan = payplan;
     }
 

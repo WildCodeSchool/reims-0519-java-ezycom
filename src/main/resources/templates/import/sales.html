@@ -59,9 +59,16 @@
             <td th:text="${sale.percent}"></td>
             
         </tr>
-​
+
     </table>
+
+    <div class="my-3 mr-3 d-flex justify-content-end ">
+        <label class=" mr-2 d-flex align-items-end" for="avatar">Importer ventes :</label> 
+        <input type="file" id="buttonimport" name="avatar" accept="Documents/xlsx, Documents/csv">
+    </div>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script th:src="@{/filter_sales.js}"></script>
+
 </body>
 </html>
