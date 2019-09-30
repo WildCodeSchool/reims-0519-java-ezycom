@@ -67,7 +67,7 @@
 					</thead>
 					<tbody>
 						<tr th:each="payplanUser : ${payplansUsers}">
-							<td th:text="${payplanUser.id}">
+							<td th:text="${payplanUser.payplan.name}">
 								<input type="text" name="history" disabled>
 							</td>				
 							<td th:text="${payplanUser.start}">
