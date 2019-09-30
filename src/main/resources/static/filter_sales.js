@@ -7,12 +7,10 @@ $("#sale option").each(function(){
         optionValues.push(this.getAttribute('commercial'));
     }
 });
-​
 function updateTable() {
     filter("commercial_list", 0);
     filter("sales_list", 3);
 }
-​
 function filter(tableId, commercialColumnNumber) {
     let myFilterSelect = document.getElementById("sale");
     let commercial = myFilterSelect.options[myFilterSelect.selectedIndex].text;
