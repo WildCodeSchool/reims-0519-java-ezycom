@@ -109,10 +109,8 @@ import org.springframework.stereotype.Component;
                     "Septembre"
                 ),
                 new Sale(
-                    
                     201906006L, //numero de commande
                     "08.07.2019", // date de commande
-                    "07.10.2019", //date de saisie ADV
                     "Richard Jacques", // Commercial
                     "S0003", //code produit
                     80, //quantité
@@ -126,7 +124,6 @@ import org.springframework.stereotype.Component;
                     
                     2019060008L, //numero de commande
                     "08.07.2019", // date de commande
-                    "07.10.2019", //date de saisie ADV
                     "Richard Jacques", // Commercial
                     "S0001", //code produit
                     600, //quantité
@@ -140,7 +137,6 @@ import org.springframework.stereotype.Component;
                     
                     2019060010L, //numero de commande
                     "08.07.2019", // date de commande
-                    "07.10.2019", //date de saisie ADV
                     "Richard Jacques", // Commercial
                     "S0001", //code produit
                     10, //quantité

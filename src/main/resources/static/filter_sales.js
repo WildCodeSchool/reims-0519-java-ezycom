@@ -29,10 +29,10 @@ function filterCommercial(tableId, commercialColumnNumber) {
             }
         }       
     }
-    $("#month").val('Sélection du mois').show();
+    $("#month").val("Select").show();
 }
 
-function resetFilter() {
-    $("#totaux_list").find("tr").show();
-    $("#sales_list").find("tr").show();
-}
+$("#button").click(function() {
+    $("#commercial").val("Select");
+    $("#month").val("Select");
+});

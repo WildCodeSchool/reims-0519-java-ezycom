@@ -15,16 +15,16 @@
 
     <div class="container">
         <select class="custom-select" id="commercial" th:name="commercial" onchange="updateTableCommercial()">
-            <option selected>Sélection du commercial</option>
+            <option selected value="Select">Sélection du commercial</option>
             <option th:each="sale : ${sales}" th:value="${sale.id}" th:text=${sale.commercial} th:attr="commercial=${sale.commercial}"></option>
         </select>
         <select class="custom-select" th:name="month" id="month" onchange="updateTableMonth()">
-            <option selected>Sélection du mois</option>
+            <option selected value="Select">Sélection du mois</option>
             <option th:each="sale : ${sales}" th:value="${sale.id}" th:text=${sale.month} th:attr="month=${sale.month}"></option>
         </select>
 
         <div class="d-flex justify-content-center">
-            <input type="reset" id="button" class="btn btn-primary btn-lg" onchange="resetFilter()"></input>
+            <button type="sumbit" id="button" class="btn btn-primary btn-lg">Réinitialiser</button>
         </div>
 ​
         <table id="totaux_list" class="product_table mt-5 d-flex justify-content-center text-center">
