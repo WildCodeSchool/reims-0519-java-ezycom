@@ -21,7 +21,6 @@ import org.springframework.stereotype.Component;
                     
                     201900001L, //numero de commande
                     "04.10.2019", // date de commande
-                    "06.10.2019", //date de saisie ADV
                     "Dupond Daniel", // Commercial
                     "P0001", //code produit
                     12, //quantité
@@ -35,7 +34,6 @@ import org.springframework.stereotype.Component;
                     
                     201900021L, //numero de commande
                     "07.10.2019", // date de commande
-                    "09.10.2019", //date de saisie ADV
                     "Dupond Daniel", // Commercial
                     "P0002", //code produit
                     8, //quantité
@@ -49,7 +47,6 @@ import org.springframework.stereotype.Component;
                     
                     201906002L, //numero de commande
                     "04.10.2019", // date de commande
-                    "06.10.2019", //date de saisie ADV
                     "Rousseau Sebastien", // Commercial
                     "P0003", //code produit
                     25, //quantité
@@ -63,7 +60,6 @@ import org.springframework.stereotype.Component;
                     
                     201906007L, //numero de commande
                     "10.09.2019", // date de commande
-                    "12.09.2019", //date de saisie ADV
                     "Rousseau Sebastien", // Commercial
                     "P0003", //code produit
                     8, //quantité
@@ -77,7 +73,6 @@ import org.springframework.stereotype.Component;
                     
                     201906002L, //numero de commande
                     "04.09.2019", // date de commande
-                    "06.09.2019", //date de saisie ADV
                     "Rousseau Sebastien", // Commercial
                     "S0005", //code produit
                     14, //quantité
@@ -91,7 +86,6 @@ import org.springframework.stereotype.Component;
                     
                     201906002L, //numero de commande
                     "20.09.2019", // date de commande
-                    "22.09.2019", //date de saisie ADV
                     "Rousseau Sebastien", // Commercial
                     "P0003", //code produit
                     5, //quantité
@@ -105,7 +99,6 @@ import org.springframework.stereotype.Component;
                     
                     201906002L, //numero de commande
                     "11.09.2019", // date de commande
-                    "13.09.2019", //date de saisie ADV
                     "Dupond Daniel", // Commercial
                     "P0003", //code produit
                     25, //quantité

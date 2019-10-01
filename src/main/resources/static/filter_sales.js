@@ -1,18 +1,19 @@
-let optionValues =[];
-$("#sale option").each(function(){
-    if($.inArray(this.getAttribute('commercial') , optionValues) >-1){
+optionValues =[];
+$("#commercial option").each(function(){
+    if($.inArray(this.getAttribute("commercial") , optionValues) >-1){
         $(this).hide();
     }
     else {
-        optionValues.push(this.getAttribute('commercial'));
+        optionValues.push(this.getAttribute("commercial"));
     }
 });
-function updateTable() {
-    filter("commercial_list", 0);
-    filter("sales_list", 3);
+
+function updateTableCommercial() {
+    filterCommercial("totaux_list", 0);
+    filterCommercial("sales_list", 3);
 }
-function filter(tableId, commercialColumnNumber) {
-    let myFilterSelect = document.getElementById("sale");
+function filterCommercial(tableId, commercialColumnNumber) {
+    let myFilterSelect = document.getElementById("commercial");
     let commercial = myFilterSelect.options[myFilterSelect.selectedIndex].text;
     let table = document.getElementById(tableId);
     let tr = table.getElementsByTagName("tr");
@@ -28,4 +29,10 @@ function filter(tableId, commercialColumnNumber) {
             }
         }       
     }
+    $("#month").val('Sélection du mois').show();
+}
+
+function resetFilter() {
+    $("#totaux_list").find("tr").show();
+    $("#sales_list").find("tr").show();
 }

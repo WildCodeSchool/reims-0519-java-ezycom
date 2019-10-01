@@ -14,12 +14,20 @@
     <h4 class="d-flex justify-content-center my-3">Tableau des ventes </h4>
 
     <div class="container">
-        <select class="custom-select" id="sale" th:name="sale" onchange="updateTable()">
-            <option selected disabled>Sélection du commercial</option>
-            <option th:each="sale : ${sales}" th:value="${sale.id}" th:text=${sale.commercial} th:attr="commercial=${sale.commercial}">item</option>
+        <select class="custom-select" id="commercial" th:name="commercial" onchange="updateTableCommercial()">
+            <option selected>Sélection du commercial</option>
+            <option th:each="sale : ${sales}" th:value="${sale.id}" th:text=${sale.commercial} th:attr="commercial=${sale.commercial}"></option>
         </select>
+        <select class="custom-select" th:name="month" id="month" onchange="updateTableMonth()">
+            <option selected>Sélection du mois</option>
+            <option th:each="sale : ${sales}" th:value="${sale.id}" th:text=${sale.month} th:attr="month=${sale.month}"></option>
+        </select>
+
+        <div class="d-flex justify-content-center">
+            <input type="reset" id="button" class="btn btn-primary btn-lg" onchange="resetFilter()"></input>
+        </div>
 ​
-        <table id="commercial_list" class="product_table mt-5 d-flex justify-content-center text-center">
+        <table id="totaux_list" class="product_table mt-5 d-flex justify-content-center text-center">
             <tr>
                 <th>Commercial</th>
                 <th>Commission</th>
@@ -36,7 +44,6 @@
             <th>Date commande</th>
             <th>Date saisie ADV</th>
             <th>Commercial</th>
-            <th>Mois</th>
             <th>Code produit</th>
             <th>Quantité</th>
             <th>PR€ HT</th>
@@ -47,9 +54,8 @@
         <tr th:id="${sale.id}" th:each="sale : ${sales}">
             <td th:text="${sale.purchase}"></td>
             <td th:text="${sale.purchaseDate}"></td>
-            <td th:text="${sale.advDate}"></td>
-            <td id="commercial" th:text="${sale.commercial}"></td>
             <td th:text="${sale.month}"></td>
+            <td th:text="${sale.commercial}"></td>
             <td th:text="${sale.productCode}"></td>
             <td th:text="${sale.quantity}"></td>
             <td th:text="${sale.preTaxeRealPrice}"></td>
@@ -67,6 +73,6 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script th:src="@{/filter_sales.js}"></script>
-
+    <script th:src="@{/filter_month.js}"></script>
 </body>
 </html>
