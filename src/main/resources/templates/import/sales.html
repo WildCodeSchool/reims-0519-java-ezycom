@@ -15,7 +15,7 @@
             <p class="my-2">Tableau des ventes</p>
     </div>
     <div class="container">
-        <select class="custom-select" id="sale" th:name="sale" onchange="updateTableCommercial()">
+        <select class="custom-select" id="commercial" th:name="commercial" onchange="updateTableCommercial()">
             <option selected disabled>Sélection du commercial</option>
             <option th:each="sale : ${sales}" th:value="${sale.id}" th:text=${sale.commercial} th:attr="commercial=${sale.commercial}"></option>
         </select>
@@ -65,5 +65,6 @@
     </table>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script th:src="@{/filter_sales.js}"></script>
+    <script th:src="@{/filter_month.js}"></script>
 </body>
 </html>
