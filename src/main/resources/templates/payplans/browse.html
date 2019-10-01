@@ -10,12 +10,12 @@
 	<link rel="stylesheet" href="../static/style.css" th:href="@{/style.css}">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet"> 
 	<link rel="icon" type="image/png" href="../../static/images/logo.png" th:href="@{../images/logo.png}">
-	<title>Liste Payplan</title>
+	<title>Ezycom</title>
 </head>
 <body>
 	<div th:replace="fragments/header :: header"></div>
 	<div class="container">
-	<h4 class="d-flex justify-content-center my-5">Création d'un utilisateur</h4>
+	<h4 class="d-flex justify-content-center my-5">Liste des plans de rémunérations</h4>
 	<div class="w-100 d-flex justify-content-center">
 		<ul>
 			<li th:each="payplan : ${payplans}" class="mb-3 d-flex justify-content-center pr-2">

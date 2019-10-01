@@ -39,6 +39,9 @@ public class PayplanController {
    
     @GetMapping("/payplans/create")
     public String create(@ModelAttribute Payplan payplan, Model model) {
+        payplan.setPayRate(0);
+        payplan.setIntegrationBonus(0);
+        payplan.setRemunerationSub(0);
         model.addAttribute("action", "/payplans");
         model.addAttribute("method", "post");
         model.addAttribute("payplan", payplan);
