@@ -15,16 +15,16 @@
             <p class="my-2">Tableau des ventes</p>
     </div>
     <div class="container">
-        <select class="custom-select" id="sale" th:name="sale" onchange="updateTable()">
+        <select class="custom-select" id="sale" th:name="sale" onchange="updateTableCommercial()">
             <option selected disabled>Sélection du commercial</option>
-            <option th:each="sale : ${sales}" th:value="${sale.id}" th:text=${sale.commercial} th:attr="commercial=${sale.commercial}">item</option>
+            <option th:each="sale : ${sales}" th:value="${sale.id}" th:text=${sale.commercial} th:attr="commercial=${sale.commercial}"></option>
         </select>
-        <select class="custom-select" th:name="month" id="month">
-            <option selected>Sélection du Mois</option>
-            <option th:each="sale : ${sales}" th:value="${sale.id}" th:text=${sale.month}></option>
+        <select class="custom-select" th:name="month" id="month" onchange="updateTableMonth()">
+            <option selected disabled>Sélection du Mois</option>
+            <option th:each="sale : ${sales}" th:value="${sale.id}" th:text=${sale.month} th:attr="month=${sale.month}"></option>
         </select>
 ​
-        <table id="commercial_list" class="product_table mt-5 d-flex justify-content-center text-center">
+        <table id="totaux_list" class="product_table mt-5 d-flex justify-content-center text-center">
             <tr>
                 <th>Commercial</th>
                 <th>Commission</th>
