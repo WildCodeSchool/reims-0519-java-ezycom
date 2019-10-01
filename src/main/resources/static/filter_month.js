@@ -31,8 +31,3 @@ function filterMonth(tableId, monthColumnNumber) {
     $("#commercial").val('Sélection du commercial').show();
     $("#totaux_list").find("tr").show();
 }
-
-function resetFilter() {
-    $("#totaux_list").find("tr").show();
-    $("#sales_list").find("tr").show();
-}

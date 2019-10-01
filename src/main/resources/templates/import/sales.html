@@ -23,6 +23,10 @@
             <option selected>Sélection du mois</option>
             <option th:each="sale : ${sales}" th:value="${sale.id}" th:text=${sale.month} th:attr="month=${sale.month}"></option>
         </select>
+
+        <div class="d-flex justify-content-center">
+            <input type="reset" id="button" class="btn btn-primary btn-lg" onchange="resetFilter()"></input>
+        </div>
 ​
         <table id="totaux_list" class="product_table mt-5 d-flex justify-content-center text-center">
             <tr>
