@@ -91,12 +91,13 @@ main {
 }
 
 .logo {
-    height: 50px;
     background-image: url("/images/logo-ezyperf.png");
     background-repeat: no-repeat;
-    background-size: 200px;
+    background-size: 220px;
     margin-top: 5px;
     margin-left: 15px;
+    height: 60px;
+    width: 230px;
 }
 
 .main-nav {
@@ -473,4 +474,8 @@ hr{
     width: 600px;
     height: 300px;
     margin-right: 3%;
+}
+
+.negmar{
+    margin-top: -24px;
 }

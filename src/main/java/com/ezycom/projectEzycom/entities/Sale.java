@@ -10,12 +10,12 @@ public class Sale{
     public Sale(){
     }
 
-    public Sale(Long purchase, String purchaseDate, String advDate, String commercial, 
+    public Sale(Long purchase, String purchaseDate, String commercial, 
     String productCode, int quantity, int preTaxeRealPrice, int preTaxeSalePrice, int marge, int percent, String month){
         
         this.purchase = purchase;// numéro de commande
         this.purchaseDate = purchaseDate;// date de la commande
-        this.advDate = advDate;
+        this.month = month;
         this.commercial = commercial;//nom du commercial
         this.productCode = productCode;//code du Product
         this.quantity = quantity;//quantity de produits
@@ -30,8 +30,7 @@ public class Sale{
     @GeneratedValue(strategy = GenerationType.IDENTITY)   
     private int id;
     private Long purchase;   
-    private String purchaseDate;
-    private String advDate;    
+    private String purchaseDate;  
     private String commercial;    
     private String productCode;   
     private int quantity;    
@@ -56,14 +55,6 @@ public class Sale{
 
     public void setPurchaseDate(String purchaseDate) {
         this.purchaseDate = purchaseDate;
-    }
-
-    public String getAdvDate() {
-        return advDate;
-    }
-
-    public void setAdvDate(String advDate) {
-        this.advDate = advDate;
     }
 
     public String getCommercial() {
