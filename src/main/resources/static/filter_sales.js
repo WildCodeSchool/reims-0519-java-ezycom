@@ -33,6 +33,6 @@ function filterCommercial(tableId, commercialColumnNumber) {
 }
 
 $("#button").click(function() {
-    $("#commercial").val("Select");
-    $("#month").val("Select");
+    $("#commercial").val("Select").show();
+    $("#month").val("Select").show();
 });
