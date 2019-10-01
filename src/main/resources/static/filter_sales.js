@@ -31,8 +31,3 @@ function filterCommercial(tableId, commercialColumnNumber) {
     }
     $("#month").val("Select").show();
 }
-
-$("#button").click(function() {
-    $("#commercial").val("Select").show();
-    $("#month").val("Select").show();
-});
