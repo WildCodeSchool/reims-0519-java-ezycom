@@ -45,7 +45,7 @@ function updateTableMonth() {
     filterMonth("sales_list", 2);
 }
 function filterMonth(tableId, monthColumnNumber) {
-    let myFilterSelect = document.getElementById('month');
+    let myFilterSelect = document.getElementById("month");
     let month = myFilterSelect.options[myFilterSelect.selectedIndex].text;
     let table = document.getElementById(tableId);
     let tr = table.getElementsByTagName("tr");
