@@ -29,4 +29,5 @@ function filterCommercial(tableId, commercialColumnNumber) {
             }
         }       
     }
+    $("#month").val('Sélection du mois').show();
 }

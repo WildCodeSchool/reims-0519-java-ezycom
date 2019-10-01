@@ -16,11 +16,11 @@
     </div>
     <div class="container">
         <select class="custom-select" id="commercial" th:name="commercial" onchange="updateTableCommercial()">
-            <option selected disabled>Sélection du commercial</option>
+            <option selected>Sélection du commercial</option>
             <option th:each="sale : ${sales}" th:value="${sale.id}" th:text=${sale.commercial} th:attr="commercial=${sale.commercial}"></option>
         </select>
         <select class="custom-select" th:name="month" id="month" onchange="updateTableMonth()">
-            <option selected disabled>Sélection du Mois</option>
+            <option selected>Sélection du mois</option>
             <option th:each="sale : ${sales}" th:value="${sale.id}" th:text=${sale.month} th:attr="month=${sale.month}"></option>
         </select>
 ​
@@ -51,8 +51,8 @@
         <tr th:id="${sale.id}" th:each="sale : ${sales}">
             <td th:text="${sale.purchase}"></td>
             <td th:text="${sale.purchaseDate}"></td>
-            <td id="month" th:text="${sale.month}"></td>
-            <td id="commercial" th:text="${sale.commercial}"></td>
+            <td th:text="${sale.month}"></td>
+            <td th:text="${sale.commercial}"></td>
             <td th:text="${sale.productCode}"></td>
             <td th:text="${sale.quantity}"></td>
             <td th:text="${sale.preTaxeRealPrice}"></td>
