@@ -2,6 +2,7 @@ package com.ezycom.projectEzycom.controllers;
 
 import java.sql.Date;
 import java.util.List;
+import java.util.Set;
 
 import com.ezycom.projectEzycom.entities.Payplan;
 import com.ezycom.projectEzycom.entities.PayplanUser;
@@ -38,31 +39,31 @@ public class UserController {
         return "/users/create";
     }
     
+    
     @PostMapping("/users/create")
     public String create(
-        @RequestParam("email") String email,
-        @RequestParam("password") String password,
-        @RequestParam("role") String role,
-        @RequestParam("lastname") String lastname,
-        @RequestParam("firstname") String firstname,
+        User user,
         RedirectAttributes redirectAttributes
         ) { 
             PasswordEncoder encoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
-            User user = new User(email, encoder.encode(password), role, lastname, firstname);
-            userRepository.save(user);     
+            user.setPassword(encoder.encode(user.getPassword()));
+            userRepository.save(user);
             redirectAttributes.addAttribute("message", "success");
             return "redirect:/users/create";
     }
     
     @GetMapping("/users/associate")
-    public String associate(Model model) {
-
+    public String associate(Model model, @RequestParam(required = false) User user) {
         List<User> users = userRepository.findAll();
         model.addAttribute("users", users);
         
         List<Payplan> payplans = payplanRepository.findAll();
         model.addAttribute("payplans", payplans);
-
+        if (user != null)
+        {
+        Set<PayplanUser> payplanUsers = user.getPayplanUsers();
+        model.addAttribute("payplansUsers", payplanUsers);
+        }
         return "users/associate";
     }
 

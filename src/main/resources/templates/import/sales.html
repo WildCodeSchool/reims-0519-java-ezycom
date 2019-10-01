@@ -10,10 +10,9 @@
 </head>
 <body>
     <div th:replace="fragments/header :: header"></div>
-    
-    <div class="my-4 mb-5 border border-dark mx-auto w-25 d-flex align-items-center justify-content-center">
-            <p class="my-2">Tableau des ventes</p>
-    </div>
+
+    <h4 class="d-flex justify-content-center my-3">Tableau des ventes </h4>
+
     <div class="container">
         <select class="custom-select" id="commercial" th:name="commercial" onchange="updateTableCommercial()">
             <option selected>Sélection du commercial</option>
@@ -62,11 +61,16 @@
             <td th:text="${sale.preTaxeRealPrice}"></td>
             <td th:text="${sale.preTaxeSalePrice}"></td>
             <td th:text="${sale.marge}"></td>
-            <td th:text="${sale.percent}"></td>
-            
+            <td th:text="${sale.percent}"></td>            
         </tr>
-​
+
     </table>
+
+    <div class="my-3 mr-3 d-flex justify-content-end ">
+        <label class=" mr-2 d-flex align-items-end" for="avatar">Importer ventes :</label> 
+        <input type="file" id="buttonimport" name="avatar" accept="Documents/xlsx, Documents/csv">
+    </div>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script th:src="@{/filter_sales.js}"></script>
     <script th:src="@{/filter_month.js}"></script>

@@ -134,4 +134,8 @@ public class User implements UserDetails {
         this.payplanUsers = payplanUsers;
     }
 
+    public String getFullName() {
+        return lastname + " " + firstname;
+    }
+
 }

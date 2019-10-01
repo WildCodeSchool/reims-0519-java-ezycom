@@ -31,7 +31,7 @@ public class SaleController {
         List<User> users = userRepository.findAll();
         model.addAttribute("users", users);
 
-        List<Commission> commissions = saleRepo.findByCommercial();
+        List<Commission> commissions = saleRepo.findCommissionsGroupByCommercial();
         model.addAttribute("commissions", commissions);
 
         return "import/sales";
