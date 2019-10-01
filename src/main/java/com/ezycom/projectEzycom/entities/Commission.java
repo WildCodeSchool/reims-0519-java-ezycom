@@ -7,6 +7,4 @@ public interface Commission{
     public String getCommercial();
 
     public String getMonth();
-
-    public int getMarge();
 }

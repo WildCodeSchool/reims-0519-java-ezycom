@@ -27,9 +27,9 @@ public class HomeController {
         if (currentUser.getRole().equals("Commercial")) {
             List<Commission> commissions = saleRepo.findCommissionsByCommercialFullName(currentUser.getFullName());
             model.addAttribute("commissions", commissions);
-            model.addAttribute("sales", new ArrayList<Sale>()/*saleRepo.findByCommercial()*/);
+            model.addAttribute("sales", new ArrayList<Sale>());
             return "/commercials/read";
-        } else /*if (currentUser.getRole().equals("Manager"))*/{
+        } else {
             return "forward:/sales";
         }
     }
