@@ -16,5 +16,11 @@ public interface SaleRepository extends JpaRepository<Sale, Long>{
         value = "select commercial,sum(marge * percent/100) as commission from ezycom.sale group by commercial",
         nativeQuery = true
     )
-    List<Commission> findByCommercial();
+    List<Commission> findCommissionsGroupByCommercial();
+
+    @Query(
+        value = "select commercial,sum(marge * percent/100) as commission from ezycom.sale where commercial=:name group by commercial",
+        nativeQuery = true
+    )
+    List<Commission> findCommissionsByCommercialFullName(String name);
 }
