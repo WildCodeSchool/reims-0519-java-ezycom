@@ -42,7 +42,7 @@
 				</div>
 				<div class="d-flex justify-content-around flex-baseline">
 					<div th:class="${#fields.hasErrors('payRate')}? has-error">
-						<label for="payRate">Taux de rémunération :</label> <output name="result">50</output>%
+						<label for="payRate">Taux de rémunération :</label> <output name="result" for="payRate" th:text="*{payRate}">0</output>%
 						<input type="range" class="custom-range" id="payRate" th:field="*{payRate}" min="0" max="100" step="5" oninput="result.value=parseInt(payRate.value)">
 					</div>
 				</div>
@@ -103,7 +103,7 @@
 			</div>
 			<div class="d-flex justify-content-around flex-baseline">
 				<div th:class="${#fields.hasErrors('integrationBonus')}? has-error">
-					<label for="prime">Montant de la prime :</label><output name="resultbis" class="ml-2">1500</output>&euro;
+					<label for="prime">Montant de la prime :</label><output name="resultbis" for="integrationbonus" th:text="*{integrationBonus}" class="ml-2">0</output>&euro;
 					<input id="prime" type="range" class="custom-range" th:field="*{integrationBonus}" min="0" max="3000" step="100" oninput="resultbis.value=parseInt(prime.value)">
 				</div>
 				<div th:class="${#fields.hasErrors('integrationBonusTime')}? has-error">
@@ -116,7 +116,7 @@
 			
 			<div class="d-flex justify-content-around ml-5">
 				<div th:class="${#fields.hasErrors('remunerationSub')}? has-error">
-					<label for="remunerationSub">Palier plan de rémunération :</label><output name="resultter" class="ml-2">90</output>%
+					<label for="remunerationSub">Palier plan de rémunération :</label><output name="resultter" for="remunerationSub" th:text="*{remunerationSub}" class="ml-2">0</output>%
 					<input type="range" class="custom-range" th:field="*{remunerationSub}" min="70" max="110" step="10" id="remunerationSub" oninput="resultter.value=parseInt(remunerationSub.value)">
 				</div>
 				<img src="../../static/images/palier.png" th:src="@{/images/palier.png}" alt="palier" class="imagepalier">
