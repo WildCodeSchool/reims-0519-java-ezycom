@@ -24,4 +24,10 @@ public interface SaleRepository extends JpaRepository<Sale, Long>{
         nativeQuery = true
     )
     List<Sale> findAllSalesByCommercialAndByMonth(@Param("month") String month, @Param("commercial") String commercial);
+
+    @Query(
+        value = "SELECT * FROM ezycom.sale where commercial=:commercial",
+        nativeQuery = true
+    )
+    List<Sale> findAllSalesByCommercial(String commercial);
 }
