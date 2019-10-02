@@ -28,6 +28,11 @@ function filterMonth(tableId, monthColumnNumber) {
             }
         }       
     }
-    $("#commercial").val('Sélection du commercial').show();
+    $("#commercial").val("Select").show();
     $("#totaux_list").find("tr").show();
 }
+
+$("#button").click(function() {
+    $("#totaux_list").find("tr").show();
+    $("#sales_list").find("tr").show();
+});
