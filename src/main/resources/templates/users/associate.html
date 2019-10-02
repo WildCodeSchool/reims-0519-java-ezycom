@@ -15,6 +15,7 @@
 		<div th:replace="fragments/header :: header"></div>
 
 		<div class="container">
+			<div class="associate">
 			<h4 class="my-4">Associer un commercial :</h4>
 			<form action="#" th:action="@{/users/associate}" method="POST">
 				<div class="form-group">
@@ -57,6 +58,10 @@
 			}
 			</script>
 
+			</div>
+
+			<hr/>
+			<div class="historique">
 			<form action="#" th:action="@{/users/associate}" method="GET">
 
 			<h4>Historique des plans de rémunération :</h4>
@@ -97,6 +102,7 @@
 					<button id="button" type="submit" class="btn btn-primary btn-lg mb-5">Valider</button>
 				</div>
 			</form>
+		</div>
 		</div>
 		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
