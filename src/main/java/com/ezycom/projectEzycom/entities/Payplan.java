@@ -22,18 +22,17 @@ public class Payplan {
 
     
     public Payplan(String name, String objectiveDeadline, String typeRemuneration,
-    Integer objectif, Integer payRate, Integer remunerationSub, Integer integrationBonus,
+    Integer objectif, Integer payRate, Integer integrationBonus,
     Integer integrationBonusTime, Boolean integration, Integer remunerationLocation){
         this.name = name; //Nom
         this.objectiveDeadline = objectiveDeadline; // Echéance Objectif
-        this.payRate = payRate; //Taux de rémuneration !!! Ne fonctionne plus
+        this.payRate = payRate; //Taux de rémuneration !!!
         this.typeRemuneration = typeRemuneration; //Rémunération sur CA ou Marge
         this.objectif = objectif; //Objectifs
-        this.remunerationLocation = remunerationLocation; // Rémunération sur contrat location/Abonnement   !!! Ne fonctionne plus
+        this.remunerationLocation = remunerationLocation; // Rémunération sur contrat location/Abonnement   !!! 
         this.integration = integration; //bouton Prime d'intégration
-        this.integrationBonus = integrationBonus; //Montant de la prime d'intégration   !!! Ne fonctionne plus
+        this.integrationBonus = integrationBonus; //Montant de la prime d'intégration   !!!
         this.integrationBonusTime = integrationBonusTime; //durée de la prime d'integration
-        this.remunerationSub = remunerationSub; //Palier payplan   !!! Ne fonctionne plus
 
     }
 
@@ -47,7 +46,6 @@ public class Payplan {
     private String typeRemuneration;
     private Integer objectif;
     private Integer payRate;
-    private Integer remunerationSub;
     private Integer integrationBonus;
     private Integer integrationBonusTime;
     private Boolean integration;
@@ -138,20 +136,6 @@ public class Payplan {
      */
     public void setPayRate(Integer payRate) {
         this.payRate = payRate;
-    }
-
-    /**
-     * @return int return the remunerationSub
-     */
-    public Integer getRemunerationSub() {
-        return remunerationSub;
-    }
-
-    /**
-     * @param remunerationSub the remunerationSub to set
-     */
-    public void setRemunerationSub(Integer remunerationSub) {
-        this.remunerationSub = remunerationSub;
     }
 
     /**
