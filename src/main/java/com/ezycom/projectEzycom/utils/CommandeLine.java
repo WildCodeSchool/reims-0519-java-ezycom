@@ -109,7 +109,6 @@ import org.springframework.stereotype.Component;
                     "Septembre"
                 ),
                 new Sale(
-                    
                     201906006L, //numero de commande
                     "08.07.2019", // date de commande
                     "Richard Jacques", // Commercial
