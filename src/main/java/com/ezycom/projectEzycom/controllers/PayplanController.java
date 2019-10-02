@@ -41,7 +41,6 @@ public class PayplanController {
     public String create(@ModelAttribute Payplan payplan, Model model) {
         payplan.setPayRate(0);
         payplan.setIntegrationBonus(0);
-        payplan.setRemunerationSub(0);
         model.addAttribute("action", "/payplans");
         model.addAttribute("method", "post");
         model.addAttribute("payplan", payplan);
@@ -86,7 +85,6 @@ public class PayplanController {
         payplanToUpdate.setObjectiveDeadline(payplan.getObjectiveDeadline());
         payplanToUpdate.setTypeRemuneration(payplan.getTypeRemuneration());
         payplanToUpdate.setObjectif(payplan.getObjectif());
-        payplanToUpdate.setRemunerationSub(payplan.getRemunerationSub());
         payplanToUpdate.setIntegrationBonus(payplan.getIntegrationBonus());
         payplanToUpdate.setIntegrationBonusTime(payplan.getIntegrationBonusTime());
         payplanToUpdate.setPayRate(payplan.getPayRate());
