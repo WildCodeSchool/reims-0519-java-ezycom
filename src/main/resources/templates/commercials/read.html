@@ -1,43 +1,48 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <title>Bienvenue sur Ezycom</title>
     <link rel="icon" type="image/png" href="../static/logo.png" th:href="@{/logo.png}">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
-            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
-            crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../static/style.css" th:href="@{/style.css}">
 
 </head>
+
 <body>
     <div th:replace="fragments/header_commercial :: header"></div>
     <h4 class="d-flex justify-content-center my-3">Tableau des ventes </h4>
     <div class="container">
 
-​
-        <table id="commercial_list" class="product_table mt-5 d-flex justify-content-center text-center">
-            <tr>
-                <th>Commercial</th>
-                <th>Mois</th>
-                <th>PR€ HT</th>
-                <th>PV€ HT</th>
-                <th>Marge</th>
-                <th>Taux en %</th>
-                <th>Commission</th>
-                
-            </tr>
-            <tr th:each="commission : ${commissions}">
-                <td id="commercial" th:text="${commission.commercial}"></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td th:text="${commission.commission}"></td>
-            </tr>
-        </table>
-    </div>
+        ​
+        <div class="container">
+            <form action="/commercial" method="GET">
+                <select class="custom-select" th:name="month" id="month">
+                    <option selected disabled>Sélection du mois</option>
+                    <option th:each="sale : ${listSales}" th:value="${sale.month}" th:text=${sale.month}
+                        th:attr="month=${sale.month}"></option>
+                </select>
+
+                <div class="d-flex justify-content-center">
+                    <input type="submit" id="button" class="btn btn-primary btn-lg"></input>
+                </div>
+            </form>
+
+            <table id="totaux_list" class="product_table mt-5 d-flex justify-content-center text-center">
+                    <tr>
+                            <th>Mois</th>
+                            <th>Commercial</th>
+                            <th>Commission</th>
+                        </tr>
+                        <tr th:each="commission : ${commissions}">
+                            <td th:text="${commission.month}"></td>
+                            <td id="commercial" th:text="${commission.commercial}"></td>
+                            <td th:text="${commission.commission}"></td>
+                        </tr>
+            </table>
+        </div>
 
     </div>
 
@@ -46,21 +51,31 @@
             <th>N° commande</th>
             <th>Date commande</th>
             <th>Date saisie ADV</th>
+            <th>Commercial</th>
             <th>Code produit</th>
             <th>Quantité</th>
-          
+            <th>PR€ HT</th>
+            <th>PV€ HT</th>
+            <th>Marge</th>
+            <th>Taux en %</th>
         </tr>
         <tr th:id="${sale.id}" th:each="sale : ${sales}">
             <td th:text="${sale.purchase}"></td>
             <td th:text="${sale.purchaseDate}"></td>
-            <td th:text="${sale.advDate}"></td>
+            <td th:text="${sale.month}"></td>
+            <td th:text="${sale.commercial}"></td>
             <td th:text="${sale.productCode}"></td>
-            <td th:text="${sale.quantity}"></td>   
-            <td th:text="${sale.commission}"></td>            
+            <td th:text="${sale.quantity}"></td>
+            <td th:text="${sale.preTaxeRealPrice}"></td>
+            <td th:text="${sale.preTaxeSalePrice}"></td>
+            <td th:text="${sale.marge}"></td>
+            <td th:text="${sale.percent}"></td>
         </tr>
 
     </table>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script th:src="@{/filter_sales.js}"></script>
+    <script th:src="@{/filter_month.js}"></script>
 </body>
+
 </html>
