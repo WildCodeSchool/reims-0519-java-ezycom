@@ -1,7 +1,6 @@
 package com.ezycom.projectEzycom.entities;
 
 import java.sql.Date;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
