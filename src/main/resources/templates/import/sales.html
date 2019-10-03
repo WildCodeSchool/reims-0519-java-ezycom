@@ -19,13 +19,14 @@
             <option selected disabled>Sélection du commercial</option>
             <option th:each="sale : ${listSales}" th:value="${sale.commercial}" th:text=${sale.commercial} th:attr="commercial=${sale.commercial}"></option>
         </select>
-        <select class="custom-select" th:name="month" id="month">
+        
+        <select class="custom-select mt-3" th:name="month" id="month">
             <option selected disabled>Sélection du mois</option>
             <option th:each="sale : ${listSales}" th:value="${sale.month}" th:text=${sale.month} th:attr="month=${sale.month}"></option>
         </select>
 
         <div class="d-flex justify-content-center">
-            <input type="submit" id="button" class="btn btn-primary btn-lg"></input>
+            <input type="submit" value="Filtrer" id="button" class="btn btn-primary btn-lg"></input>
         </div>
     </form>
 ​
