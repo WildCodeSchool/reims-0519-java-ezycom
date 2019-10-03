@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class SaleController {
@@ -23,17 +24,25 @@ public class SaleController {
     private UserRepository userRepository;
 
     @GetMapping("/sales")
-    public String browse(Model model) {
+    public String browse(Model model, @RequestParam(required = false) String month, @RequestParam(required = false) String commercial) {
+        if(month != null || commercial != null) {
+            List<Commission> commissions = saleRepo.findCommissionsGroupByCommercial(month, commercial);
+            model.addAttribute("commissions", commissions);
 
-        List<Sale> sales = saleRepo.findAll();
-        model.addAttribute("sales", sales);
+            List<Sale> sales = saleRepo.findAllSalesByCommercialAndByMonth(month, commercial);
+            model.addAttribute("sales", sales);
+        } else {
+            List<Sale> sales = saleRepo.findAll();
+            model.addAttribute("sales", sales);
+        }
+        List<Sale> listSales = saleRepo.findAll();
+        model.addAttribute("listSales", listSales);
+
 
         List<User> users = userRepository.findAll();
         model.addAttribute("users", users);
 
-        List<Commission> commissions = saleRepo.findCommissionsGroupByCommercial();
-        model.addAttribute("commissions", commissions);
-
         return "import/sales";
     }
+
 }
