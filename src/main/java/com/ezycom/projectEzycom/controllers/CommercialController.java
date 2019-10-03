@@ -6,7 +6,6 @@ import com.ezycom.projectEzycom.entities.Commission;
 import com.ezycom.projectEzycom.entities.Sale;
 import com.ezycom.projectEzycom.entities.User;
 import com.ezycom.projectEzycom.repositories.SaleRepository;
-import com.ezycom.projectEzycom.repositories.UserRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
