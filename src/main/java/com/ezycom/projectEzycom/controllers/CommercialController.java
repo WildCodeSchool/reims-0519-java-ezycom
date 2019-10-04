@@ -26,8 +26,8 @@ public class CommercialController {
             List<Sale> listSales = saleRepo.findAll();
             model.addAttribute("listSales", listSales);
             List<Commission> commissions = saleRepo.findCommissionsGroupByCommercial(month, currentUser.getFullName());
-            List<Sale> sales = saleRepo.findAllSalesByCommercial(currentUser.getFullName());
             model.addAttribute("commissions", commissions);
+            List<Sale> sales = saleRepo.findAllSalesByCommercialAndByMonth(month, currentUser.getFullName());
             model.addAttribute("sales", sales);
             return "/commercials/read"; 
     } 
