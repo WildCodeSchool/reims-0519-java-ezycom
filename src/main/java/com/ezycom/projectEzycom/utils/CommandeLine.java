@@ -145,12 +145,193 @@ import org.springframework.stereotype.Component;
                     24, // Marge
                     10, // Taux en %
                     "Septembre"
+                ),
+
+                new Sale(
+                    
+                    2019060011L, //numero de commande
+                    "08.07.2019", // date de commande
+                    "Dupond Daniel", // Commercial
+                    "S0001", //code produit
+                    10, //quantité
+                    80, // Prix Reel HT
+                    104, //Prix vente HT
+                    24, // Marge
+                    10, // Taux en %
+                    "Septembre"
+                ),
+                new Sale(
+                    
+                    2019060012L, //numero de commande
+                    "08.07.2019", // date de commande
+                    "Dupond Daniel", // Commercial
+                    "S0002", //code produit
+                    11, //quantité
+                    80, // Prix Reel HT
+                    124, //Prix vente HT
+                    24, // Marge
+                    10, // Taux en %
+                    "Septembre"
+                ),
+                new Sale(
+                    
+                    2019060010L, //numero de commande
+                    "08.07.2019", // date de commande
+                    "Dupond Daniel", // Commercial
+                    "S0003", //code produit
+                    10, //quantité
+                    80, // Prix Reel HT
+                    164, //Prix vente HT
+                    20, // Marge
+                    10, // Taux en %
+                    "Septembre"
+                ),
+                new Sale(
+                    
+                    2019060010L, //numero de commande
+                    "18.07.2019", // date de commande
+                    "Dupond Daniel", // Commercial
+                    "S0004", //code produit
+                    2, //quantité
+                    80, // Prix Reel HT
+                    194, //Prix vente HT
+                    24, // Marge
+                    10, // Taux en %
+                    "Septembre"
+                ),
+                new Sale(
+                    
+                    2019060010L, //numero de commande
+                    "15.07.2019", // date de commande
+                    "Dupond Daniel", // Commercial
+                    "S0001", //code produit
+                    10, //quantité
+                    80, // Prix Reel HT
+                    104, //Prix vente HT
+                    24, // Marge
+                    10, // Taux en %
+                    "Septembre"
+                ),
+                new Sale(
+                    
+                    2019060010L, //numero de commande
+                    "02.07.2019", // date de commande
+                    "Dupond Daniel", // Commercial
+                    "S0003", //code produit
+                    1, //quantité
+                    80, // Prix Reel HT
+                    104, //Prix vente HT
+                    24, // Marge
+                    10, // Taux en %
+                    "Septembre"
+                ),
+                new Sale(
+                    
+                    2019060010L, //numero de commande
+                    "09.07.2019", // date de commande
+                    "Dupond Daniel", // Commercial
+                    "S0006", //code produit
+                    15, //quantité
+                    80, // Prix Reel HT
+                    184, //Prix vente HT
+                    24, // Marge
+                    10, // Taux en %
+                    "Septembre"
+                ),
+                new Sale(
+                    
+                    2019060010L, //numero de commande
+                    "22.07.2019", // date de commande
+                    "Dupond Daniel", // Commercial
+                    "S0011", //code produit
+                    10, //quantité
+                    80, // Prix Reel HT
+                    99, //Prix vente HT
+                    24, // Marge
+                    10, // Taux en %
+                    "Septembre"
+                ),
+                new Sale(
+                    
+                    2019060010L, //numero de commande
+                    "28.07.2019", // date de commande
+                    "Dupond Daniel", // Commercial
+                    "S00011", //code produit
+                    10, //quantité
+                    80, // Prix Reel HT
+                    104, //Prix vente HT
+                    24, // Marge
+                    10, // Taux en %
+                    "Septembre"
+                ),
+                new Sale(
+                    
+                    2019060010L, //numero de commande
+                    "30.07.2019", // date de commande
+                    "Dupond Daniel", // Commercial
+                    "S0002", //code produit
+                    20, //quantité
+                    80, // Prix Reel HT
+                    174, //Prix vente HT
+                    24, // Marge
+                    10, // Taux en %
+                    "Septembre"
+                ),
+                new Sale(
+                    
+                    2019060010L, //numero de commande
+                    "20.07.2019", // date de commande
+                    "Dupond Daniel", // Commercial
+                    "S0008", //code produit
+                    5, //quantité
+                    80, // Prix Reel HT
+                    98, //Prix vente HT
+                    24, // Marge
+                    10, // Taux en %
+                    "Septembre"
+                ),new Sale(
+                    
+                    2019060010L, //numero de commande
+                    "19.07.2019", // date de commande
+                    "Dupond Daniel", // Commercial
+                    "S0011", //code produit
+                    19, //quantité
+                    80, // Prix Reel HT
+                    142, //Prix vente HT
+                    24, // Marge
+                    10, // Taux en %
+                    "Septembre"
+                ),
+                new Sale(
+                    
+                    2019060010L, //numero de commande
+                    "23.07.2019", // date de commande
+                    "Dupond Daniel", // Commercial
+                    "S0009", //code produit
+                    40, //quantité
+                    80, // Prix Reel HT
+                    194, //Prix vente HT
+                    24, // Marge
+                    10, // Taux en %
+                    "Septembre"
+                ),
+                new Sale(
+                    
+                    2019060010L, //numero de commande
+                    "23.07.2019", // date de commande
+                    "Dupond Daniel", // Commercial
+                    "S0009", //code produit
+                    40, //quantité
+                    80, // Prix Reel HT
+                    194, //Prix vente HT
+                    24, // Marge
+                    10, // Taux en %
+                    "Septembre"
                 )
             };
             for(Sale sale : data) {
     
                 saleRepository.save(sale);
-    
             }   
     }
 }
