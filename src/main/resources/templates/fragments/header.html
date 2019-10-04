@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>header</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<header>
+			<div class="profile">
+				<div class="bloc">
+					<a class="right" th:href="@{/logout}"><img class="nav-icon" th:src="@{/images/icon-logout.png}" alt="logout">Se déconnecter</a>
+				</div>
+			</div>
+			<a th:href="@{../sales}"><div class="logo"></div></a>
+			<div class="main-nav">
+				<ul class="menu-nav">
+					<li><a class="titre-nav" href="#">Ventes / Produits</a>
+						<ul>
+							<li class="deroulant"><a th:href="@{../sales}">Les ventes</a></li>
+							<li class="deroulant"><a th:href="@{../products}">Les produits</a></li>
+						</ul>
+					</li>  
+					<li><a class="titre-nav" href="#">Plans de rémunération</a>
+						<ul>
+							<li class="deroulant"><a th:href="@{../payplans/create}">Créer</a></li>
+							<li class="deroulant"><a th:href="@{../payplans}">Liste</a></li>
+						</ul>
+					</li>
+					<li><a class="titre-nav" href="#">Utilisateurs</a>
+						<ul>
+							<li class="deroulant"><a th:href="@{../users/create}">Créer</a></li>
+							<li class="deroulant"><a th:href="@{../users/associate}">Associer</a></li>
+						</ul>
+					</li>  
+				</ul>
+			</div>
+		</header>
+	</body>
+</html>
