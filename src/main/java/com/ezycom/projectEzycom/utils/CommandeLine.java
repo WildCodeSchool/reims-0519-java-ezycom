@@ -314,12 +314,24 @@ import org.springframework.stereotype.Component;
                     24, // Marge
                     10, // Taux en %
                     "Septembre"
+                ),
+                new Sale(
+                    
+                    2019060010L, //numero de commande
+                    "23.07.2019", // date de commande
+                    "Dupond Daniel", // Commercial
+                    "S0009", //code produit
+                    40, //quantité
+                    80, // Prix Reel HT
+                    194, //Prix vente HT
+                    24, // Marge
+                    10, // Taux en %
+                    "Septembre"
                 )
             };
             for(Sale sale : data) {
     
                 saleRepository.save(sale);
-    
             }   
     }
 }
