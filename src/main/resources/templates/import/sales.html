@@ -34,7 +34,7 @@
             <tr>
                 <th>Mois</th>
                 <th>Commercial</th>
-                <th>Commission</th>
+                <th>Commission en €</th>
             </tr>
             <tr th:each="commission : ${commissions}">
                 <td th:text="${commission.month}"></td>
@@ -53,9 +53,8 @@
             <th>Quantité</th>
             <th>PR€ HT</th>
             <th>PV€ HT</th>
-            <th>Marge</th>
-            <th>Taux en %</th>
-        </tr>
+            <th>Marge en €</th>
+            </tr>
         <tr th:id="${sale.id}" th:each="sale : ${sales}">
             <td th:text="${sale.purchase}"></td>
             <td th:text="${sale.purchaseDate}"></td>
@@ -65,8 +64,7 @@
             <td th:text="${sale.quantity}"></td>
             <td th:text="${sale.preTaxeRealPrice}"></td>
             <td th:text="${sale.preTaxeSalePrice}"></td>
-            <td th:text="${sale.marge}"></td>
-            <td th:text="${sale.percent}"></td>            
+            <td th:text="${sale.marge}"></td>           
         </tr>
 
     </table>
