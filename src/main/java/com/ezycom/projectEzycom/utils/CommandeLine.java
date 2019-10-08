@@ -47,7 +47,7 @@ import org.springframework.stereotype.Component;
                     
                     201906009L, //numero de commande
                     "04.10.2019", // date de commande
-                    "Mando Morgan", // Commercial
+                    "Mando Morgane", // Commercial
                     "P0003", //code produit
                     25, //quantité
                     15000, // Prix Reel HT
@@ -60,7 +60,7 @@ import org.springframework.stereotype.Component;
                     
                     201906007L, //numero de commande
                     "10.09.2019", // date de commande
-                    "Mando Morgan", // Commercial
+                    "Mando Morgane", // Commercial
                     "P0003", //code produit
                     8, //quantité
                     4800, // Prix Reel HT
@@ -73,7 +73,7 @@ import org.springframework.stereotype.Component;
                     
                     201906002L, //numero de commande
                     "04.09.2019", // date de commande
-                    "Mando Morgan", // Commercial
+                    "Mando Morgane", // Commercial
                     "S0005", //code produit
                     14, //quantité
                     420, // Prix Reel HT
@@ -146,6 +146,7 @@ import org.springframework.stereotype.Component;
                     10, // Taux en %
                     "Septembre"
                 ),
+
                 new Sale(
                     201906118L, //numero de commande
                     "08.10.2019", // date de commande
@@ -169,12 +170,103 @@ import org.springframework.stereotype.Component;
                     150, // Marge
                     10, // Taux en %
                     "Octobre"
+
+                ),
+                new Sale(
+                    
+                    2019060011L, //numero de commande
+                    "08.07.2019", // date de commande
+                    "Jacques Adrien", // Commercial
+                    "S0001", //code produit
+                    10, //quantité
+                    60, // Prix Reel HT
+                    84, //Prix vente HT
+                    24, // Marge
+                    10, // Taux en %
+                    "Septembre"
+                ),
+                new Sale(
+                    
+                    2019060012L, //numero de commande
+                    "08.07.2019", // date de commande
+                    "Jacques Adrien", // Commercial
+                    "S0002", //code produit
+                    11, //quantité
+                    160, // Prix Reel HT
+                    200, //Prix vente HT
+                    40, // Marge
+                    10, // Taux en %
+                    "Septembre"
+                ),
+                new Sale(
+                    
+                    2019060010L, //numero de commande
+                    "08.07.2019", // date de commande
+                    "Baudou Jeremie", // Commercial
+                    "S0003", //code produit
+                    10, //quantité
+                    80, // Prix Reel HT
+                    164, //Prix vente HT
+                    20, // Marge
+                    10, // Taux en %
+                    "Septembre"
+                ),
+                new Sale(
+                    
+                    2019060010L, //numero de commande
+                    "18.07.2019", // date de commande
+                    "Mando Morgane", // Commercial
+                    "S0004", //code produit
+                    4, //quantité
+                    160, // Prix Reel HT
+                    194, //Prix vente HT
+                    34, // Marge
+                    10, // Taux en %
+                    "Octobre"
+                ),
+                new Sale(
+                    
+                    2019060010L, //numero de commande
+                    "15.07.2019", // date de commande
+                    "Mando Morgane", // Commercial
+                    "S0001", //code produit
+                    10, //quantité
+                    80, // Prix Reel HT
+                    104, //Prix vente HT
+                    24, // Marge
+                    10, // Taux en %
+                    "Septembre"
+                ),
+                new Sale(
+                    
+                    2019060010L, //numero de commande
+                    "02.07.2019", // date de commande
+                    "Mando Morgane", // Commercial
+                    "S0003", //code produit
+                    1, //quantité
+                    80, // Prix Reel HT
+                    104, //Prix vente HT
+                    24, // Marge
+                    10, // Taux en %
+                    "Septembre"
+                ),
+                new Sale(
+                    
+                    2019060010L, //numero de commande
+                    "09.07.2019", // date de commande
+                    "Mando Morgane", // Commercial
+                    "S0006", //code produit
+                    15, //quantité
+                    80, // Prix Reel HT
+                    184, //Prix vente HT
+                    24, // Marge
+                    10, // Taux en %
+                    "Septembre"
                 )
             };
             for(Sale sale : data) {
     
                 saleRepository.save(sale);
-    
             }   
     }
 }
