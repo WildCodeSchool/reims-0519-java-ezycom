@@ -57,7 +57,6 @@
             <th>PR€ HT</th>
             <th>PV€ HT</th>
             <th>Marge</th>
-            <th>Taux en %</th>
         </tr>
         <tr th:id="${sale.id}" th:each="sale : ${sales}">
             <td th:text="${sale.purchase}"></td>
@@ -69,7 +68,6 @@
             <td th:text="${sale.preTaxeRealPrice}"></td>
             <td th:text="${sale.preTaxeSalePrice}"></td>
             <td th:text="${sale.marge}"></td>
-            <td th:text="${sale.percent}"></td>
         </tr>
 
     </table>
